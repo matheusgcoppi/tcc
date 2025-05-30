@@ -1,0 +1,9 @@
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces Estrutura típica de arquitetura monolítica.}}{14}{figure.caption.9}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Arquitetura Serverless típica, mostrando os componentes principais: API Gateway, Funções como Serviço (FaaS), e serviços gerenciados. Fonte: Adaptado de \blx@tocontentsinit {0}\cite {shekhar2023microservices}.}}{15}{figure.caption.10}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Padrões fundamentais em arquitetura de microsserviços}}{17}{figure.caption.12}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Padrões de streaming no gRPC: (A) Unário, (B) Servidor, (C) Cliente, (D) Bidirecional.}}{21}{figure.caption.15}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Visão geral do projeto}}{22}{figure.caption.16}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Diagrama de casos de uso}}{24}{figure.caption.17}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Modelo de banco de dados}}{24}{figure.caption.18}%

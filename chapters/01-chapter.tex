@@ -1,0 +1,105 @@
+% ----------------------------------------------------------
+\chapter{Introdução} \label{cap:Introducao}
+% ----------------------------------------------------------
+
+Em poucos anos, a complexidade dos sistemas de software em ascenção e a necessidade de escalabilidade; flexibilidade e pulseira continua têm consequentemente impulsionado a propagação da arquitetura de microsserviços ao invés da tradicional arquitetura monolítica (NIAZI et al., 2020).
+
+Por que a fragmentação de aplicações de serviços independentes, torna as aplicações mais flexíveis em termos de desenvolvimento, teste, implantação e expansão a se harmonizar mais rapidamente e de modo mais eficiente, tornando-se apto para times distribuídos com ciclos de entrega mais curtos (NIAZI et al., 2020).
+
+A arquitetura de microsserviços apresenta diversas vantagens: a modularização em serviços independentes facilita a manutenção e evolução de componentes isolados (JAMSHIDI, 2016); a escalabilidade granular permite o dimensionamento seletivo de cada serviço conforme demanda, esta arquitetura se alinha perfeitamente com ambiente \textit{cloud}, provendo escalabilidade, flexibilidade e resiliência (Gaurav Shekhar, 2023).
+
+O ciclo de desenvolvimento é acelerado, pois equipes menores podem trabalhar em paralelo em serviços distintos sem necessariamente conhecer os outros serviços, ciclos de entrega mais rápidos pela habilidade de fazer \textit{deploy updates} independente para cada \textit{micro serviço} facilitando atualizações frequentes, além disso temos a questão da alta confiabilidade, falhas são isoladas, minimizando os impactos, por exemplo, um \textit{crash} em um sistema de pagamentos não vai para outros componentes como a autenticação do usuário (Swapnil K Shevate, 2021).
+
+Contudo, embora a adoção de microsserviços traga benefícios inegáveis, também impõe desafios significativos: A orquestração e o gerenciamento de múltiplos serviços demandam ferramentas como \textit{Kubernetes}, elevando a sobrecarga operacional e a curva de aprendizado (JAMSHIDI, 2016); cada serviço necessita de uma infraestrutura adicional, como separação de banco de dados, ferramentas de monitoramento e \textit{logging}. Além disso há uma dificuldade maior no \textit{debbuging} da aplicação por conta dos \textit{logs} serem distribuídos o que dificulta o \textit{error tracing} e a resolução (Gaurav Shekhar, 2023).
+
+Além disso, estudos como o de Niswar et al. [6] avaliam o impacto da escolha de protocolos de comunicação (\textit{REST}, \textit{gRPC}, \textit{GraphQL}) sobre o desempenho de microsserviços, destacando a importância de decisões arquitetônicas bem-informadas para garantir uma observabilidade eficaz. Complementarmente, o trabalho de SHA et al. [7] investiga como \textit{logs} de clusters \textit{Kubernetes} podem ser usados para automatizar a análise de falhas em testes, evidenciando o papel crítico que a observabilidade desempenha na manutenção da qualidade de sistemas distribuídos.
+% \ref{cap:Fundamentacao}), os conceitos e tecnologias devem ser melhor aprofundados nesta seção.
+% Em seguida você pode explicar qual é o problema que o projeto pretende resolver com a solução proposta no objetivo geral.
+% Ao final desta seção, você irá dizer algo como:
+% Dentro deste contexto, este trabalho procura fazer uma contribuição na área de .... através do desenvolvimento e avaliação de...
+
+\section{Objetivos}\label{sec:objetivos}
+% ----------------------------------------------------------
+
+Diante disso, o presente Trabalho de Conclusão de Curso tem como objetivo geral comparar o desempenho dos protocolos de comunicação \textit{REST} e \textit{gRPC} em arquiteturas de microsserviços, utilizando métricas de observabilidade para avaliar latência (P95 e P99), \textit{throughput} e uso de recursos.
+
+% ----------------------------------------------------------
+\subsection{Objetivo Geral}\label{subsec:objetivosgerais}
+% ----------------------------------------------------------
+
+Comparar o desempenho dos protocolos de comunicação \textit{REST} e \textit{gRPC} em arquiteturas de microsserviços, utilizando métricas de observabilidade para avaliar latência, \textit{throughput} e uso de recursos.
+
+% ----------------------------------------------------------
+\subsection{Objetivos Específicos}
+% ----------------------------------------------------------
+\begin{itemize}
+    \item Implementação de dois microserviços equivalentes, cada um empregando um dos protocolos em análise; 
+    
+    \item Instrumentação dos serviços para expor métricas em uma rota, coletadas pelo prometheus; 
+    
+    \item Execução de testes de carga controlados; 
+    
+    \item Coleta e análise de métricas de latência, throughput e recursos pelo prometheus; 
+
+    \item Comparação estatística dos resultados para identificar o protocolo de melhor desempenho em diferentes cenários de carga.     
+
+\end{itemize}
+
+% ----------------------------------------------------------
+% \subsection{Justificativa}
+% % ----------------------------------------------------------
+
+% Aqui, o foco está em justificar a solução proposta. Você deve deixar muito claro para o leitor qual será a efetiva contribuição que o seu trabalho irá oferecer, procurando responder no seu texto a perguntas como, por exemplo:
+
+% Qual é a relevância da solução da proposta?
+
+% Qual é a complexidade da solução proposta?
+
+% Qual é a aplicabilidade da solução?
+
+% A solução é viável?
+
+% Qual é o seu diferencial a outros similares?
+
+% Qual é a motivação para ele?
+
+% Procure utilizar referências bibliográficas para ajudar na defesa da relevância da solução proposta.
+
+% A justificativa, como o próprio nome indica, é a argumentação a favor da validade da realização do trabalho proposto, identificando as contribuições esperadas.
+
+% ----------------------------------------------------------
+\subsection{LIMITAÇÃO DO ESCOPO}
+% ----------------------------------------------------------
+
+Este trabalho limita-se à comparação do desempenho entre os protocolos de comunicação \textit{REST} e \textit{gRPC} em dois serviços equivalentes implementados em uma arquitetura de \textit{microsserviços}. A análise será conduzida em ambiente de testes controlado, com foco em métricas de observabilidade como latência (P95 e P99), \textit{throughput} e uso de recursos.
+
+Não serão abordados aspectos relacionados à segurança, autenticação, autorização, persistência de dados ou integração com sistemas legados. Da mesma forma, não se pretende avaliar outros protocolos de comunicação, como \textit{GraphQL} ou \textit{SOAP}, nem realizar testes em ambientes de produção. O uso de ferramentas como o \textit{Prometheus} será restrito à coleta e análise de métricas, não sendo objetivo do estudo compará-las com outras soluções de monitoramento.
+
+% ----------------------------------------------------------
+% \subsection{METODOLOGIA}
+% % ----------------------------------------------------------
+
+% Você deve iniciar esta seção classificando a sua pesquisa sob três pontos de vista: natureza (básica ou aplicada), objetivos (exploratória, descritiva ou explicativa) e forma de abordagem do problema (quantitativa ou qualitativa). Nas referências deste modelo, há duas bibliografias \cite{gil2008metodos, da2005metodologia} que podem ser utilizadas para você fundamentar a classificação.
+
+% Em seguida você deve descrever os caminhos que foram percorridos (procedimentos metodológicos) para se chegar aos objetivos propostos (levantamento, estudo de caso, pesquisa bibliográfica, dentre outros), por exemplo: 
+
+% Pesquisa bibliográfica: inicialmente, foi realizada uma pesquisa bibliográfica em diversas bases de dados para adquirir familiaridade com o tema Computacional (PC). A pesquisa explorou definições e características do PC e também buscou identificar as estratégias que estão sendo utilizadas para o seu desenvolvimento com diferentes tipos de públicos.
+
+% Desenvolvimento do jogo: esta etapa atendeu ao Objetivo Específico 1 do TCC. Como primeira atividade, foi realizada uma pesquisa bibliográfica sobre Teoria da Computação e Lógica de Computabilidade, através da qual foram definidos o enredo e a mecânica do jogo proposto. Em seguida, foram desenvolvidas atividades de documentação (Game Design Document), modelagem (diagramas UML), implementação e teste de usabilidade.
+
+% Criação do conjunto de problemas do jogo: esta etapa atendeu ao Objetivo Específico 2 do TCC. A primeira atividade realizada foi o estabelecimento de parâmetros para a avaliação da complexidade de modelos de autômatos finitos e de máquina de Turing. Em seguida foi criado um conjunto de 23 problemas que exploram o poder dos autômatos finitos e da máquina de Turing de maneira incremental, tendo como base os parâmetros estabelecidos. Na última atividade desta etapa, os 23 problemas foram implementados no banco de dados do jogo.
+
+% % ----------------------------------------------------------
+% \subsection{ESTRUTURA DO TRABALHO}
+% % ----------------------------------------------------------
+% Nesta seção você deve descrever a estrutura do TCC, falando um pouco sobre o conteúdo de cada capítulo, por exemplo:
+
+% Este trabalho está estruturado em cinco capítulos. O Capítulo \ref{cap:Introducao} é dividido em cinco seções e contextualiza o trabalho, traz também os objetivos a serem alcançados, a justificativa do projeto e a limitação do escopo, além da metodologia aplicada na sua elaboração.
+
+% O Capítulo \ref{cap:Fundamentacao} apresenta um estudo da literatura que explora os temas relacionados com o trabalho. A Seção \ref{sec:conceitos} trata...
+
+% O Capítulo \ref{cap:desenvolvimento} apresenta, em detalhes, o desenvolvimento da solução proposta na Seção \ref{subsec:objetivosgerais}. A Seção \ref{sec:visao} apresenta...
+
+% O Capítulo \ref{cap:teste} apresenta a avaliação...
+
+% O Capítulo \ref{cap:consideracoes} apresenta as considerações finais do trabalho, bem como as contribuições e trabalhos futuros.
