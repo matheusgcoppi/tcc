@@ -48,6 +48,33 @@
       \field{title}{Observability in Kubernetes Cluster: Automatic Anomalies Detection using Prometheus}
       \field{year}{2022}
     \endentry
+    \entry{sandeep2022observability}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b254342bb16fd6f8ef289eb5695c71fa}{%
+           family={Chinamanagonda},
+           familyi={C\bibinitperiod},
+           given={Sandeep},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b254342bb16fd6f8ef289eb5695c71fa}
+      \strng{fullhash}{b254342bb16fd6f8ef289eb5695c71fa}
+      \strng{fullhashraw}{b254342bb16fd6f8ef289eb5695c71fa}
+      \strng{bibnamehash}{b254342bb16fd6f8ef289eb5695c71fa}
+      \strng{authorbibnamehash}{b254342bb16fd6f8ef289eb5695c71fa}
+      \strng{authornamehash}{b254342bb16fd6f8ef289eb5695c71fa}
+      \strng{authorfullhash}{b254342bb16fd6f8ef289eb5695c71fa}
+      \strng{authorfullhashraw}{b254342bb16fd6f8ef289eb5695c71fa}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{MZ Research Journal}
+      \field{title}{Observability in Microservices Architectures -Advanced observability tools for microservices environments}
+      \field{year}{2022}
+    \endentry
     \entry{farhan2023performance}{misc}{}{}
       \true{moreauthor}
       \true{morelabelname}

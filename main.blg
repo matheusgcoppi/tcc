@@ -1,21 +1,21 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'main.blg'
-[42] biber:340> INFO - === sex mai 30, 2025, 19:14:52
-[52] Biber.pm:420> INFO - Reading 'main.bcf'
-[98] Biber.pm:994> INFO - Found 15 citekeys in bib section 0
-[106] Biber.pm:4463> INFO - Processing section 0
-[112] Biber.pm:4654> INFO - Looking for bibtex file 'references.bib' for section 0
-[113] bibtex.pm:1713> INFO - LaTeX decoding ...
-[120] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[179] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[179] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[179] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
-[179] Biber.pm:4289> INFO - No sort tailoring available for locale 'pt-BR'
-[188] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[192] bbl.pm:779> INFO - Output to main.bbl
-[192] Biber.pm:131> WARN - Duplicate entry key: 'observability2023' in file 'references.bib', skipping ...
-[192] Biber.pm:131> WARN - Duplicate entry key: 'niswar2023performance' in file 'references.bib', skipping ...
-[192] Biber.pm:131> WARN - Duplicate entry key: 'nizami2020comparison' in file 'references.bib', skipping ...
-[192] Biber.pm:131> WARN - Duplicate entry key: 'shekhar2023microservices' in file 'references.bib', skipping ...
-[192] Biber.pm:131> WARN - Duplicate entry key: 'niswar2023performance' in file 'references.bib', skipping ...
-[192] Biber.pm:133> INFO - WARNINGS: 5
+[58] biber:340> INFO - === dom jun  1, 2025, 19:34:15
+[72] Biber.pm:420> INFO - Reading 'main.bcf'
+[136] Biber.pm:994> INFO - Found 16 citekeys in bib section 0
+[146] Biber.pm:4463> INFO - Processing section 0
+[153] Biber.pm:4654> INFO - Looking for bibtex file 'references.bib' for section 0
+[154] bibtex.pm:1713> INFO - LaTeX decoding ...
+[163] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[251] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[251] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[251] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
+[251] Biber.pm:4289> INFO - No sort tailoring available for locale 'pt-BR'
+[268] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[274] bbl.pm:779> INFO - Output to main.bbl
+[274] Biber.pm:131> WARN - Duplicate entry key: 'observability2023' in file 'references.bib', skipping ...
+[274] Biber.pm:131> WARN - Duplicate entry key: 'niswar2023performance' in file 'references.bib', skipping ...
+[274] Biber.pm:131> WARN - Duplicate entry key: 'nizami2020comparison' in file 'references.bib', skipping ...
+[274] Biber.pm:131> WARN - Duplicate entry key: 'shekhar2023microservices' in file 'references.bib', skipping ...
+[275] Biber.pm:131> WARN - Duplicate entry key: 'niswar2023performance' in file 'references.bib', skipping ...
+[275] Biber.pm:133> INFO - WARNINGS: 5
