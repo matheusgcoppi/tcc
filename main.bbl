@@ -138,6 +138,33 @@
       \field{type}{phdthesis}
       \field{year}{2000}
     \endentry
+    \entry{Fowler2012CircuitBreaker}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=312ac886938a9b2be4f8eb607567fe4c}{%
+           family={Fowler},
+           familyi={F\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{fullhashraw}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{bibnamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorbibnamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authornamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorfullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorfullhashraw}{312ac886938a9b2be4f8eb607567fe4c}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://martinfowler.com/bliki/CircuitBreaker.html}}
+      \field{title}{Circuit Breaker}
+      \field{year}{2012}
+    \endentry
     \entry{grpc:1}{misc}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=a3a4dde425c214175e79ec479deea1fa}{%
@@ -343,6 +370,35 @@
       \field{note}{Trabalho de Conclusão de Curso}
       \field{title}{Comparativo entre arquiteturas de APIs: REST, GraphQL e gRPC}
       \field{year}{2024}
+    \endentry
+    \entry{Nair2019CircuitBreaker}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=df02fed690b29cfcc8d30c35814bf659}{%
+           family={Nair},
+           familyi={N\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8877478799bcee42506685e84d3ddec3}
+      \strng{fullhash}{8877478799bcee42506685e84d3ddec3}
+      \strng{fullhashraw}{8877478799bcee42506685e84d3ddec3}
+      \strng{bibnamehash}{8877478799bcee42506685e84d3ddec3}
+      \strng{authorbibnamehash}{8877478799bcee42506685e84d3ddec3}
+      \strng{authornamehash}{8877478799bcee42506685e84d3ddec3}
+      \strng{authorfullhash}{8877478799bcee42506685e84d3ddec3}
+      \strng{authorfullhashraw}{8877478799bcee42506685e84d3ddec3}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Recent Technology and Engineering}
+      \field{title}{A survey on circuit breaker pattern in microservices architecture}
+      \field{year}{2019}
     \endentry
     \entry{nizami2020comparison}{inproceedings}{}{}
       \true{moreauthor}

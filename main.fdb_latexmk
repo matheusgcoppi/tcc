@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber main"] 1748817254.27073 "main.bcf" "main.bbl" "main" 1748817264.10144 0
-  "main.bcf" 1748817263.94099 121011 ae79cb69b80112cb82006db52c86edb1 "pdflatex"
-  "references.bib" 1748816189.77667 5078 195bc8c3ac675d8e12c2dbb507189ccd ""
+["biber main"] 1749142696.99916 "main.bcf" "main.bbl" "main" 1749142709.5572 0
+  "main.bcf" 1749142709.41953 121636 5c34982c9ce74dec530f11ab18631ccd "pdflatex"
+  "references.bib" 1748903643.32985 5493 a9fc54fc7b0910a3d8c23d224b40bf6d ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["makeindex main.idx"] 1748643164.32799 "main.idx" "main.ind" "main" 1748817264.10133 0
-  "main.idx" 1748817261.22003 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1749142693.68193 "main.idx" "main.ind" "main" 1749142709.5571 0
+  "main.idx" 1749142707.34058 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1748817259.82925 "/home/gruppe/Downloads/tccAtual/main.tex" "main.pdf" "main" 1748817264.10174 0
+["pdflatex"] 1749142706.39055 "/home/gruppe/Downloads/tccAtual/main.tex" "main.pdf" "main" 1749142709.5574 0
   "/home/gruppe/Downloads/tccAtual/main.tex" 1748638482.54633 9761 503408a4ec8a104714f54c815dd3f27a ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -258,10 +258,11 @@
   "beforetext/abstract.tex" 1748643640 1166 3a220d89f9e18fd1232b6e315690c9f4 ""
   "beforetext/resumo.tex" 1748643640 1295 8a659dd005dc6b8cc8fe407cee95cc10 ""
   "chapters/01-chapter.tex" 1748817249.3792 13337 dc78e7d5008cb9f21b265ea78c6b4ef8 ""
-  "chapters/02-chapter.tex" 1748643285.27231 28986 b39adab55008f01f3881e34d708594c5 ""
+  "chapters/02-chapter.tex" 1749142687.19904 34428 ea9eb88c6d353beaf0099f2dffa744c3 ""
   "chapters/03-chapter.tex" 1748643640 6143 9c6af1e53207d12d48ffe4b1a825420c ""
   "chapters/04-chapter.tex" 1748643640 2207 b25076d4903d93897ecbf291b0373feb ""
   "chapters/05-chapter.tex" 1748639237.19593 1496 9ec2347f70142b44130432cb40290c72 ""
+  "images/circuit_breaker.png" 1749142649.29795 134334 6e27a09aadc50daf48a94b881e20182b ""
   "images/figura1.png" 1748643640 5161 13482e3e91d20d2df636a9f04b7ce265 ""
   "images/figura2.png" 1748643640 55161 db5b222f2cb6c85a1646b7d3f7d5c2d1 ""
   "images/figura3.png" 1748643640 14140 4be94b3bbe1ddc3ef911fe879665cd37 ""
@@ -269,14 +270,14 @@
   "images/microservice.png" 1748643640 46036 e3ce7aa05578c0adc06a35f4b1e8ae3c ""
   "images/monolito.png" 1748643640 69392 3259e2dd6bc6911b9bd66f5986b4a6f1 ""
   "images/serverless.png" 1748643640 94475 3cc0c1259aa0bf47ebab5159765f2a0a ""
-  "main.aux" 1748817263.92699 36328 12c1f4927f9ebd7e318f28b739b5e532 "pdflatex"
-  "main.bbl" 1748817255.39911 21233 246b56151cbbf7c8d18191bc8f770a89 "biber main"
-  "main.ind" 1748643164.41791 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.lof" 1748817263.94199 1090 903cce1c0badbbc81c5a93d9f4567b9d "pdflatex"
-  "main.lot" 1748817263.94199 515 b5c44b9e1e326d5d0e9e950bd64e6f11 "pdflatex"
-  "main.run.xml" 1748817263.94199 2510 a9329479f4b528d21d17670ed8613de5 "pdflatex"
+  "main.aux" 1749142709.39953 37732 7791e56ddea29b01f8be293c63f2dc5b "pdflatex"
+  "main.bbl" 1749142700.21174 23723 6419a2ab1fc91e69de9a56e786cf7dc9 "biber main"
+  "main.ind" 1749142693.78889 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
+  "main.lof" 1749142709.42053 1237 82c9f8f37d6d67f23db0745d436cff79 "pdflatex"
+  "main.lot" 1749142709.42053 515 e7e827372f699b5ffb0421f5ef3a012e "pdflatex"
+  "main.run.xml" 1749142709.42053 2510 a9329479f4b528d21d17670ed8613de5 "pdflatex"
   "main.tex" 1748638482.54633 9761 503408a4ec8a104714f54c815dd3f27a ""
-  "main.toc" 1748817263.94199 5103 730dff193d6986bf98a60349c4944303 "pdflatex"
+  "main.toc" 1749142709.42153 5103 592e507850570c6e6036141e1a3db208 "pdflatex"
   "setup/information.tex" 1748643640 2623 a46b2df0deb0390ba2e970f5bb0e545a ""
   "setup/list_of_acron_symbols.tex" 1748643164.1679 1249 0a0e074c86aff60b36d6d7f083f30bdd ""
   "setup/logo.png" 1748643640 7280 93e2c0d319a417c99c40faf4bbf8fe1c ""
