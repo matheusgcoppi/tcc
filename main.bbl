@@ -48,6 +48,36 @@
       \field{title}{Observability in Kubernetes Cluster: Automatic Anomalies Detection using Prometheus}
       \field{year}{2022}
     \endentry
+    \entry{aws:1}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3eb2c1a57a8160029f036e3dcbf84bf1}{%
+           family={{Amazon Web Services}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{fullhash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{fullhashraw}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{bibnamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{authorbibnamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{authornamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{authorfullhash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{authorfullhashraw}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Acesso em: 31 maio 2025}
+      \field{title}{Diferenças entre gRPC e REST}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://aws.amazon.com/pt/compare/the-difference-between-grpc-and-rest/
+      \endverb
+      \verb{url}
+      \verb https://aws.amazon.com/pt/compare/the-difference-between-grpc-and-rest/
+      \endverb
+    \endentry
     \entry{sandeep2022observability}{article}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=b254342bb16fd6f8ef289eb5695c71fa}{%
@@ -165,36 +195,6 @@
       \field{title}{Circuit Breaker}
       \field{year}{2012}
     \endentry
-    \entry{grpc:1}{misc}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=a3a4dde425c214175e79ec479deea1fa}{%
-           family={{gRPC Authors}},
-           familyi={g\bibinitperiod}}}%
-      }
-      \strng{namehash}{a3a4dde425c214175e79ec479deea1fa}
-      \strng{fullhash}{a3a4dde425c214175e79ec479deea1fa}
-      \strng{fullhashraw}{a3a4dde425c214175e79ec479deea1fa}
-      \strng{bibnamehash}{a3a4dde425c214175e79ec479deea1fa}
-      \strng{authorbibnamehash}{a3a4dde425c214175e79ec479deea1fa}
-      \strng{authornamehash}{a3a4dde425c214175e79ec479deea1fa}
-      \strng{authorfullhash}{a3a4dde425c214175e79ec479deea1fa}
-      \strng{authorfullhashraw}{a3a4dde425c214175e79ec479deea1fa}
-      \field{sortinit}{g}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Acesso em: 31 maio 2025}
-      \field{title}{gRPC: A high performance, open source universal RPC framework}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://grpc.io
-      \endverb
-      \verb{url}
-      \verb https://grpc.io
-      \endverb
-    \endentry
     \entry{ibm:7}{misc}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=cbf44511d041dc6d1dd73cc0c033122c}{%
@@ -279,69 +279,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Observability in Microservices Architectures: Leveraging Logging, Metrics, and Distributed Tracing in Large-Scale Systems}
       \field{year}{2023}
-    \endentry
-    \entry{googleblog:5}{misc}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=03322cc2c18dba433022915506b3b0fe}{%
-           family={Marculescu},
-           familyi={M\bibinitperiod},
-           given={Mugur},
-           giveni={M\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{03322cc2c18dba433022915506b3b0fe}
-      \strng{fullhash}{03322cc2c18dba433022915506b3b0fe}
-      \strng{fullhashraw}{03322cc2c18dba433022915506b3b0fe}
-      \strng{bibnamehash}{03322cc2c18dba433022915506b3b0fe}
-      \strng{authorbibnamehash}{03322cc2c18dba433022915506b3b0fe}
-      \strng{authornamehash}{03322cc2c18dba433022915506b3b0fe}
-      \strng{authorfullhash}{03322cc2c18dba433022915506b3b0fe}
-      \strng{authorfullhashraw}{03322cc2c18dba433022915506b3b0fe}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Acesso em: 31 maio 2025}
-      \field{title}{Introducing gRPC, a new open source HTTP/2 RPC Framework}
-      \field{year}{2015}
-      \verb{urlraw}
-      \verb https://developers.googleblog.com/2015/02/introducing-grpc-new-open-source-http2.html
-      \endverb
-      \verb{url}
-      \verb https://developers.googleblog.com/2015/02/introducing-grpc-new-open-source-http2.html
-      \endverb
-    \endentry
-    \entry{marutitech:9}{misc}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=fbbce3135d74e63127981aae934e0ea3}{%
-           family={{Maruti Techlabs}},
-           familyi={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{fbbce3135d74e63127981aae934e0ea3}
-      \strng{fullhash}{fbbce3135d74e63127981aae934e0ea3}
-      \strng{fullhashraw}{fbbce3135d74e63127981aae934e0ea3}
-      \strng{bibnamehash}{fbbce3135d74e63127981aae934e0ea3}
-      \strng{authorbibnamehash}{fbbce3135d74e63127981aae934e0ea3}
-      \strng{authornamehash}{fbbce3135d74e63127981aae934e0ea3}
-      \strng{authorfullhash}{fbbce3135d74e63127981aae934e0ea3}
-      \strng{authorfullhashraw}{fbbce3135d74e63127981aae934e0ea3}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Acesso em: 31 maio 2025}
-      \field{title}{REST vs gRPC: Which is Better for Your Application?}
-      \field{year}{2024}
-      \verb{urlraw}
-      \verb https://marutitech.com/rest-vs-grpc/
-      \endverb
-      \verb{url}
-      \verb https://marutitech.com/rest-vs-grpc/
-      \endverb
     \endentry
     \entry{maso2024comparativo}{inproceedings}{}{}
       \name{author}{1}{}{%
@@ -515,36 +452,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Microservices Design Patterns for Cloud Architecture}
       \field{year}{2023}
-    \endentry
-    \entry{wallarm:4}{misc}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=af7b9ca6d24464b5c2084bb08073b634}{%
-           family={{Wallarm}},
-           familyi={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{af7b9ca6d24464b5c2084bb08073b634}
-      \strng{fullhash}{af7b9ca6d24464b5c2084bb08073b634}
-      \strng{fullhashraw}{af7b9ca6d24464b5c2084bb08073b634}
-      \strng{bibnamehash}{af7b9ca6d24464b5c2084bb08073b634}
-      \strng{authorbibnamehash}{af7b9ca6d24464b5c2084bb08073b634}
-      \strng{authornamehash}{af7b9ca6d24464b5c2084bb08073b634}
-      \strng{authorfullhash}{af7b9ca6d24464b5c2084bb08073b634}
-      \strng{authorfullhashraw}{af7b9ca6d24464b5c2084bb08073b634}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Acesso em: 31 maio 2025}
-      \field{title}{gRPC vs. REST: Comparing Key API Designs And Deciding Which One is Best}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://www.wallarm.com/what/grpc-vs-rest-comparing-key-api-designs-and-deciding-which-one-is-best
-      \endverb
-      \verb{url}
-      \verb https://www.wallarm.com/what/grpc-vs-rest-comparing-key-api-designs-and-deciding-which-one-is-best
-      \endverb
     \endentry
   \enddatalist
 \endrefsection

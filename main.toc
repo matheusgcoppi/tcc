@@ -16,46 +16,20 @@
 \contentsline {section}{\numberline {2.1}Padrões Arquiteturais}{14}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Arquitetura Monolítica}{14}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Event-Driven Architecture}{16}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Serverless}{16}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Microsserviços}{17}{subsection.2.1.4}%
-\contentsline {subsubsection}{\numberline {2.1.4.1}Mecanismos de Comunicação}{19}{subsubsection.2.1.4.1}%
-\contentsline {subsubsection}{\numberline {2.1.4.2}Padrões Arquiteturais Essenciais}{20}{subsubsection.2.1.4.2}%
-\contentsline {subsubsection}{\numberline {2.1.4.3}Desafios Operacionais e Soluções}{21}{subsubsection.2.1.4.3}%
-\contentsline {subsubsection}{\numberline {2.1.4.4}Melhores Práticas de Implementação}{21}{subsubsection.2.1.4.4}%
-\contentsline {subsubsection}{\numberline {2.1.4.5}Casos de Estudo Relevantes}{21}{subsubsection.2.1.4.5}%
-\contentsline {subsubsection}{\numberline {2.1.4.6}Recomendações Estratégicas}{22}{subsubsection.2.1.4.6}%
-\contentsline {subsection}{\numberline {2.1.5}Protocolos de Comunicação para Microsserviços}{22}{subsection.2.1.5}%
-\contentsline {subsubsection}{\numberline {2.1.5.1}\gls {REST} (Representational State Transfer)}{22}{subsubsection.2.1.5.1}%
-\contentsline {subsubsection}{\numberline {2.1.5.2}\gls {gRPC} (gRPC Remote Procedure Calls)}{23}{subsubsection.2.1.5.2}%
-\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{DESENVOLVIMENTO}}{25}{chapter.3}%
-\contentsline {section}{\numberline {3.1}VISÃO GERAL DO PROJETO}{25}{section.3.1}%
-\contentsline {section}{\numberline {3.2}LEVANTAMENTO DE REQUISITOS}{25}{section.3.2}%
-\contentsline {section}{\numberline {3.3}MODELAGEM}{26}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Casos de uso}{26}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Modelos de dados}{27}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}IMPLEMENTAÇÃO}{28}{subsection.3.3.3}%
-\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{TESTE OU AVALIAÇÃO}}{29}{chapter.4}%
-\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{CONSIDERAÇÕES FINAIS}}{30}{chapter.5}%
-\contentsline {section}{\numberline {5.1}CONTRIBUIÇÕES}{30}{section.5.1}%
-\contentsline {section}{\numberline {5.2}TRABALHOS FUTUROS}{30}{section.5.2}%
+\contentsline {subsection}{\numberline {2.1.3}Serverless}{18}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Microsserviços}{19}{subsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.4.1}Mecanismos de Comunicação}{21}{subsubsection.2.1.4.1}%
+\contentsline {subsubsection}{\numberline {2.1.4.2}Padrões Arquiteturais Essenciais}{22}{subsubsection.2.1.4.2}%
+\contentsline {subsubsection}{\numberline {2.1.4.3}Desafios Operacionais e Soluções}{23}{subsubsection.2.1.4.3}%
+\contentsline {subsubsection}{\numberline {2.1.4.4}Melhores Práticas de Implementação}{23}{subsubsection.2.1.4.4}%
+\contentsline {subsubsection}{\numberline {2.1.4.5}Casos de Estudo Relevantes}{23}{subsubsection.2.1.4.5}%
+\contentsline {subsubsection}{\numberline {2.1.4.6}Recomendações Estratégicas}{24}{subsubsection.2.1.4.6}%
+\contentsline {subsection}{\numberline {2.1.5}Protocolos de Comunicação para Microsserviços}{24}{subsection.2.1.5}%
+\contentsline {subsubsection}{\numberline {2.1.5.1}\gls {REST} (Representational State Transfer)}{24}{subsubsection.2.1.5.1}%
+\contentsline {subsubsection}{\numberline {2.1.5.2}gRPC (gRPC Remote Procedure Calls)}{25}{subsubsection.2.1.5.2}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{REFERÊNCIAS}{31}{section*.23}%
+\contentsline {chapter}{REFERÊNCIAS}{28}{section*.20}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
-\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 1}}{34}{appendix.A}%
-\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\cftinsert {A}
-\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Código Fonte}}{35}{appendix.B}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
-\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Declaração de Isenção}}{36}{appendix.anexochapback.1}%

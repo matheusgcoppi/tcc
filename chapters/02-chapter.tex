@@ -47,7 +47,7 @@ Por fim, destaca-se a complexidade evolutiva. Modificações em qualquer parte d
 \label{fig:monolitico}
 \end{figure}
 
-Como ilustrado na Figura~\ref{fig:monolitico}, a arquitetura monolítica caracteriza-se pela centralização de todos os módulos e funcionalidades do sistema em uma única aplicação, onde as camadas — como apresentação, lógica de negócio e acesso a dados — encontram-se fortemente acopladas e compartilham o mesmo espaço de execução. O fluxo de requisições percorre camadas internamente acopladas, sem isolamento de processos. Essa centralização, embora simplifique o desenvolvimento inicial, apresenta limitações significativas em cenários de alta demanda e necessidade de escalabilidade.
+Como ilustrado na Figura~\ref{fig:monolitico}, a arquitetura monolítica caracteriza-se pela centralização de todos os módulos e funcionalidades do sistema em uma única aplicação, onde as camadas como apresentação, lógica de negócio e acesso a dados encontram-se fortemente acopladas e compartilham o mesmo espaço de execução. O fluxo de requisições percorre camadas internamente acopladas, sem isolamento de processos. Essa centralização, embora simplifique o desenvolvimento inicial, apresenta limitações significativas em cenários de alta demanda e necessidade de escalabilidade.
 
 Segundo Farhan et al.~\cite{farhan2023performance}, sistemas monolíticos apresentaram, em testes empíricos, 40\% maior tempo de resposta sob carga crescente, 68\% mais \textit{downtime} durante atualizações e limite máximo de escalonamento em cinco instâncias, devido ao compartilhamento de recursos e à ausência de isolamento entre processos. Portanto, embora a arquitetura monolítica seja adequada para aplicações de menor porte ou com requisitos estáveis, suas restrições de escalabilidade, resiliência e flexibilidade tornam-se evidentes em ambientes dinâmicos e de grande escala, justificando a busca por alternativas arquiteturais mais modernas.
 
@@ -59,7 +59,25 @@ O fluxo de requisições em sistemas monolíticos percorre camadas fortemente ac
 Apesar dessas limitações, a arquitetura monolítica ainda mantém relevância em contextos específicos, como aplicações com tráfego previsível, equipes de desenvolvimento co-localizadas ou situações em que a simplicidade operacional é mais importante do que requisitos de elasticidade \cite{shekhar2023microservices}. No entanto, para sistemas empresariais modernos que exigem entrega contínua, resiliência e escalabilidade dinâmica, a viabilidade do modelo monolítico torna-se progressivamente reduzida, justificando a busca por alternativas arquiteturais mais flexíveis.
 
 \subsection{Event-Driven Architecture}
-A \textit{Event-Driven Architecture} é especialmente indicada para sistemas que exigem alta escalabilidade e resposta em tempo real. Nesse padrão, os componentes do sistema comunicam-se por meio de eventos, que são processados de forma assíncrona. Essa abordagem é bastante utilizada em sistemas de \textit{e-commerce}, plataformas de \textit{streaming} e aplicações que demandam processamento distribuído, pois permite maior desacoplamento entre os módulos e facilita a escalabilidade horizontal \cite{jamshidi2016systematic}. 
+A \textit{Event-Driven Architecture} (EDA) é um paradigma arquitetural que se destaca pela capacidade de lidar com sistemas distribuídos, dinâmicos e de alta escalabilidade, sendo especialmente recomendada para aplicações que exigem resposta em tempo real e processamento assíncrono de grandes volumes de dados \cite{jamshidi2016systematic}. Nesse modelo, os componentes do sistema frequentemente implementados como microserviços comunicam-se por meio de eventos, que representam mudanças de estado ou ocorrências relevantes no domínio da aplicação. Cada evento é transmitido por um produtor e pode ser consumido por um ou mais consumidores, promovendo o desacoplamento entre os módulos e facilitando a evolução independente de cada serviço \cite{shekhar2023microservices}.
+
+A adoção da EDA é comum em cenários como plataformas de \textit{e-commerce}, sistemas financeiros, aplicações de \textit{streaming} e ambientes de \textit{Internet das Coisas} (IoT), onde a escalabilidade horizontal e a resiliência são requisitos críticos \cite{jamshidi2016systematic, shekhar2023microservices}. Nesses contextos, a arquitetura orientada a eventos permite que múltiplos serviços processem informações de forma paralela e reativa, reduzindo gargalos e aumentando a capacidade de resposta do sistema como um todo.
+
+Segundo Jamshidi et al.~\cite{jamshidi2016systematic}, a EDA contribui para a redução do acoplamento entre componentes, pois os serviços não dependem diretamente uns dos outros, mas sim de eventos compartilhados por meio de um barramento ou intermediário, como um \textit{message broker}. Essa característica facilita a manutenção, a escalabilidade e a resiliência, uma vez que falhas em um serviço não necessariamente impactam os demais, desde que o barramento de eventos permaneça operacional.
+
+No entanto, a adoção da EDA traz desafios, como a complexidade na gestão do fluxo de eventos, a necessidade de garantir a ordem e a consistência das mensagens, além do aumento da dificuldade de depuração e testes em ambientes altamente distribuídos \cite{sha2023automating}. Ainda assim, os benefícios em termos de escalabilidade, flexibilidade e resiliência tornam a arquitetura orientada a eventos uma escolha estratégica para sistemas modernos e de grande porte.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/event-driven.png}
+    \caption{Arquitetura Orientada a Eventos, ilustrando a comunicação assíncrona entre microserviços através de um barramento de eventos.}
+    \label{fig:event-driven}
+    \parbox{\textwidth}{
+        A Figura \ref{fig:event-driven} apresenta um diagrama conceitual da Arquitetura Orientada a Eventos (\textit{Event-Driven Architecture}). Nesta arquitetura, microserviços independentes comunicam-se de forma assíncrona através de um barramento de eventos central popularmente conhecido como \textit{message broker}. Os microserviços podem tanto produzir eventos, enviando-os para o barramento, quanto consumir eventos, recebendo-os do barramento. Essa abordagem promove o desacoplamento entre os serviços, facilitando a escalabilidade, a resiliência e a manutenção do sistema.
+    }
+\end{figure}
+
+A Figura~\ref{fig:event-driven} apresenta um diagrama conceitual da Arquitetura Orientada a Eventos (\textit{Event-Driven Architecture}). Nesta arquitetura, microserviços independentes comunicam-se de forma assíncrona através de um barramento de eventos central popularmente conhecido como \textit{message broker}. Os microserviços podem tanto produzir eventos, enviando-os para o barramento, quanto consumir eventos, recebendo-os do barramento. Essa abordagem promove o desacoplamento entre os serviços, facilitando a escalabilidade, a resiliência e a manutenção do sistema.
 
 \subsection{Serverless}
 A arquitetura \textit{serverless} tem se destacado com o avanço das plataformas de computação em nuvem, oferecendo uma abordagem inovadora para o desenvolvimento e a execução de aplicações. Nesse modelo, os desenvolvedores podem se concentrar exclusivamente na lógica de negócio, delegando a gestão da infraestrutura ao provedor de nuvem. Essa abstração permite maior agilidade no desenvolvimento e escalabilidade automática, embora apresente desafios relacionados à portabilidade e ao controle sobre o ambiente de execução \cite{shekhar2023microservices}.
@@ -82,7 +100,11 @@ Entre os principais benefícios dos microsserviços está a escalabilidade granu
 
 Outro ponto relevante é a resiliência: falhas em um serviço tendem a ser isoladas, reduzindo o impacto sobre o sistema como um todo \cite{farhan2023performance}. Isso é especialmente importante em ambientes de missão crítica, onde a disponibilidade contínua é fundamental. Para garantir essa resiliência, padrões como o \textit{Circuit Breaker} são frequentemente empregados.
 
+A observabilidade em microsserviços demanda o uso de ferramentas especializadas para coleta e análise de métricas, logs e rastreamento distribuído \cite{observability2023, sha2023automating}. Essa visibilidade é indispensável para identificar gargalos, diagnosticar falhas e garantir a saúde do sistema em produção. Soluções como Prometheus e Jaeger são amplamente utilizadas para monitorar o desempenho e rastrear o fluxo de requisições entre serviços, facilitando a manutenção e a evolução contínua da arquitetura.
+
 Outro ponto relevante é a resiliência: falhas em um serviço tendem a ser isoladas, reduzindo o impacto sobre o sistema como um todo \cite{farhan2023performance}. Isso é especialmente importante em ambientes de missão crítica, onde a disponibilidade contínua é fundamental. Para garantir essa resiliência, padrões como o \textit{Circuit Breaker} são frequentemente empregados.
+
+Por fim, a orquestração de microsserviços envolve o gerenciamento automatizado de implantação, escalonamento e atualização dos serviços, frequentemente utilizando plataformas como Kubernetes \cite{shekhar2023microservices}. Essa abordagem permite maior resiliência operacional, reduz o tempo de indisponibilidade e simplifica a administração de ambientes complexos. A automação dos processos de entrega contínua e recuperação de falhas é um dos pilares para o sucesso de arquiteturas baseadas em microsserviços.
 
 \begin{figure}[H]
 \centering
@@ -93,7 +115,7 @@ Outro ponto relevante é a resiliência: falhas em um serviço tendem a ser isol
 
 O \textit{Circuit Breaker} é um padrão arquitetural amplamente utilizado em sistemas distribuídos para aumentar a resiliência e evitar falhas em cascata \cite{Nair2019CircuitBreaker, Fowler2012CircuitBreaker}. Ele atua como um "interruptor" que monitora as chamadas a um serviço externo. Seu funcionamento é dividido em três estados principais: fechado, aberto e meio-aberto.
 
-No estado \textbf{fechado}, todas as requisições são encaminhadas normalmente ao serviço. Se o número de falhas ultrapassar um limite configurado, o circuito entra no estado \textbf{aberto}, bloqueando novas tentativas e retornando imediatamente uma resposta de erro ou acionando um mecanismo de \textit{fallback} — uma solução alternativa, como dados em cache ou uma resposta padrão, para manter a aplicação funcionando de forma degradada. Após um tempo de espera, o circuito passa para o estado \textbf{meio-aberto}, permitindo algumas requisições de teste. Se essas requisições forem bem-sucedidas, o circuito retorna ao estado fechado; caso contrário, volta ao estado aberto, protegendo o sistema de sobrecarga e falhas sucessivas \cite{Nair2019CircuitBreaker, Fowler2012CircuitBreaker}.
+No estado fechado, todas as requisições são encaminhadas normalmente ao serviço. Se o número de falhas ultrapassar um limite configurado, o circuito entra no estado aberto, bloqueando novas tentativas e retornando imediatamente uma resposta de erro ou acionando um mecanismo de \textit{fallback} uma solução alternativa, como dados em cache ou uma resposta padrão, para manter a aplicação funcionando de forma degradada. Após um tempo de espera, o circuito passa para o estado meio-aberto, permitindo algumas requisições de teste. Se essas requisições forem bem-sucedidas, o circuito retorna ao estado fechado; caso contrário, volta ao estado aberto, protegendo o sistema de sobrecarga e falhas sucessivas \cite{Nair2019CircuitBreaker, Fowler2012CircuitBreaker}.
 
 Esse padrão é fundamental para garantir a robustez de sistemas baseados em microsserviços, pois impede que falhas em um serviço se propaguem e comprometam toda a aplicação. Estudos recentes destacam a importância do \textit{Circuit Breaker} em arquiteturas resilientes, especialmente em ambientes de alta disponibilidade e missão crítica \cite{Nair2019CircuitBreaker}. 
 
@@ -106,20 +128,20 @@ Além disso, a escolha dos protocolos de comunicação entre microsserviços (\t
 A arquitetura de microsserviços representa uma evolução paradigmática no desenvolvimento de software, decompondo sistemas complexos em serviços autônomos especializados. Conforme \cite{jamshidi2016systematic}, esta abordagem oferece:
 
 \begin{itemize}
-    \item \textbf{Autonomia tecnológica}: Cada serviço pode utilizar linguagens e tecnologias distintas (Java, Python, Node.js)
-    \item \textbf{Resiliência aprimorada}: Isolamento de falhas através de padrões como \textit{Circuit Breaker}
-    \item \textbf{Entrega contínua}: \textit{Deploys} independentes permitindo múltiplas implantações diárias
+    \item Autonomia tecnológica: Cada serviço pode utilizar linguagens e tecnologias distintas (Java, Python, Node.js)
+    \item Resiliência aprimorada: Isolamento de falhas através de padrões como \textit{Circuit Breaker}
+    \item Entrega contínua: \textit{Deploys} independentes permitindo múltiplas implantações diárias
 \end{itemize}
 
 \subsubsection{Mecanismos de Comunicação}
-A comunicação entre serviços ocorre principalmente através de:
+A comunicação entre serviços em arquiteturas de microsserviços pode ser realizada por diferentes mecanismos, cada um com características, vantagens e limitações específicas. A escolha do protocolo de comunicação é um fator determinante para o desempenho, a escalabilidade e a complexidade do sistema, influenciando diretamente a experiência do usuário e a eficiência operacional \cite{niswar2023performance, maso2024comparativo}.
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Comparação de protocolos de comunicação}
 \begin{tabular}{|l|c|c|c|}
 \hline
-\textbf{Protocolo} & \textbf{Latência} & \textbf{Complexidade} & \textbf{Casos de Uso} \\
+Protocolo & Latência & Complexidade & Casos de Uso \\
 \hline
 REST/HTTP & Alta & Baixa & Sistemas com baixa frequência \\
 gRPC & Baixa & Média & Microserviços acoplados \\
@@ -129,12 +151,16 @@ Eventos (Kafka) & Assíncrona & Alta & Sistemas escaláveis \\
 \label{tab:protocolos}
 \end{table}
 
-Conforme demonstrado na Tabela \ref{tab:protocolos}, a escolha do protocolo impacta diretamente o desempenho do sistema \cite{niswar2023performance}.
+Conforme demonstrado na Tabela~\ref{tab:protocolos}, a seleção do protocolo de comunicação deve considerar o perfil de uso e os requisitos de cada aplicação. O protocolo REST/HTTP é amplamente adotado devido à sua simplicidade e compatibilidade com diferentes plataformas, sendo indicado para cenários em que a frequência de requisições não é elevada e a interoperabilidade é prioridade \cite{fielding2000rest, aws:1}. Por outro lado, o gRPC destaca-se pela baixa latência e eficiência na serialização de dados, tornando-se uma escolha adequada para integrações entre microsserviços que exigem alto desempenho e comunicação síncrona \cite{niswar2023performance, ibm:7}.
+
+Já os mecanismos baseados em eventos, como o uso de filas e \textit{brokers} (exemplo: Kafka), possibilitam comunicação assíncrona e desacoplamento entre os serviços, favorecendo a escalabilidade horizontal e a resiliência do sistema \cite{jamshidi2016systematic, shekhar2023microservices}. Essa abordagem é especialmente recomendada para sistemas que processam grandes volumes de dados ou que demandam alta disponibilidade, pois permite que os serviços operem de forma independente, reduzindo o risco de falhas em cascata.
+
+Além dos aspectos técnicos, a complexidade de implementação e manutenção também deve ser considerada. Protocolos como REST tendem a ser mais simples de configurar e depurar, enquanto soluções baseadas em eventos exigem infraestrutura adicional e monitoramento especializado para garantir a integridade e a ordem das mensagens \cite{maso2024comparativo, observability2023}. Dessa forma, a decisão sobre o mecanismo de comunicação deve ser pautada por uma análise criteriosa das necessidades do projeto, visando sempre o equilíbrio entre desempenho, escalabilidade e simplicidade operacional.
 
 \subsubsection{Padrões Arquiteturais Essenciais}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{images/microservice.png}
+\includegraphics[width=0.7\textwidth]{images/microservice.png}
 \caption{Padrões fundamentais em arquitetura de microsserviços}
 \label{fig:micro_patterns}
 \end{figure}
@@ -149,14 +175,14 @@ Essa abordagem modular e distribuída é um dos pilares das arquiteturas moderna
 A implementação prática enfrenta obstáculos significativos:
 
 \begin{itemize}
-    \item \textbf{Observabilidade}: Requer integração de métricas, \textit{logs} e \textit{traces} com ferramentas como:
+    \item Observabilidade: Requer integração de métricas, \textit{logs} e \textit{traces} com ferramentas como:
     \begin{itemize}
         \item \textit{Prometheus} para monitoramento
         \item \textit{Jaeger} para rastreamento distribuído
         \item \textit{EFK Stack} (Elasticsearch, Fluentd, Kibana) para análise
     \end{itemize}
     
-    \item \textbf{Orquestração}: Plataformas como \textit{Kubernetes} gerenciam:
+    \item Orquestração: Plataformas como \textit{Kubernetes} gerenciam:
     \begin{itemize}
         \item Escalonamento automático
         \item Balanceamento de carga
@@ -168,13 +194,13 @@ A implementação prática enfrenta obstáculos significativos:
 Experiências de empresas líderes revelam estratégias eficazes:
 
 \begin{itemize}
-    \item \textbf{Amazon}: Utiliza a prática do "time da pizza de dois" — equipes pequenas e independentes, responsáveis por serviços autônomos do início ao fim.
+    \item Amazon: Utiliza a prática do "time da pizza de dois" equipes pequenas e independentes, responsáveis por serviços autônomos do início ao fim.
     
-    \item \textbf{Netflix}: Introduziu a cultura do \textit{Chaos Engineering}, simulando falhas em produção para garantir a resiliência dos serviços.
+    \item Netflix: Introduziu a cultura do \textit{Chaos Engineering}, simulando falhas em produção para garantir a resiliência dos serviços.
 
-    \item \textbf{Spotify}: Estruturou suas equipes em \textit{squads} responsáveis por domínios funcionais, promovendo independência e entrega contínua.
+    \item Spotify: Estruturou suas equipes em \textit{squads} responsáveis por domínios funcionais, promovendo independência e entrega contínua.
 
-    \item \textbf{Uber}: Implementou uma hierarquia de serviços baseada em criticidade, diferenciando serviços centrais de auxiliares para otimizar a operação.
+    \item Uber: Implementou uma hierarquia de serviços baseada em criticidade, diferenciando serviços centrais de auxiliares para otimizar a operação.
 \end{itemize}
 
 \subsubsection{Casos de Estudo Relevantes}
@@ -185,7 +211,7 @@ Resultados empíricos demonstram impactos mensuráveis:
 \caption{Impacto da migração para microsserviços}
 \begin{tabular}{|l|c|c|}
 \hline
-\textbf{Métrica} & \textbf{Antes} & \textbf{Depois} \\
+Métrica & Antes & Depois \\
 \hline
 Tempo de entrega & 30 dias & 2 dias \\
 Disponibilidade & 92\% & 99.95\% \\
@@ -201,10 +227,10 @@ Conforme dados na Tabela \ref{tab:impacto}, organizações reportam melhorias si
 A adoção deve considerar:
 
 \begin{itemize}
-    \item \textbf{Pré-requisitos}: Maturidade em DevOps e cultura de automação
-    \item \textbf{Critérios}: Complexidade sistêmica > 50k LOC > 15 desenvolvedores
-    \item \textbf{Alternativas}: Arquiteturas híbridas para transição gradual
-    \item \textbf{Anti-padrões}: Decomposição excessiva ("nanoserviços")
+    \item Pré-requisitos: Maturidade em DevOps e cultura de automação
+    \item Critérios: Complexidade sistêmica > 50k LOC > 15 desenvolvedores
+    \item Alternativas: Arquiteturas híbridas para transição gradual
+    \item Anti-padrões: Decomposição excessiva ("nanoserviços")
 \end{itemize}
 
 Em síntese, microsserviços oferecem vantagens transformacionais para sistemas complexos, mas exigem investimento proporcional em automação e governança \cite{nizami2020comparison, observability2023}.
@@ -212,24 +238,24 @@ Em síntese, microsserviços oferecem vantagens transformacionais para sistemas 
 \subsection{Protocolos de Comunicação para Microsserviços}
 A seleção de protocolos de comunicação é um fator crítico em arquiteturas de microsserviços, influenciando diretamente o desempenho, acoplamento e capacidade de evolução do sistema. Dois padrões predominantes neste contexto são \gls{REST} e \gls{gRPC}, cada um com características técnicas distintas que os tornam adequados a cenários específicos \cite{niswar2023performance}.
 
-\subsubsection{\gls{REST} (Representational State Transfer)}
+\subsubsection{\texorpdfstring{\gls{REST}}{REST} (Representational State Transfer)}
 O \gls{REST}, formalizado por Fielding \cite{fielding2000rest} em sua tese seminal, é um estilo arquitetural baseado em princípios de recursos identificáveis por \gls{URI} e operações padronizadas via verbos \gls{HTTP} (GET, POST, PUT, DELETE). Sua adoção generalizada deve-se a:
 
 \begin{itemize}
-\item \textbf{Simplicidade}: Uso de formatos legíveis como \gls{JSON}, facilitando depuração e integração entre sistemas heterogêneos. A serialização textual consome 30-50\% mais banda que protocolos binários \cite{niswar2023performance}.
-\item \textbf{Estateless}: Cada requisição contém contexto completo, eliminando estado no servidor e favorecendo escalabilidade horizontal \cite{fielding2000rest}.
-\item \textbf{Uniform Interface}: Princípios como identificação única de recursos via URI e \gls{HATEOAS} garantem consistência e desacoplamento \cite{maso2024comparativo}.
-\item \textbf{Compatibilidade}: Suporte nativo em navegadores e adoção massiva em APIs públicas \cite{maso2024comparativo}.
+    \item Simplicidade: Utiliza formatos legíveis como \gls{JSON}, facilitando a depuração e a integração entre sistemas heterogêneos. No entanto, a serialização textual pode consumir de 30\% a 50\% mais banda em comparação com protocolos binários \cite{niswar2023performance}.
+    \item \textit{Stateless}: Cada requisição carrega todo o contexto necessário, eliminando a necessidade de manter estado no servidor e favorecendo a escalabilidade horizontal \cite{fielding2000rest}.
+    \item Interface Uniforme: Princípios como a identificação única de recursos via URI e o uso de HATEOAS (\textit{Hypermedia as the Engine of Application State}) garantem consistência e desacoplamento. Com HATEOAS, as respostas da API incluem hipermídia (links) que orientam o cliente sobre as próximas ações possíveis, promovendo navegação dinâmica e reduzindo o acoplamento entre cliente e servidor \cite{maso2024comparativo}.
+    \item Compatibilidade: Possui suporte nativo em navegadores e ampla adoção em APIs públicas, facilitando a integração com diferentes plataformas \cite{maso2024comparativo}.
 \end{itemize}
 
-\textbf{Limitações em cenários complexos}:
+Limitações em cenários complexos:
 \begin{itemize}
-\item \textbf{Overhead de comunicação}: Serialização textual aumenta latência e consumo de \gls{CPU}, especialmente em payloads grandes \cite{niswar2023performance}.
-\item \textbf{Modelo síncrono}: Suporta apenas comunicação unária (request/response), inviabilizando fluxos assíncronos \cite{niswar2023performance}.
-\item \textbf{Falta de contratos rígidos}: Validação de esquemas depende de implementações adicionais \cite{maso2024comparativo}.
+\item Overhead de comunicação: Serialização textual aumenta latência e consumo de \gls{CPU}, especialmente em payloads grandes \cite{niswar2023performance}.
+\item Modelo síncrono: Suporta apenas comunicação unária (request/response), inviabilizando fluxos assíncronos \cite{niswar2023performance}.
+\item Falta de contratos rígidos: Validação de esquemas depende de implementações adicionais \cite{maso2024comparativo}.
 \end{itemize}
 
-\textbf{Operações Básicas e Códigos HTTP}:
+Operações Básicas e Códigos HTTP:
 A Tabela \ref{tab:rest_operations} sintetiza o mapeamento CRUD em REST, conforme padrões industriais \cite{fielding2000rest}:
 
 \begin{table}[h]
@@ -238,7 +264,7 @@ A Tabela \ref{tab:rest_operations} sintetiza o mapeamento CRUD em REST, conforme
 \label{tab:rest_operations}
 \begin{tabular}{|l|c|c|}
 \hline
-\textbf{Método HTTP} & \textbf{Ação} & \textbf{Código Sucesso} \\ \hline
+Método HTTP & Ação & Código Sucesso \\ \hline
 GET & Ler recurso & 200 (OK) \\ \hline
 POST & Criar recurso & 201 (Created) \\ \hline
 PUT/PATCH & Atualizar recurso & 200 (OK) ou 204 (No Content) \\ \hline
@@ -254,40 +280,45 @@ DELETE & Excluir recurso & 204 (No Content) \\ \hline
 % \label{fig:rest_flow}
 % \end{figure}
 
-\subsubsection{\gls{gRPC} (gRPC Remote Procedure Calls)}
-Desenvolvido pelo Google e inicialmente lançado em 2015 \cite{googleblog:5}, o \gls{gRPC} é um \textit{framework} aberto de alta performance para chamadas de procedimento remoto (RPC) que utiliza \gls{HTTP/2} e \textit{Protocol Buffers} para comunicação binária eficiente. Conforme demonstrado por \cite{niswar2023performance}, sua adoção em arquiteturas de microsserviços deve-se aos seguintes diferenciais:
+\subsubsection{gRPC (gRPC Remote Procedure Calls)}
+
+O \gls{gRPC} é um \textit{framework} aberto de alta performance para chamadas de procedimento remoto (RPC), desenvolvido pelo Google e lançado em 2015, que utiliza \gls{HTTP/2} e \textit{Protocol Buffers} para comunicação binária eficiente \cite{niswar2023performance, maso2024comparativo}. Sua adoção em arquiteturas de microsserviços deve-se a diferenciais como desempenho superior, suporte a streaming bidirecional, contratos fortemente tipados e geração automática de código.
 
 \begin{itemize}
-\item \textbf{Desempenho superior}: A serialização binária via \textit{Protocol Buffers} reduz o tamanho dos \textit{payloads} em até 80\% e a latência em 60\% comparado a APIs REST tradicionais, conforme mensurações em ambientes controlados \cite{niswar2023performance}.
-\item \textbf{Streaming bidirecional}: Suporte nativo a fluxos contínuos de dados (cliente-servidor, servidor-cliente e bidirecional), habilitando comunicação assíncrona para aplicações em tempo real \cite{grpc:1}.
-\item \textbf{Contratos fortemente tipados}: Definição explícita de serviços e estruturas de mensagens em arquivos \texttt{.proto}, garantindo compatibilidade e evolução controlada de APIs \cite{maso2024comparativo}.
-\item \textbf{Geração de código automática}: Compilação de \textit{stubs} clientes e servidores em 11 linguagens de programação a partir de arquivos \texttt{.proto}, promovendo consistência e redução de erros \cite{grpc:1}.
+    \item Desempenho superior: A serialização binária via \textit{Protocol Buffers} reduz o tamanho dos \textit{payloads} e a latência em relação a APIs REST tradicionais, conforme mensurações em ambientes controlados \cite{niswar2023performance}.
+    \item Streaming bidirecional: Suporte nativo a fluxos contínuos de dados (cliente-servidor, servidor-cliente e bidirecional), habilitando comunicação assíncrona para aplicações em tempo real \cite{maso2024comparativo}.
+    \item Contratos fortemente tipados: Definição explícita de serviços e estruturas de mensagens em arquivos \texttt{.proto}, garantindo compatibilidade e evolução controlada de APIs \cite{shekhar2023microservices}.
+    \item Geração de código automática: Compilação de \textit{stubs} clientes e servidores em múltiplas linguagens de programação a partir de arquivos \texttt{.proto}, promovendo consistência e redução de erros \cite{shekhar2023microservices}.
 \end{itemize}
 
-\textbf{Aspectos críticos em sua adoção}:
+Apesar das vantagens, alguns desafios são observados:
 \begin{itemize}
-\item \textbf{Acoplamento forte}: Alterações nos contratos \texttt{.proto} exigem atualização sincronizada de clientes e servidores, aumentando a complexidade de evolução em sistemas distribuídos \cite{ibm:7}.
-\item \textbf{Suporte limitado em navegadores}: A ausência de implementação nativa do HTTP/2 em navegadores requer o uso do proxy \textit{gRPC-Web} para comunicações cliente-web \cite{wallarm:4}.
-\item \textbf{Curva de aprendizagem}: Complexidade na definição de contratos e manipulação de fluxos de \textit{streaming}, especialmente para desenvolvedores familiarizados com paradigmas REST \cite{marutitech:9}.
+    \item Acoplamento forte: Alterações nos contratos \texttt{.proto} exigem atualização sincronizada de clientes e servidores, aumentando a complexidade de evolução em sistemas distribuídos \cite{shekhar2023microservices}.
+    \item Curva de aprendizagem: A definição de contratos e manipulação de fluxos de \textit{streaming} pode ser complexa, especialmente para desenvolvedores familiarizados com paradigmas REST \cite{maso2024comparativo}.
 \end{itemize}
 
-\textbf{Modelos de Comunicação}:
-A Figura \ref{fig:grpc_streaming} ilustra os quatro padrões suportados:
+A Figura~\ref{fig:grpc_streaming} apresenta os quatro padrões de comunicação suportados pelo gRPC, cada um adequado a diferentes cenários de integração entre serviços distribuídos.
 
 \begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{images/grpc.png}
-\caption{Padrões de streaming no gRPC: (A) Unário, (B) Servidor, (C) Cliente, (D) Bidirecional.}
-\label{fig:grpc_streaming}
+    \centering
+    \includegraphics[width=1.0\textwidth]{images/grpc.png}
+    \caption{Padrões de streaming no gRPC: (A) Unário, (B) Servidor, (C) Cliente, (D) Bidirecional.}
+    \label{fig:grpc_streaming}
 \end{figure}
 
-\textbf{Vantagens Técnicas Comprovadas}:
-Estudos empíricos demonstram ganhos operacionais mensuráveis \cite{niswar2023performance}:
-\begin{itemize}
-\item Redução de 35-45\% no consumo de CPU durante serialização
-\item Até 7x maior throughput em comunicações inter-serviços
-\end{itemize}
+No padrão \textit{unary} (A), o cliente realiza uma chamada simples, enviando uma única requisição ao servidor e recebendo uma única resposta. Esse modelo é o mais próximo das operações tradicionais de APIs REST, sendo indicado para transações pontuais e de baixa complexidade, como consultas ou comandos diretos.
 
+O padrão \textit{server streaming} (B) ocorre quando o cliente envia uma requisição e o servidor responde com um fluxo contínuo de mensagens. Esse padrão é útil em situações em que o servidor precisa retornar uma grande quantidade de dados ou fornecer atualizações progressivas, como em relatórios extensos ou notificações em tempo real.
+
+No padrão \textit{client streaming} (C), o cliente envia um fluxo de mensagens ao servidor, que processa todas as informações recebidas e retorna uma única resposta ao final. Esse modelo é apropriado para cenários em que múltiplos dados precisam ser enviados de forma agrupada, como uploads de arquivos ou envio de lotes de registros.
+
+Por fim, o padrão \textit{bidirectional streaming} (D) permite que tanto o cliente quanto o servidor enviem múltiplas mensagens de forma independente e assíncrona, compartilhando um canal de comunicação contínuo. Esse padrão é especialmente poderoso para aplicações que exigem troca dinâmica de dados em tempo real, como chats, jogos online ou monitoramento de sensores, proporcionando máxima flexibilidade e desempenho na comunicação entre microsserviços \cite{niswar2023performance, shekhar2023microservices}.
+
+Vantagens Técnicas Comprovadas: Estudos empíricos demonstram ganhos operacionais mensuráveis \cite{niswar2023performance}:
+\begin{itemize}
+    \item Redução de 35-45\% no consumo de CPU durante serialização;
+    \item Até 7x maior throughput em comunicações inter-serviços.
+\end{itemize}
 % \ref{cap:Introducao}).
 % \ref{cap:Introducao}).
 % % ----------------------------------------------------------
