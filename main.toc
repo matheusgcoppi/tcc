@@ -26,10 +26,10 @@
 \contentsline {subsubsection}{\numberline {2.1.4.6}Recomendações Estratégicas}{24}{subsubsection.2.1.4.6}%
 \contentsline {subsection}{\numberline {2.1.5}Protocolos de Comunicação para Microsserviços}{24}{subsection.2.1.5}%
 \contentsline {subsubsection}{\numberline {2.1.5.1}\gls {REST} (Representational State Transfer)}{24}{subsubsection.2.1.5.1}%
-\contentsline {subsubsection}{\numberline {2.1.5.2}gRPC (gRPC Remote Procedure Calls)}{25}{subsubsection.2.1.5.2}%
+\contentsline {subsubsection}{\numberline {2.1.5.2}gRPC (gRPC Remote Procedure Calls)}{26}{subsubsection.2.1.5.2}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{REFERÊNCIAS}{28}{section*.20}%
+\contentsline {chapter}{REFERÊNCIAS}{29}{section*.21}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }

@@ -2580,17 +2580,20 @@
     <bcf:citekey order="73" intorder="1">fielding2000rest</bcf:citekey>
     <bcf:citekey order="74" intorder="1">niswar2023performance</bcf:citekey>
     <bcf:citekey order="75" intorder="1">fielding2000rest</bcf:citekey>
-    <bcf:citekey order="76" intorder="1">niswar2023performance</bcf:citekey>
+    <bcf:citekey order="76" intorder="1">fielding2000rest</bcf:citekey>
     <bcf:citekey order="76" intorder="2">maso2024comparativo</bcf:citekey>
     <bcf:citekey order="77" intorder="1">niswar2023performance</bcf:citekey>
-    <bcf:citekey order="78" intorder="1">maso2024comparativo</bcf:citekey>
-    <bcf:citekey order="79" intorder="1">shekhar2023microservices</bcf:citekey>
-    <bcf:citekey order="80" intorder="1">shekhar2023microservices</bcf:citekey>
+    <bcf:citekey order="78" intorder="1">niswar2023performance</bcf:citekey>
+    <bcf:citekey order="78" intorder="2">maso2024comparativo</bcf:citekey>
+    <bcf:citekey order="79" intorder="1">niswar2023performance</bcf:citekey>
+    <bcf:citekey order="80" intorder="1">maso2024comparativo</bcf:citekey>
     <bcf:citekey order="81" intorder="1">shekhar2023microservices</bcf:citekey>
-    <bcf:citekey order="82" intorder="1">maso2024comparativo</bcf:citekey>
-    <bcf:citekey order="83" intorder="1">niswar2023performance</bcf:citekey>
-    <bcf:citekey order="83" intorder="2">shekhar2023microservices</bcf:citekey>
-    <bcf:citekey order="84" intorder="1">niswar2023performance</bcf:citekey>
+    <bcf:citekey order="82" intorder="1">shekhar2023microservices</bcf:citekey>
+    <bcf:citekey order="83" intorder="1">shekhar2023microservices</bcf:citekey>
+    <bcf:citekey order="84" intorder="1">maso2024comparativo</bcf:citekey>
+    <bcf:citekey order="85" intorder="1">niswar2023performance</bcf:citekey>
+    <bcf:citekey order="85" intorder="2">shekhar2023microservices</bcf:citekey>
+    <bcf:citekey order="86" intorder="1">niswar2023performance</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

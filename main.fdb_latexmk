@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber main"] 1749403832.09999 "main.bcf" "main.bbl" "main" 1749403967.5031 0
-  "main.bcf" 1749403967.39023 123064 4b06d85424385a2299510ce8c8dc5cf5 "pdflatex"
+["biber main"] 1749405123.2062 "main.bcf" "main.bbl" "main" 1749405133.13472 0
+  "main.bcf" 1749405133.01018 123288 89c57cfc7544a4d93230568a947c2873 "pdflatex"
   "references.bib" 1749401427.63322 5493 a9fc54fc7b0910a3d8c23d224b40bf6d ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["makeindex main.idx"] 1749142693.68193 "main.idx" "main.ind" "main" 1749403967.503 0
-  "main.idx" 1749403965.34127 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1749404494.43114 "main.idx" "main.ind" "main" 1749405133.13459 0
+  "main.idx" 1749405129.6042 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1749403964.34675 "/home/gruppe/Downloads/tccAtual/main.tex" "main.pdf" "main" 1749403967.5033 0
+["pdflatex"] 1749405128.61533 "/home/gruppe/Downloads/tccAtual/main.tex" "main.pdf" "main" 1749405133.13493 0
   "/home/gruppe/Downloads/tccAtual/main.tex" 1749247803.49921 9775 e851c263a68131e83eb407400a417664 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -233,21 +233,22 @@
   "beforetext/abstract.tex" 1748643640 1166 3a220d89f9e18fd1232b6e315690c9f4 ""
   "beforetext/resumo.tex" 1748643640 1295 8a659dd005dc6b8cc8fe407cee95cc10 ""
   "chapters/01-chapter.tex" 1748817249.3792 13337 dc78e7d5008cb9f21b265ea78c6b4ef8 ""
-  "chapters/02-chapter.tex" 1749403957.86139 42517 0550f2dbac3154756d372ce4068016d3 ""
+  "chapters/02-chapter.tex" 1749405118.55128 44765 8bc720c08f22f58cede86adb42d233b0 ""
   "images/circuit_breaker.png" 1749142649.29795 134334 6e27a09aadc50daf48a94b881e20182b ""
   "images/event-driven.png" 1749169171.72298 1271278 60750e32d320477909867587fbbed19e ""
   "images/grpc.png" 1749402617.41886 166247 1b3bfc765b48ab8a89e1b99140407339 ""
   "images/microservice.png" 1749402375.00529 34675 4a39bdf5c92fe4ca3e37e6bccecd944a ""
   "images/monolito.png" 1749394601.84447 209285 d0baf4e4cb0dfd8585e9e5526e6ef84f ""
+  "images/rest.png" 1749404794.5418 891277 7fd7ddf44f4149b0ed42fbf96434d931 ""
   "images/serverless.png" 1748643640 94475 3cc0c1259aa0bf47ebab5159765f2a0a ""
-  "main.aux" 1749403967.37923 30904 b6716e6772ca05439d2b851a098ad7e4 "pdflatex"
-  "main.bbl" 1749403832.94068 19688 a1f1ca6d32ba80c684f47be98a2892e4 "biber main"
-  "main.ind" 1749142693.78889 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.lof" 1749403967.39123 1136 a12ec9c3f8ed33c554e9f4436425d29c "pdflatex"
-  "main.lot" 1749403967.39123 409 3febfea8fd85f18577fc41248ecec66a "pdflatex"
-  "main.run.xml" 1749403967.39123 2510 a9329479f4b528d21d17670ed8613de5 "pdflatex"
+  "main.aux" 1749405132.99818 32000 f2f237d28058d791e208f87b412b307e "pdflatex"
+  "main.bbl" 1749405124.05124 19688 a1f1ca6d32ba80c684f47be98a2892e4 "biber main"
+  "main.ind" 1749404494.54551 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
+  "main.lof" 1749405133.01118 1520 7189738dce7b336f327bc3513c026317 "pdflatex"
+  "main.lot" 1749405133.01118 409 3febfea8fd85f18577fc41248ecec66a "pdflatex"
+  "main.run.xml" 1749405133.01118 2510 a9329479f4b528d21d17670ed8613de5 "pdflatex"
   "main.tex" 1749247803.49921 9775 e851c263a68131e83eb407400a417664 ""
-  "main.toc" 1749403967.39123 2940 afb6abab449ea394cee6cde8515c3282 "pdflatex"
+  "main.toc" 1749405133.01118 2940 b550feced028af11bfe6dffbeeb46db0 "pdflatex"
   "setup/information.tex" 1749247537.53939 2646 371c8411639ce685156817def85bd699 ""
   "setup/list_of_acron_symbols.tex" 1748643164.1679 1249 0a0e074c86aff60b36d6d7f083f30bdd ""
   "setup/logo.png" 1748643640 7280 93e2c0d319a417c99c40faf4bbf8fe1c ""

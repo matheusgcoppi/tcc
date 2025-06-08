@@ -5,4 +5,5 @@
 \contentsline {figure}{\numberline {3}{\ignorespaces Arquitetura Serverless típica, mostrando os componentes principais: API Gateway, Funções como Serviço (FaaS), e serviços gerenciados. Fonte: Adaptado de \blx@tocontentsinit {0}\cite {shekhar2023microservices}.}}{18}{figure.caption.11}%
 \contentsline {figure}{\numberline {4}{\ignorespaces Funcionamento do padrão Circuit Breaker em sistemas distribuídos.}}{20}{figure.caption.12}%
 \contentsline {figure}{\numberline {5}{\ignorespaces Padrões fundamentais em arquitetura de microsserviços}}{22}{figure.caption.14}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Padrões de streaming no gRPC: (A) Unário, (B) Servidor, (C) Cliente, (D) Bidirecional.}}{26}{figure.caption.17}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Arquitetura REST: comunicação stateless entre cliente e servidor, utilizando métodos HTTP (GET, POST, PUT, DELETE) para manipulação de recursos identificados por URI. O diagrama destaca os princípios REST, exemplos de URIs e resposta JSON, evidenciando a interface uniforme e a ausência de estado.}}{26}{figure.caption.17}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Padrões de streaming no gRPC: (A) Unário, (B) Servidor, (C) Cliente, (D) Bidirecional.}}{27}{figure.caption.18}%

@@ -273,12 +273,22 @@ DELETE & Excluir recurso & 204 (No Content) \\ \hline
 \fonte{Adaptado de \cite{niswar2023performance} e \cite{fielding2000rest}.}
 \end{table}
 
-% \begin{figure}[h]
-% \centering
-% \includegraphics[width=0.75\textwidth]{images/rest-protocol.png}
-% \caption{Fluxo de comunicação REST típico com operações CRUD sobre recursos. Fonte: Adaptado de \cite{aws:1}.}
-% \label{fig:rest_flow}
-% \end{figure}
+A adoção do REST em arquiteturas de microsserviços proporciona diversos benefícios, especialmente pela padronização da comunicação e pela facilidade de integração entre componentes heterogêneos. O uso de URIs para identificação de recursos, aliado à interface uniforme baseada em métodos HTTP, simplifica o desenvolvimento e a manutenção dos serviços, permitindo que diferentes equipes trabalhem de forma independente e escalável \cite{fielding2000rest, maso2024comparativo}.
+
+Além disso, a independência de estado (\textit{stateless}) facilita o balanceamento de carga e a replicação dos serviços, pois qualquer instância do servidor pode processar requisições sem depender de informações armazenadas em sessões. Essa característica é fundamental para ambientes distribuídos e de alta disponibilidade, comuns em sistemas modernos baseados em microsserviços.
+
+Por outro lado, é importante considerar que, apesar de sua simplicidade e ampla adoção, o REST pode apresentar limitações em cenários que exigem comunicação em tempo real, operações transacionais complexas ou validação rígida de contratos. Nesses casos, pode ser necessário complementar a arquitetura com outros padrões ou protocolos, como gRPC ou eventos assíncronos, para atender a requisitos específicos de desempenho e flexibilidade \cite{niswar2023performance}.
+
+Dessa forma, a arquitetura REST permanece como uma das principais escolhas para a construção de APIs robustas, escaláveis e de fácil integração, sendo amplamente utilizada tanto em aplicações web quanto em ambientes de microsserviços.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/rest.png}
+    \caption{Arquitetura REST: comunicação stateless entre cliente e servidor, utilizando métodos HTTP (GET, POST, PUT, DELETE) para manipulação de recursos identificados por URI. O diagrama destaca os princípios REST, exemplos de URIs e resposta JSON, evidenciando a interface uniforme e a ausência de estado.}
+    \label{fig:rest-arquitetura}
+\end{figure}
+
+A Figura~\ref{fig:rest-arquitetura} ilustra a arquitetura REST, evidenciando a troca de mensagens entre cliente e servidor por meio de métodos HTTP padronizados. Os recursos são identificados por URIs específicas, e as respostas são geralmente estruturadas em formato JSON. O princípio stateless garante que cada requisição seja independente, promovendo escalabilidade e simplicidade na integração entre sistemas.
 
 \subsubsection{gRPC (gRPC Remote Procedure Calls)}
 
