@@ -71,12 +71,6 @@
       \field{note}{Acesso em: 31 maio 2025}
       \field{title}{Diferenças entre gRPC e REST}
       \field{year}{2023}
-      \verb{urlraw}
-      \verb https://aws.amazon.com/pt/compare/the-difference-between-grpc-and-rest/
-      \endverb
-      \verb{url}
-      \verb https://aws.amazon.com/pt/compare/the-difference-between-grpc-and-rest/
-      \endverb
     \endentry
     \entry{sandeep2022observability}{article}{}{}
       \name{author}{1}{}{%
@@ -191,7 +185,6 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://martinfowler.com/bliki/CircuitBreaker.html}}
       \field{title}{Circuit Breaker}
       \field{year}{2012}
     \endentry
@@ -218,12 +211,6 @@
       \field{note}{Acesso em: 31 maio 2025}
       \field{title}{gRPC vs. REST}
       \field{year}{2025}
-      \verb{urlraw}
-      \verb https://www.ibm.com/think/topics/grpc-vs-rest
-      \endverb
-      \verb{url}
-      \verb https://www.ibm.com/think/topics/grpc-vs-rest
-      \endverb
     \endentry
     \entry{jamshidi2016systematic}{article}{}{}
       \true{moreauthor}
@@ -253,6 +240,44 @@
       \field{journaltitle}{Institute of Electrical and Electronics Engineers}
       \field{title}{A Systematic Mapping Study in Microservice Architecture}
       \field{year}{2016}
+    \endentry
+    \entry{kim2021servicemesh}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b2236af712a294693dcea632d195b1fb}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa5a7c8780167efaa3ed45566a0806a0}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{db097df803ff3f6e73eed2683be0a911}
+      \strng{fullhash}{db097df803ff3f6e73eed2683be0a911}
+      \strng{fullhashraw}{db097df803ff3f6e73eed2683be0a911}
+      \strng{bibnamehash}{db097df803ff3f6e73eed2683be0a911}
+      \strng{authorbibnamehash}{db097df803ff3f6e73eed2683be0a911}
+      \strng{authornamehash}{db097df803ff3f6e73eed2683be0a911}
+      \strng{authorfullhash}{db097df803ff3f6e73eed2683be0a911}
+      \strng{authorfullhashraw}{db097df803ff3f6e73eed2683be0a911}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2021 International Conference on Information Networking (ICOIN)}
+      \field{title}{Service Mesh Based Distributed Tracing System}
+      \field{year}{2021}
+      \field{pages}{105\bibrangedash 110}
+      \range{pages}{6}
     \endentry
     \entry{observability2023}{misc}{}{}
       \name{author}{1}{}{%

@@ -16,7 +16,7 @@ A definição de padrões arquiteturais é essencial para garantir a organizaç�
 
 Um dos padrões mais tradicionais é a arquitetura monolítica, na qual todas as funcionalidades do sistema são implementadas em um único bloco de código, compartilhando o mesmo ambiente de execução e banco de dados. Embora seja simples de desenvolver e implantar, esse modelo apresenta dificuldades de escalabilidade e manutenção à medida que o sistema cresce. Como afirmam \cite{nizami2020comparison}: 
 
-“A arquitetura monolítica é fácil de desenvolver e fazer \textit{deploy}, mas, à medida que a aplicação cresce, torna-se difícil de gerenciar, escalar e manter. Qualquer pequena mudança requer que toda a aplicação seja reconstruída e reimplantada, o que aumenta o risco e o esforço.” 
+“A arquitetura monolítica é fácil de desenvolver e fazer \textit{deploy}, mas, à medida que a aplicação cresce, torna-se difícil de gerenciar, escalar e manter.”
 
 Essa limitação faz com que, em projetos de maior porte, a arquitetura monolítica se torne menos atrativa, especialmente quando há necessidade de frequentes atualizações e escalabilidade do sistema. 
 
@@ -132,6 +132,31 @@ A arquitetura de microsserviços representa uma evolução paradigmática no des
     \item Resiliência aprimorada: Isolamento de falhas através de padrões como \textit{Circuit Breaker}
     \item Entrega contínua: \textit{Deploys} independentes permitindo múltiplas implantações diárias
 \end{itemize}
+
+\subsubsection{Docker e Microsserviços}
+
+Docker revolucionou a forma como as aplicações são empacotadas, distribuídas e executadas, tornando-se um pilar fundamental para a adoção de microsserviços \cite{farhan2023performance}. Ao encapsular cada serviço em um conteiner, o Docker garante a portabilidade e a consistência do ambiente de execução, eliminando problemas de dependências e conflitos entre diferentes serviços.
+
+A utilização de conteineres Docker facilita a criação de ambientes isolados para cada microsserviço, permitindo que equipes de desenvolvimento trabalhem de forma independente e sem interferir no funcionamento de outros serviços \cite{farhan2023performance}. Essa independência é crucial para acelerar o ciclo de entrega e promover a autonomia das equipes.
+
+Além disso, o Docker simplifica o processo de implantação e escalonamento de microsserviços, pois os contêineres podem ser facilmente replicados e distribuídos em diferentes servidores ou ambientes de nuvem \cite{farhan2023performance}. Essa flexibilidade é essencial para garantir a escalabilidade e a resiliência das aplicações em produção.
+
+A combinação de Docker e microsserviços também impulsiona a adoção de práticas \textit{DevOps}, como a integração e a entrega contínua (\textit{CI/CD}). Os contêineres Docker podem ser integrados em pipelines automatizados, permitindo que novas versões dos serviços sejam testadas e implantadas de forma rápida e segura \cite{farhan2023performance}.
+
+\textit{DevOps} é uma abordagem cultural e técnica que busca integrar as áreas de desenvolvimento e operações por meio da automação de processos e da promoção da melhoria contínua. No contexto de arquiteturas baseadas em microsserviços, essa cultura se reflete na autonomia das equipes, que passam a ser responsáveis por todo o ciclo de vida dos seus serviços desde o desenvolvimento até a implantação, monitoramento e manutenção \cite{farhan2023performance}.
+
+\textit{CI/CD} (Integração Contínua/Entrega Contínua) são práticas que automatizam o pipeline de desenvolvimento, desde a integração do código até a entrega em produção. A \textit{CI} garante que as mudanças no código sejam integradas, testadas e validadas automaticamente, enquanto a \textit{CD} automatiza a implantação dessas mudanças em ambientes de teste e produção, permitindo entregas mais rápidas e seguras \cite{farhan2023performance}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{images/docker.png}
+  \caption{Estrutura do Docker: cada contêiner encapsula uma aplicação, suas dependências e bibliotecas, todos isolados uns dos outros, rodando sobre o Docker Engine e compartilhando o mesmo sistema operacional do host.}
+  \label{fig:docker-estrutura}
+\end{figure}
+
+A Figura~\ref{fig:docker-estrutura} ilustra a arquitetura do Docker, mostrando como múltiplos contêineres podem ser executados de forma isolada sobre o mesmo host físico ou virtual. Cada contêiner possui sua própria aplicação, dependências e bibliotecas, garantindo portabilidade e consistência, enquanto compartilham o sistema operacional subjacente por meio do Docker Engine.
+
+Em resumo, o Docker desempenha um papel crucial na arquitetura de microsserviços, fornecendo a base para a portabilidade, o isolamento, a escalabilidade e a automação das aplicações. Sua adoção é fundamental para garantir o sucesso e a eficiência de projetos baseados em microsserviços \cite{farhan2023performance}.
 
 \subsubsection{Mecanismos de Comunicação}
 A comunicação entre serviços em arquiteturas de microsserviços pode ser realizada por diferentes mecanismos, cada um com características, vantagens e limitações específicas. A escolha do protocolo de comunicação é um fator determinante para o desempenho, a escalabilidade e a complexidade do sistema, influenciando diretamente a experiência do usuário e a eficiência operacional \cite{niswar2023performance, maso2024comparativo}.
@@ -275,7 +300,7 @@ DELETE & Excluir recurso & 204 (No Content) \\ \hline
 
 A adoção do REST em arquiteturas de microsserviços proporciona diversos benefícios, especialmente pela padronização da comunicação e pela facilidade de integração entre componentes heterogêneos. O uso de URIs para identificação de recursos, aliado à interface uniforme baseada em métodos HTTP, simplifica o desenvolvimento e a manutenção dos serviços, permitindo que diferentes equipes trabalhem de forma independente e escalável \cite{fielding2000rest, maso2024comparativo}.
 
-Além disso, a independência de estado (\textit{stateless}) facilita o balanceamento de carga e a replicação dos serviços, pois qualquer instância do servidor pode processar requisições sem depender de informações armazenadas em sessões. Essa característica é fundamental para ambientes distribuídos e de alta disponibilidade, comuns em sistemas modernos baseados em microsserviços.
+Além disso, a independência de estado (\textit{stateless}) facilita o balanceamento de carga e a replicação dos serviços, pois qualquer instância do servidor pode processar requisições sem depender de informações armazenadas em sessões. Essa característica é fundamental para ambientes distribuídos e de alta disponibilidade, comuns em sistemas modernos baseados em microsserviços \cite{fielding2000rest, maso2024comparativo}.
 
 Por outro lado, é importante considerar que, apesar de sua simplicidade e ampla adoção, o REST pode apresentar limitações em cenários que exigem comunicação em tempo real, operações transacionais complexas ou validação rígida de contratos. Nesses casos, pode ser necessário complementar a arquitetura com outros padrões ou protocolos, como gRPC ou eventos assíncronos, para atender a requisitos específicos de desempenho e flexibilidade \cite{niswar2023performance}.
 
@@ -329,6 +354,302 @@ Vantagens Técnicas Comprovadas: Estudos empíricos demonstram ganhos operaciona
     \item Redução de 35-45\% no consumo de CPU durante serialização;
     \item Até 7x maior throughput em comunicações inter-serviços.
 \end{itemize}
+% ----------------------------------------------------------
+\section{OBSERVABILIDADE EM ARQUITETURAS DE MICROSSERVIÇOS}
+\label{cap:observabilidade}
+% ----------------------------------------------------------
+
+A migração de sistemas monolíticos para arquiteturas distribuídas baseadas em microsserviços trouxe ganhos expressivos de escalabilidade e agilidade \cite{jamshidi2016systematic}. No entanto, essa transição introduziu um \textit{gap} de visibilidade operacional que as técnicas tradicionais de monitoramento não conseguem preencher \cite{nizami2020comparison}.
+
+Surge então o conceito de observabilidade, definido como a capacidade de inferir o estado interno de um sistema a partir de suas saídas externas \cite{observability2023}. Para organizações que operam centenas de serviços em ambientes Kubernetes, a observabilidade tornou-se um requisito fundamental \cite{shekhar2023microservices}.
+
+Essa necessidade se justifica para manter SLOs (\textit{Service Level Objectives}), que são metas específicas de desempenho e disponibilidade que um serviço deve atingir, garantindo a qualidade da experiência do usuário, reduzir \textit{downtime} e acelerar ciclos de \textit{deploy} \cite{shekhar2023microservices}. A complexidade inerente às arquiteturas de microsserviços exige uma abordagem de monitoramento que vá além das métricas tradicionais \cite{jamshidi2016systematic}.
+
+A observabilidade surge como uma solução para essa lacuna, permitindo que as equipes compreendam o comportamento do sistema em tempo real \cite{observability2023}. Isso possibilita a identificação proativa de problemas e a tomada de decisões informadas para otimizar o desempenho e a confiabilidade \cite{shekhar2023microservices}.
+
+Diferentemente do monitoramento tradicional, que se concentra em métricas pré-definidas, a observabilidade permite explorar o sistema de forma dinâmica \cite{observability2023}. Essa exploração possibilita investigar o que não foi previsto inicialmente, crucial em ambientes de microsserviços com comportamentos emergentes \cite{nizami2020comparison}.
+
+A capacidade de inferir o estado interno a partir das saídas externas é fundamental para a resiliência e escalabilidade \cite{shekhar2023microservices}. Coletar e analisar dados de telemetria, como métricas, logs e traces, oferece uma visão holística do sistema \cite{observability2023}.
+
+Essa visão permite identificar gargalos de desempenho, erros e outros problemas que podem afetar a experiência do usuário \cite{ahmed2022observability}. Além disso, a observabilidade possibilita monitorar o impacto das mudanças no código e na infraestrutura \cite{shekhar2023microservices}.
+
+A adoção da observabilidade não é apenas uma questão de tecnologia, mas também de cultura e processos \cite{shekhar2023microservices}. As equipes precisam adotar uma mentalidade de responsabilidade compartilhada, onde os desenvolvedores monitoram e mantêm os serviços que criam \cite{observability2023}.
+
+\subsection{Kubernetes}
+Kubernetes é uma plataforma open source para orquestração de contêineres, amplamente utilizada em arquiteturas de microsserviços devido à sua capacidade de automatizar o gerenciamento, a implantação e o escalonamento de aplicações distribuídas \cite{shekhar2023microservices}. Sua adoção permite que empresas operem ambientes altamente dinâmicos, com múltiplos serviços sendo criados, atualizados e removidos de forma contínua.
+
+A arquitetura do Kubernetes é composta por dois grandes blocos: o \textit{Control Plane} e os nós de trabalho (\textit{workers}). O \textit{Control Plane} é responsável por gerenciar o estado desejado do cluster, tomando decisões sobre agendamento, monitoramento e controle dos recursos \cite{shekhar2023microservices}.
+
+No topo da Figura~\ref{fig:k8s-arquitetura}, a interface do usuário representa as formas de interação com o Kubernetes, seja por meio de interfaces gráficas (UI), linha de comando (CLI) ou a ferramenta \textit{kubectl}, que permite executar comandos diretamente no cluster.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{images/kube-arch.png}
+    \caption{Arquitetura do Kubernetes: componentes principais, control plane, nós de trabalho, pods e containers.}
+    \label{fig:k8s-arquitetura}
+\end{figure}
+
+O control plane centraliza os principais componentes de controle do Kubernetes. O \textit{API Server} é o ponto de entrada para todas as requisições, servindo como interface entre usuários, automações e o cluster. O \textit{Scheduler} é responsável por decidir em qual nó os pods serão alocados, considerando recursos disponíveis e restrições. O \textit{Controller Manager} gerencia os controladores que garantem que o estado real do cluster esteja sempre alinhado ao estado desejado. O \textit{etcd} é o banco de dados chave-valor distribuído que armazena todas as informações de configuração e estado do cluster \cite{shekhar2023microservices}.
+
+Nas laterais da figura estão os nós de trabalho (Nó de Trabalho 1 e Nó de Trabalho 2), que são servidores físicos ou virtuais responsáveis por executar as aplicações. Cada nó contém múltiplos pods, que são as menores unidades de implantação do Kubernetes. Cada pod pode conter um ou mais containers, que executam as aplicações e compartilham recursos de rede e armazenamento \cite{shekhar2023microservices}.
+
+Na base de cada nó, encontram-se três componentes essenciais: o \textit{Docker}, responsável por criar e gerenciar os containers o \textit{Kubelet}, agente que garante que os containers estejam rodando conforme especificado pelo control plane e o \textit{Kube-proxy}, que gerencia a comunicação de rede dentro e fora do nó, garantindo o roteamento correto das requisições \cite{shekhar2023microservices}.
+
+As setas pontilhadas na figura indicam a comunicação entre o control plane e os nós de trabalho, evidenciando como o gerenciamento centralizado do cluster é realizado. Essa arquitetura modular e distribuída permite ao Kubernetes oferecer alta disponibilidade, escalabilidade e resiliência, características essenciais para ambientes de microsserviços modernos.
+
+A observabilidade em Kubernetes é desafiadora, pois o ciclo de vida dos pods é efêmero e os serviços podem ser realocados entre nós do cluster a qualquer momento \cite{ahmed2022observability}. Isso exige soluções que acompanhem essas mudanças em tempo real, garantindo visibilidade sobre o estado de cada componente do sistema.
+
+Ferramentas como Prometheus, Grafana e Jaeger são essenciais nesse cenário. O Prometheus coleta métricas detalhadas de recursos, pods e serviços, enquanto o Grafana permite a visualização dessas métricas em dashboards customizáveis \cite{ahmed2022observability}. O Jaeger, por sua vez, realiza o rastreamento distribuído, possibilitando a análise do caminho das requisições entre diferentes microsserviços.
+
+Além dessas ferramentas, o Kubernetes integra nativamente eventos e logs que podem ser coletados por soluções como Fluentd e Elasticsearch, facilitando a centralização e análise dos dados \cite{ahmed2022observability}. Essa integração é fundamental para detectar anomalias, identificar falhas e otimizar o uso de recursos do cluster.
+
+Outro ponto relevante é o uso de service mesh, como Istio, que adiciona camadas de observabilidade sem necessidade de modificar o código das aplicações. O service mesh coleta métricas, logs e traces automaticamente, aumentando a granularidade e a precisão das informações \cite{kim2021servicemesh}.
+
+A observabilidade em Kubernetes também permite a implementação de alertas inteligentes e automação de respostas a incidentes. Isso reduz o tempo de detecção e resolução de problemas, contribuindo para a alta disponibilidade e confiabilidade dos serviços \cite{ahmed2022observability}.
+
+A integração entre Kubernetes e ferramentas de observabilidade permite que equipes de operações e desenvolvimento tenham acesso a dados em tempo real sobre o funcionamento do ambiente. Essa visibilidade é essencial para identificar rapidamente falhas, gargalos de desempenho e comportamentos anômalos, reduzindo o tempo de resposta a incidentes e melhorando a experiência do usuário final \cite{ahmed2022observability}.
+
+Além disso, a observabilidade facilita a análise de causa raiz em ambientes distribuídos, onde uma falha em um serviço pode impactar diversos outros componentes do sistema. O rastreamento distribuído, por exemplo, permite acompanhar o fluxo de uma requisição por múltiplos microsserviços, identificando exatamente onde ocorreu o problema e possibilitando uma resolução mais ágil \cite{observability2023}.
+
+Por fim, a adoção de práticas avançadas de observabilidade em Kubernetes contribui para a evolução contínua das aplicações. Com dados detalhados sobre o comportamento do sistema, as equipes podem tomar decisões baseadas em evidências, promovendo melhorias constantes na arquitetura, no desempenho e na confiabilidade dos serviços \cite{shekhar2023microservices}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/k8s-observability-architecture.png}
+    \caption{Arquitetura de observabilidade em ambientes Kubernetes, integrando métricas, logs e rastreamento distribuído.}
+    \label{fig:k8s-observability}
+\end{figure}
+
+A Figura~\ref{fig:k8s-observability} ilustra como as principais ferramentas de observabilidade se integram ao Kubernetes, coletando dados de diferentes camadas do cluster e fornecendo uma visão unificada do ambiente.
+
+Em resumo, a combinação de Kubernetes e práticas avançadas de observabilidade é indispensável para garantir a eficiência operacional, a escalabilidade e a resiliência de sistemas baseados em microsserviços \cite{shekhar2023microservices,ahmed2022observability}.
+
+\subsection{Relação com a Teoria de Controle}
+
+Na teoria de sistemas lineares, um sistema é considerado observável quando, a partir das saídas disponíveis, é possível reconstruir completamente o vetor de estados internos do sistema ao longo do tempo \cite{observability2023}. Esse conceito, formalizado por Kalman, é fundamental para o projeto de sistemas de controle robustos e confiáveis \cite{observability2023}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{images/teoria-controle.png}
+  \caption{Relação entre a teoria de controle e a observabilidade em sistemas de software: a partir das saídas observáveis, busca-se reconstruir os estados internos do sistema, como latência, fila de mensagens e estado de sessão.}
+  \label{fig:controle-observabilidade}
+\end{figure}
+
+A Figura~\ref{fig:controle-observabilidade} ilustra como, na teoria de controle, as saídas observáveis de um sistema são analisadas para reconstruir seus estados internos. No contexto de software, essa abordagem é aplicada para inferir variáveis como latência, fila de mensagens e estado de sessão a partir de sinais de telemetria coletados externamente \cite{observability2023}.
+
+De forma análoga, em sistemas de software distribuídos, busca-se inferir variáveis internas, como latência de funções, tamanho de filas de mensagens e estado de sessões, a partir de sinais de telemetria coletados externamente \cite{observability2023}. Essa abordagem permite que equipes de operações e desenvolvimento compreendam o comportamento do sistema sem acesso direto ao seu interior \cite{observability2023}.
+
+A perspectiva da observabilidade desloca o foco tradicional de “o que medir” para “como responder perguntas desconhecidas a priori” \cite{observability2023}. Ou seja, não basta definir métricas fixas; é necessário estruturar a coleta de dados de modo a possibilitar investigações dinâmicas e flexíveis, respondendo a questões que surgem apenas diante de falhas ou comportamentos inesperados \cite{observability2023}.
+
+Essa visão teórica fundamenta a importância de práticas avançadas de observabilidade em arquiteturas modernas, como microsserviços e ambientes Kubernetes \cite{observability2023}. Ao alinhar conceitos da engenharia de controle com a engenharia de software, reforça-se a necessidade de sistemas capazes de fornecer informações detalhadas e contextualizadas para a tomada de decisão rápida e precisa \cite{observability2023}.
+
+% \subsection{Evolução Histórica}
+
+% \begin{description}
+%   \item[1980–2000] Ferramentas de \textit{Application Performance
+%   Monitoring} (APM) centradas em métricas de host (CPU, memória).
+%   \item[2000–2010] Monitoring 2.0: \textit{time-series databases}
+%   (RRDtool, Graphite) e dashboards mais ricos.
+%   \item[2010–2020] Era \textit{cloud native}: surgimento de Prometheus,
+%   Jaeger, Grafana, e do termo observabilidade como união de
+%   \textit{metrics + logs + traces} \cite{observability2023}.
+%   \item[2020–hoje] Padrões abertos (OpenTelemetry),
+%   instrumentação baseada em eBPF, \textit{AIOps}.
+% \end{description}
+
+\subsection{Pilares da Observabilidade}
+
+A observabilidade em arquiteturas de microsserviços é sustentada por três pilares principais: métricas, logs e rastreamento distribuído (\textit{tracing}) \cite{observability2023}. Cada um desses pilares fornece uma perspectiva única sobre o funcionamento do sistema, sendo essenciais para a detecção e resolução de problemas em ambientes distribuídos.
+
+A implementação da observabilidade em arquiteturas de microsserviços traz diversos benefícios, como a detecção proativa de problemas, a redução do tempo de resolução de incidentes e a otimização do desempenho dos serviços \cite{observability2023}. No entanto, essa implementação também apresenta desafios significativos, como a complexidade da coleta e análise de dados em ambientes distribuídos e a necessidade de ferramentas e processos adequados.
+
+Um dos principais desafios é a grande quantidade de dados gerados pelos microsserviços, que podem sobrecarregar os sistemas de monitoramento e dificultar a identificação de informações relevantes \cite{ahmed2022observability}. Para lidar com esse volume de dados, é fundamental adotar técnicas de agregação, filtragem e amostragem, além de investir em ferramentas de análise escaláveis e eficientes.
+
+Outro desafio importante é a necessidade de integrar diferentes fontes de dados, como métricas, logs e rastreamento distribuído, para obter uma visão holística do sistema \cite{observability2023}. Essa integração exige a padronização dos formatos de dados, a definição de modelos de correlação e a implementação de dashboards unificados, permitindo que as equipes compreendam o comportamento do sistema em tempo real e identifiquem rapidamente as causas de problemas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.60\textwidth]{images/pillars-observability.png}
+    \caption{Os três pilares da observabilidade: métricas, logs e rastreamento distribuído, cada um fornecendo uma perspectiva complementar para o monitoramento e diagnóstico de sistemas de microsserviços.}
+    \label{fig:pilares-observabilidade}
+\end{figure}
+
+A Figura~\ref{fig:pilares-observabilidade} ilustra os três pilares da observabilidade. Cada coluna representa um pilar fundamental: métricas, logs e rastreamento distribuído, com exemplos práticos de cada categoria.
+
+As métricas são dados quantitativos coletados continuamente, como uso de CPU, memória, latência de requisições e taxa de erros \cite{ahmed2022observability}. Elas permitem o monitoramento em tempo real do desempenho dos serviços, facilitando a identificação de tendências, gargalos e anomalias operacionais.
+
+Os logs registram eventos detalhados que ocorrem durante a execução dos serviços, incluindo mensagens de erro, fluxos de execução e informações de auditoria \cite{observability2023}. A análise centralizada dos logs é fundamental para o diagnóstico de falhas e para a compreensão do comportamento do sistema em situações específicas.
+
+O rastreamento distribuído permite acompanhar o caminho de uma requisição ao longo de múltiplos microsserviços, identificando pontos de latência e dependências críticas \cite{observability2023}. Ferramentas como Jaeger e Zipkin são amplamente utilizadas para implementar esse pilar, proporcionando visibilidade de ponta a ponta em sistemas complexos.
+
+A integração eficiente desses três pilares é indispensável para garantir uma observabilidade robusta, permitindo que equipes de desenvolvimento e operações respondam rapidamente a incidentes e promovam a melhoria contínua dos sistemas \cite{observability2023}.
+
+\chapter{Proposta}
+\label{cap:Proposta}
+
+O presente Trabalho de Conclusão de Curso propõe-se a realizar uma análise comparativa entre os protocolos de comunicação REST e gRPC em arquiteturas de microsserviços, utilizando métricas de observabilidade para avaliar aspectos de desempenho como latência, throughput e uso de recursos. A motivação central reside na crescente adoção de microsserviços em ambientes corporativos e acadêmicos, onde a escolha do protocolo de comunicação pode impactar diretamente a eficiência, escalabilidade e manutenção dos sistemas.
+
+A proposta consiste em implementar dois microserviços equivalentes, cada um utilizando um dos protocolos em análise. Ambos os serviços serão desenvolvidos para executar a mesma funcionalidade, garantindo assim a comparabilidade dos resultados obtidos. A instrumentação dos microserviços será realizada de modo a expor métricas relevantes por meio de rotas específicas, permitindo a coleta automatizada de dados por ferramentas de monitoramento.
+
+O ambiente experimental será configurado em um cluster de orquestração de contêineres, possibilitando a simulação de cenários reais de operação e a execução de testes de carga controlados. Serão definidos diferentes perfis de carga, variando o número de requisições e o volume de dados trafegados, com o objetivo de avaliar o comportamento dos protocolos sob distintas condições de uso. As métricas de latência, throughput e consumo de recursos computacionais serão coletadas de forma sistemática durante os experimentos.
+
+A análise dos dados será conduzida de maneira quantitativa, buscando identificar padrões de desempenho, gargalos e possíveis vantagens de cada protocolo em cenários específicos. Serão aplicadas técnicas estatísticas para comparar os resultados e garantir a validade das conclusões. O estudo pretende, ainda, discutir as implicações práticas das escolhas arquiteturais, considerando aspectos como facilidade de implementação, manutenção e escalabilidade dos serviços.
+
+Além da comparação de desempenho, a proposta contempla a avaliação da experiência de instrumentação e monitoramento dos microserviços, destacando os desafios e benefícios encontrados durante o processo. A utilização de ferramentas de observabilidade será explorada para demonstrar como a coleta e análise de métricas podem subsidiar decisões técnicas e operacionais em ambientes distribuídos.
+
+O trabalho será desenvolvido em etapas, iniciando-se pela revisão do estado da arte e definição dos requisitos dos microserviços. Em seguida, será realizada a implementação dos serviços REST e gRPC, bem como a configuração do ambiente de testes e das ferramentas de monitoramento. Após a execução dos experimentos, os dados coletados serão analisados e os resultados discutidos à luz dos objetivos propostos.
+
+Espera-se, ao final do projeto, fornecer subsídios para a escolha do protocolo de comunicação mais adequado a diferentes contextos de uso em microsserviços, contribuindo para a otimização de sistemas distribuídos e para o avanço do conhecimento na área de arquitetura de software. A proposta visa, portanto, não apenas comparar tecnicamente REST e gRPC, mas também evidenciar a importância da observabilidade como ferramenta estratégica para a gestão eficiente de microsserviços.
+
+A execução dos experimentos será cuidadosamente documentada, detalhando os procedimentos adotados, as configurações do ambiente e os parâmetros utilizados nos testes de carga. Essa abordagem visa garantir a reprodutibilidade dos resultados e permitir que outros pesquisadores ou profissionais possam replicar o estudo em diferentes contextos. A documentação também incluirá eventuais dificuldades encontradas durante a implementação e execução dos testes, bem como as soluções adotadas para superá-las.
+
+Durante o desenvolvimento do trabalho, serão observados critérios de rigor metodológico, buscando minimizar vieses e assegurar a imparcialidade na análise dos dados. A seleção das métricas de desempenho será fundamentada em práticas consolidadas no mercado e na literatura técnica, priorizando indicadores que realmente reflitam o comportamento dos sistemas em produção. A análise estatística dos resultados será conduzida de forma transparente, apresentando não apenas médias, mas também medidas de dispersão e intervalos de confiança.
+
+Outro aspecto relevante da proposta é a preocupação com a aplicabilidade dos resultados. Ao final do estudo, pretende-se apresentar recomendações práticas para equipes de desenvolvimento e arquitetura de software, considerando diferentes cenários de uso e demandas de negócio. Essas recomendações poderão auxiliar na tomada de decisão sobre a escolha do protocolo de comunicação mais adequado, levando em conta fatores como desempenho, facilidade de manutenção e integração com ferramentas de observabilidade.
+
+Por fim, o trabalho buscará contribuir para o debate sobre boas práticas em arquiteturas de microsserviços, destacando a importância da mensuração contínua de desempenho e da adoção de estratégias de observabilidade desde as fases iniciais do projeto. Ao promover uma análise comparativa fundamentada e orientada por dados, espera-se que este estudo possa servir de referência para futuros projetos acadêmicos e profissionais que envolvam a construção e otimização de sistemas distribuídos.
+% \section{Arquitetura de Telemetria End-to-End}
+% \label{sec:arquitetura}
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=.9\textwidth]{images/otel_pipeline.png}
+%   \caption{Pipeline OpenTelemetry: Instrumentação $\rightarrow$
+%            Collector $\rightarrow$ Backend.}
+%   \label{fig:otel}
+% \end{figure}
+
+% \noindent
+% O pipeline (Fig.~\ref{fig:otel}) é composto por:
+
+% \begin{enumerate}
+%   \item \textbf{Instrumentação}: SDKs ou auto-instrumentação via eBPF.
+%   \item \textbf{Collector}: estágio de transformação, filtragem e
+%         \textit{batching}.  Tail sampling reduz 90 \% do volume de \textit{traces}
+%         sem perda de visibilidade crítica \cite{chen2021offline}.
+%   \item \textbf{Backend}: armazenamento escalável (Tempo, Jaeger,
+%         Thanos, Loki) e camada de consulta.
+% \end{enumerate}
+
+% \section{Instrumentação}
+% \label{sec:instrumentacao}
+
+% \subsection{Manual × Automática}
+
+% Instrumentação manual fornece contexto semântico rico, porém é
+% propensa a \textit{drift}.  
+% Auto-instrumentação utiliza agentes que interceptam bibliotecas
+% (\textit{bytecode weaving}) ou sondas eBPF em nível de kernel
+% \cite{sandeep2022observability}.  
+% Comparação de overhead médio:
+
+% \begin{table}[H]
+%   \centering
+%   \caption{Overhead de métodos de instrumentação (latência média por requisição).}
+%   \label{tab:overhead}
+%   \begin{tabular}{|l|c|c|}
+%     \hline
+%     Método & Latência (\textmu s) & Fonte \\ \hline
+%     Manual SDK (Java) & 75 & \cite{sha2023automating} \\
+%     Auto (Java Agent) & 130 & \cite{sha2023automating} \\
+%     eBPF (kernel) & 22 & \cite{kim2021servicemesh} \\ \hline
+%   \end{tabular}
+% \end{table}
+
+% \section{Observabilidade com eBPF}
+% \label{sec:ebpf}
+
+% eBPF permite anexar programas a ganchos do kernel (\texttt{kprobes},
+% \texttt{tracepoints}) sem recompilação do SO.  
+% Resultados de Chen \& Li \cite{chen2021offline} mostram redução de
+% 45 \% no consumo de CPU comparado a agentes em \textit{user space}.  
+
+% \begin{itemize}
+%   \item \textbf{Vantagens}: coleta sem modificar código da aplicação,
+%         latência sub-milissegundo, visibilidade de pacotes.
+%   \item \textbf{Desafios}: curvas de aprendizagem em \texttt{C/BPF},
+%         limitação de mapas de dados, portabilidade entre kernels.
+% \end{itemize}
+
+% \section{Integração com Service Mesh}
+
+% Sidecars (Envoy/Istio) interceptam todo o tráfego na camada 7,
+% injetando cabeçalhos de tracing e exportando métricas prontas.  
+% Kim \& Lee \cite{kim2021servicemesh} relatam aumento de 27 \%
+% na cobertura de \textit{spans} e redução de 11 \% no MTTR após adoção
+% de Istio +\ OpenTelemetry.
+
+% \section{SRE: Sinais Dourados e SLOs}
+% \label{sec:sre}
+
+% Google define \textit{Golden Signals}: \emph{latência}, \emph{tráfego},
+% \emph{erros}, \emph{saturação}.  
+% A correlação desses sinais com \textit{traces} fornece diagnóstico
+% instantâneo de regressões.  
+% Organizações com observabilidade centralizada reportam economias
+% de 30–40 \% em horas de engenharia \cite{observability2023}.
+
+% \section{AIOps e Detecção Proativa de Anomalias}
+% \label{sec:aiops}
+
+% Ahmed et al.~\cite{ahmed2022observability} aplicam \textit{Isolation Forest}
+% sobre métricas Prometheus, obtendo \textbf{F1-score 0,86}.  
+% Técnicas emergentes:  
+% \begin{itemize}
+%   \item \textbf{eBPF + ML in-kernel}: análise de fluxos em tempo real.
+%   \item \textbf{Graph Neural Networks}: modelar dependências entre
+%         serviços para \textit{root-cause} em cascata.
+% \end{itemize}
+
+% \section{Maturidade e ROI}
+% \label{sec:maturidade}
+
+% Modelo de quatro níveis:
+
+% \begin{enumerate}
+%   \item \textbf{L0 — Visibility}: apenas métricas de host.
+%   \item \textbf{L1 — Monitoring}: dashboards gráficos, alertas básicos.
+%   \item \textbf{L2 — Observability}: correlação \textit{metrics+logs+traces},
+%         detecção de anomalias.
+%   \item \textbf{L3 — Predictive Ops}: AIOps, SLO automáticos,
+%         autorremediação.
+% \end{enumerate}
+
+% Empresas que atingem L2/L3 relatam MTTR \(<\) 30 min, contra
+% \(\approx\) 2 h em L1 \cite{observability2023}.
+
+% \section{Desafios em Aberto}
+% \label{sec:desafios}
+
+% \begin{itemize}
+%   \item \textbf{Cardinalidade alta}: séries com milhões de rótulos.
+%   \item \textbf{Custo de armazenamento}: compressão de \textit{traces},
+%         amostragem dinâmica.
+%   \item \textbf{Privacidade}: telemetria pode expor dados sensíveis.
+%   \item \textbf{Padronização}: evolução do OTLP e semântica de atributos.
+% \end{itemize}
+
+% \section{Tendências Futuras}
+
+% \begin{enumerate}
+%   \item Observabilidade \textit{shift-left}: coletar dados já no
+%         pipeline CI / CD.
+%   \item eBPF + WASM para filtros seguros e portáveis.
+%   \item Telemetria zero-copy (OTel-Arrow) para reduzir overhead.
+% \end{enumerate}
+
+% \section{Conclusão}
+
+% Observabilidade é pilar central da confiabilidade em
+% microsserviços. Ferramentas abertas, padrões como OpenTelemetry e
+% avanços em eBPF democratizaram a coleta de telemetria, mas
+% \textit{capability gaps} persistem em custos, segurança e correlação de
+% dados. Investimentos em cultura SRE, automação e pesquisa de
+% inteligência artificial constituem o próximo passo rumo a operações
+% autônomas e resilientes.
+
+% ----------------------------------------------------------
+% ----------------------------------------------------------
 % \ref{cap:Introducao}).
 % \ref{cap:Introducao}).
 % % ----------------------------------------------------------
