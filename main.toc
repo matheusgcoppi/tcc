@@ -32,11 +32,12 @@
 \contentsline {subsection}{\numberline {2.2.1}Kubernetes}{31}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Relação com a Teoria de Controle}{34}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Pilares da Observabilidade}{36}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Automação e Resposta a Incidentes}{38}{subsection.2.2.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Proposta}}{38}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Proposta}}{40}{chapter.3}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{REFERÊNCIAS}{40}{section*.26}%
+\contentsline {chapter}{REFERÊNCIAS}{42}{section*.27}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }

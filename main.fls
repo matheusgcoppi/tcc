@@ -603,6 +603,11 @@ INPUT ./images/pillars-observability.png
 INPUT ./images/pillars-observability.png
 INPUT ./images/pillars-observability.png
 INPUT ./images/pillars-observability.png
+INPUT ./images/automacao.png
+INPUT ./images/automacao.png
+INPUT ./images/automacao.png
+INPUT ./images/automacao.png
+INPUT ./images/automacao.png
 OUTPUT main.lof
 OUTPUT main.lot
 OUTPUT main.toc

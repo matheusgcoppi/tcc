@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.5.30)  15 JUN 2025 19:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.5.30)  15 JUN 2025 23:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2087,7 +2087,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 ]
 
 [13]
-<images/monolito.png, id=263, 1275.76625pt x 1217.54875pt>
+<images/monolito.png, id=270, 1275.76625pt x 1217.54875pt>
 File: images/monolito.png Graphic file (type png)
 <use images/monolito.png>
 Package pdftex.def Info: images/monolito.png  used on input line 45.
@@ -2099,7 +2099,7 @@ Package pdftex.def Info: images/monolito.png  used on input line 45.
 [15 <./images/monolito.png>]
 
 [16]
-<images/event-driven.png, id=304, 1027.84pt x 1027.84pt>
+<images/event-driven.png, id=311, 1027.84pt x 1027.84pt>
 File: images/event-driven.png Graphic file (type png)
 <use images/event-driven.png>
 Package pdftex.def Info: images/event-driven.png  used on input line 72.
@@ -2117,7 +2117,7 @@ Overfull \hbox (26.00456pt too wide) in paragraph at lines 80--81
 
 
 [17 <./images/event-driven.png (PNG copy)>]
-<images/serverless.png, id=313, 866.23625pt x 458.71375pt>
+<images/serverless.png, id=320, 866.23625pt x 458.71375pt>
 File: images/serverless.png Graphic file (type png)
 <use images/serverless.png>
 Package pdftex.def Info: images/serverless.png  used on input line 87.
@@ -2127,7 +2127,7 @@ Package pdftex.def Info: images/serverless.png  used on input line 87.
 [18 <./images/serverless.png>]
 
 [19]
-<./images/circuit_breaker.png, id=354, 907.89188pt x 654.94687pt>
+<./images/circuit_breaker.png, id=361, 907.89188pt x 654.94687pt>
 File: ./images/circuit_breaker.png Graphic file (type png)
 <use ./images/circuit_breaker.png>
 Package pdftex.def Info: ./images/circuit_breaker.png  used on input line 111.
@@ -2137,7 +2137,7 @@ Package pdftex.def Info: ./images/circuit_breaker.png  used on input line 111.
 [20 <./images/circuit_breaker.png (PNG copy)>]
 
 [21]
-<images/docker.png, id=413, 1027.84pt x 1027.84pt>
+<images/docker.png, id=420, 1027.84pt x 1027.84pt>
 File: images/docker.png Graphic file (type png)
 <use images/docker.png>
 Package pdftex.def Info: images/docker.png  used on input line 152.
@@ -2147,7 +2147,7 @@ Package pdftex.def Info: images/docker.png  used on input line 152.
 [22 <./images/docker.png (PNG copy)>]
 
 [23]
-<images/microservice.png, id=452, 639.89063pt x 391.4625pt>
+<images/microservice.png, id=459, 639.89063pt x 391.4625pt>
 File: images/microservice.png Graphic file (type png)
 <use images/microservice.png>
 Package pdftex.def Info: images/microservice.png  used on input line 188.
@@ -2159,7 +2159,7 @@ Package pdftex.def Info: images/microservice.png  used on input line 188.
 [25]
 
 [26]
-<images/rest.png, id=521, 1027.84pt x 657.45625pt>
+<images/rest.png, id=528, 1027.84pt x 657.45625pt>
 File: images/rest.png Graphic file (type png)
 <use images/rest.png>
 Package pdftex.def Info: images/rest.png  used on input line 311.
@@ -2174,7 +2174,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 [28{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./images/rest.png>]
-<images/grpc.png, id=552, 1094.0875pt x 517.935pt>
+<images/grpc.png, id=559, 1094.0875pt x 517.935pt>
 File: images/grpc.png Graphic file (type png)
 <use images/grpc.png>
 Package pdftex.def Info: images/grpc.png  used on input line 339.
@@ -2184,56 +2184,65 @@ Package pdftex.def Info: images/grpc.png  used on input line 339.
 [29 <./images/grpc.png>]
 
 [30]
-<images/kube-arch.png, id=608, 1027.84pt x 1027.84pt>
+
+[31]
+<images/kube-arch.png, id=625, 1027.84pt x 1027.84pt>
 File: images/kube-arch.png Graphic file (type png)
 <use images/kube-arch.png>
-Package pdftex.def Info: images/kube-arch.png  used on input line 387.
+Package pdftex.def Info: images/kube-arch.png  used on input line 393.
 (pdftex.def)             Requested size: 295.74722pt x 295.7448pt.
 
 
-[31]
-
 [32 <./images/kube-arch.png (PNG copy)>]
-<images/k8s-observability-architecture.png, id=639, 1027.84pt x 1027.84pt>
-File: images/k8s-observability-architecture.png Graphic file (type png)
-<use images/k8s-observability-architecture.png>
-Package pdftex.def Info: images/k8s-observability-architecture.png  used on input line 418.
-(pdftex.def)             Requested size: 364.00139pt x 363.99963pt.
-
 
 [33]
-<images/teoria-controle.png, id=656, 1027.84pt x 1027.84pt>
+<images/k8s-observability-architecture.png, id=659, 1027.84pt x 1027.84pt>
+File: images/k8s-observability-architecture.png Graphic file (type png)
+<use images/k8s-observability-architecture.png>
+Package pdftex.def Info: images/k8s-observability-architecture.png  used on input line 424.
+(pdftex.def)             Requested size: 364.00139pt x 363.99963pt.
+<images/teoria-controle.png, id=669, 1027.84pt x 1027.84pt>
 File: images/teoria-controle.png Graphic file (type png)
 <use images/teoria-controle.png>
-Package pdftex.def Info: images/teoria-controle.png  used on input line 433.
+Package pdftex.def Info: images/teoria-controle.png  used on input line 439.
 (pdftex.def)             Requested size: 364.00139pt x 363.99963pt.
 
 
 [34 <./images/k8s-observability-architecture.png (PNG copy)>]
 
 [35 <./images/teoria-controle.png (PNG copy)>]
-<images/pillars-observability.png, id=688, 1027.84pt x 1027.84pt>
+
+[36]
+<images/pillars-observability.png, id=713, 1027.84pt x 1027.84pt>
 File: images/pillars-observability.png Graphic file (type png)
 <use images/pillars-observability.png>
-Package pdftex.def Info: images/pillars-observability.png  used on input line 472.
+Package pdftex.def Info: images/pillars-observability.png  used on input line 484.
 (pdftex.def)             Requested size: 273.00278pt x 273.00365pt.
 
 
-[36]
-
 [37 <./images/pillars-observability.png (PNG copy)>]
 
-[38
+[38]
+<images/automacao.png, id=743, 1027.84pt x 1027.84pt>
+File: images/automacao.png Graphic file (type png)
+<use images/automacao.png>
+Package pdftex.def Info: images/automacao.png  used on input line 515.
+(pdftex.def)             Requested size: 318.49861pt x 318.50163pt.
 
-])
 
-[39]
+[39 <./images/automacao.png (PNG copy)>]
 
 [40
 
-]
+])
 
 [41]
+
+[42
+
+]
+
+[43]
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
@@ -2257,18 +2266,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44534 strings out of 469590
- 819051 string characters out of 5470346
- 1938622 words of memory out of 5000000
- 70516 multiletter control sequences out of 15000+600000
+ 44561 strings out of 469590
+ 819475 string characters out of 5470346
+ 1938937 words of memory out of 5000000
+ 70539 multiletter control sequences out of 15000+600000
  666435 words of font info for 196 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  196i,13n,292p,2559b,4447s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (42 pages, 8704274 bytes).
+Output written on main.pdf (44 pages, 9887320 bytes).
 PDF statistics:
- 885 PDF objects out of 1000 (max. 8388607)
- 806 compressed objects within 9 object streams
- 127 named destinations out of 1000 (max. 500000)
- 41818 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 934 PDF objects out of 1000 (max. 8388607)
+ 852 compressed objects within 9 object streams
+ 131 named destinations out of 1000 (max. 500000)
+ 41831 words of extra memory for PDF output out of 42996 (max. 10000000)
 
