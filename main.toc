@@ -6,38 +6,57 @@
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{9}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Objetivos}{11}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Objetivo Geral}{11}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Objetivos Específicos}{11}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}LIMITAÇÃO DO ESCOPO}{11}{subsection.1.1.3}%
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{11}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Objetivos}{13}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Objetivo Geral}{13}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Objetivos Específicos}{13}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}LIMITAÇÃO DO ESCOPO}{13}{subsection.1.1.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{FUNDAMENTAÇÃO TEÓRICA}}{12}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Padrões Arquiteturais}{14}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Arquitetura Monolítica}{14}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Event-Driven Architecture}{16}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Serverless}{18}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Microsserviços}{19}{subsection.2.1.4}%
-\contentsline {subsubsection}{\numberline {2.1.4.1}Docker e Microsserviços}{21}{subsubsection.2.1.4.1}%
-\contentsline {subsubsection}{\numberline {2.1.4.2}Mecanismos de Comunicação}{23}{subsubsection.2.1.4.2}%
-\contentsline {subsubsection}{\numberline {2.1.4.3}Padrões Arquiteturais Essenciais}{24}{subsubsection.2.1.4.3}%
-\contentsline {subsubsection}{\numberline {2.1.4.4}Desafios Operacionais e Soluções}{24}{subsubsection.2.1.4.4}%
-\contentsline {subsubsection}{\numberline {2.1.4.5}Melhores Práticas de Implementação}{25}{subsubsection.2.1.4.5}%
-\contentsline {subsubsection}{\numberline {2.1.4.6}Casos de Estudo Relevantes}{25}{subsubsection.2.1.4.6}%
-\contentsline {subsubsection}{\numberline {2.1.4.7}Recomendações Estratégicas}{25}{subsubsection.2.1.4.7}%
-\contentsline {subsection}{\numberline {2.1.5}Protocolos de Comunicação para Microsserviços}{26}{subsection.2.1.5}%
-\contentsline {subsubsection}{\numberline {2.1.5.1}\gls {REST} (Representational State Transfer)}{26}{subsubsection.2.1.5.1}%
-\contentsline {subsubsection}{\numberline {2.1.5.2}gRPC (gRPC Remote Procedure Calls)}{28}{subsubsection.2.1.5.2}%
-\contentsline {section}{\numberline {2.2}OBSERVABILIDADE EM ARQUITETURAS DE MICROSSERVIÇOS}{30}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Kubernetes}{31}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Relação com a Teoria de Controle}{34}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Pilares da Observabilidade}{36}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Automação e Resposta a Incidentes}{38}{subsection.2.2.4}%
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{FUNDAMENTAÇÃO TEÓRICA}}{14}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Padrões Arquiteturais}{16}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Arquitetura Monolítica}{16}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Event-Driven Architecture}{18}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Serverless}{20}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Microsserviços}{21}{subsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.4.1}Docker e Microsserviços}{23}{subsubsection.2.1.4.1}%
+\contentsline {subsubsection}{\numberline {2.1.4.2}Mecanismos de Comunicação}{25}{subsubsection.2.1.4.2}%
+\contentsline {subsubsection}{\numberline {2.1.4.3}Padrões Arquiteturais Essenciais}{26}{subsubsection.2.1.4.3}%
+\contentsline {subsubsection}{\numberline {2.1.4.4}Desafios Operacionais e Soluções}{26}{subsubsection.2.1.4.4}%
+\contentsline {subsubsection}{\numberline {2.1.4.5}Melhores Práticas de Implementação}{27}{subsubsection.2.1.4.5}%
+\contentsline {subsubsection}{\numberline {2.1.4.6}Casos de Estudo Relevantes}{27}{subsubsection.2.1.4.6}%
+\contentsline {subsubsection}{\numberline {2.1.4.7}Recomendações Estratégicas}{27}{subsubsection.2.1.4.7}%
+\contentsline {subsection}{\numberline {2.1.5}Protocolos de Comunicação para Microsserviços}{28}{subsection.2.1.5}%
+\contentsline {subsubsection}{\numberline {2.1.5.1}\gls {REST} (Representational State Transfer)}{28}{subsubsection.2.1.5.1}%
+\contentsline {subsubsection}{\numberline {2.1.5.2}gRPC (gRPC Remote Procedure Calls)}{30}{subsubsection.2.1.5.2}%
+\contentsline {section}{\numberline {2.2}OBSERVABILIDADE EM ARQUITETURAS DE MICROSSERVIÇOS}{32}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Kubernetes}{33}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Relação com a Teoria de Controle}{36}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Pilares da Observabilidade}{38}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Automação e Resposta a Incidentes}{40}{subsection.2.2.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Proposta}}{40}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Proposta}}{42}{chapter.3}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{DESENVOLVIMENTO}}{44}{chapter.4}%
+\contentsline {section}{\numberline {4.1}VISÃO GERAL DO PROJETO}{44}{section.4.1}%
+\contentsline {section}{\numberline {4.2}AMBIENTE DE DESENVOLVIMENTO}{44}{section.4.2}%
+\contentsline {section}{\numberline {4.3}ESTRUTURA DO PROJETO}{45}{section.4.3}%
+\contentsline {section}{\numberline {4.4}IMPLEMENTAÇÃO DOS SERVIDORES}{45}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Servidor REST}{45}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Servidor gRPC}{48}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}LÓGICA DE NEGÓCIO COMPARTILHADA}{50}{section.4.5}%
+\contentsline {section}{\numberline {4.6}INTEGRAÇÃO COM OBSERVABILIDADE}{52}{section.4.6}%
+\contentsline {section}{\numberline {4.7}METODOLOGIA DE COMPARAÇÃO}{54}{section.4.7}%
+\contentsline {section}{\numberline {4.8}CONTAINERIZAÇÃO E ORQUESTRAÇÃO}{54}{section.4.8}%
+\contentsline {section}{\numberline {4.9}RESULTADOS DA COMPARAÇÃO}{55}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Análise do Tamanho de Payload}{57}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Análise do Tempo de Transferência}{58}{subsection.4.9.2}%
+\contentsline {subsection}{\numberline {4.9.3}Projeção de Economia de Largura de Banda}{58}{subsection.4.9.3}%
+\contentsline {subsection}{\numberline {4.9.4}Análise de Consumo de Recursos via Observabilidade}{59}{subsection.4.9.4}%
+\contentsline {subsubsection}{\numberline {4.9.4.1}Resultados do Teste com 15.110 Certificados}{59}{subsubsection.4.9.4.1}%
+\contentsline {subsubsection}{\numberline {4.9.4.2}Resultados do Teste com 5.000 Certificados}{61}{subsubsection.4.9.4.2}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{REFERÊNCIAS}{42}{section*.27}%
+\contentsline {chapter}{REFERÊNCIAS}{63}{section*.36}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }

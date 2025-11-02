@@ -113,7 +113,6 @@
 \RequirePackage{amssymb}
 \RequirePackage{mathtools}
 \RequirePackage{icomma}
-
 \RequirePackage{colortbl} % colorir tabelas
 \RequirePackage{multirow} %c manuseio de tabelas
 \RequirePackage[table]{xcolor} % colorir tabelas

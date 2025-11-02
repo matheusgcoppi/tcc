@@ -2,14 +2,17 @@
 \chapter{DESENVOLVIMENTO} \label{cap:desenvolvimento}
 % ----------------------------------------------------------
 
-% A estrutura de seções deste capítulo varia em função das características de cada trabalho, e deve ser definida junto com o orientador no decorrer da disciplina. A seguir é apresentada uma estrutura de seções tradicionalmente utilizada em TCCs que envolvem o desenvolvimento de um software. 
-
+O tópico de desenvolvimento será tratado desde o ambiente utilizado até o funcionamento detalhado do sistema, abordando as tecnologias empregadas, a arquitetura adotada e as decisões de implementação.
 
 % ----------------------------------------------------------
-% \section{VISÃO GERAL DO PROJETO}\label{sec:visao}
-% % ----------------------------------------------------------
+\section{VISÃO GERAL DO PROJETO}\label{sec:visao}
+% ----------------------------------------------------------
 
-% Em alguns casos, pode ser interessante fornecer ao leitor uma visão geral do projeto, especialmente quando a solução é complexa e/ou envolve diversos componentes. Você também pode utilizar esta seção para falar um pouco sobre o modelo de processo de software adotado (cascata, espiral, incremental, …) e o planejamento das atividades realizadas.
+O projeto consiste em uma implementação prática para comparar os protocolos REST e gRPC em uma arquitetura de microsserviços. A aplicação foi desenvolvida em Go e possui dois servidores independentes: um utilizando REST com JSON e outro usando gRPC com Protocol Buffers. Ambos compartilham a mesma lógica de negócio para garantir uma comparação justa.
+
+A funcionalidade implementada envolve a geração de certificados X.509. Essa escolha permite avaliar como cada protocolo se comporta ao lidar com diferentes volumes de dados e operações de serialização.
+
+Para viabilizar a observabilidade, o projeto integra Prometheus para coleta de métricas, Grafana para visualização e cAdvisor para monitoramento dos contêineres Docker. Essas ferramentas permitem acompanhar métricas como latência, uso de CPU e memória, e tamanho de payload em tempo real.
 
 % \begin{figure}[htb]
 % 	\begin{center}
@@ -100,11 +103,506 @@
 % O código SQL de construção do esquema de banco de dados encontra-se no Apêndice B deste trabalho.
 
 % ----------------------------------------------------------
-\subsection{IMPLEMENTAÇÃO}
+\section{AMBIENTE DE DESENVOLVIMENTO}\label{sec:ambiente}
 % ----------------------------------------------------------
 
-Nesta seção você pode falar um pouco sobre o código desenvolvido. Não é necessário explicar ou apresentar todo o código fonte da aplicação. Você pode focar nas principais classes ou funções. É importante explicar quais foram as ferramentas utilizadas e o porquê da escolha de cada uma delas.
+O ambiente de desenvolvimento foi configurado utilizando Go versão 1.24.6 como linguagem principal. A escolha do Go se justifica por suas características de \textit{performance}, suporte nativo a concorrência através de \textit{goroutines} e amplo ecossistema para desenvolvimento de microsserviços. Além disso, a linguagem possui bibliotecas maduras tanto para construção de APIs REST quanto para implementação de serviços gRPC.
 
-Você deve colocar o código na pasta sources e carrega-lo ao apêndice, usando aqui apenas uma referência ou trechos de código.
+Para o desenvolvimento foi utilizado o \textit{goland} como editor principal. O projeto utiliza Go \textit{Modules} para gerenciamento de dependências, facilitando a reprodutibilidade do ambiente. As principais dependências incluem o framework gRPC (\texttt{google.golang.org/grpc}), Protocol Buffers (\texttt{google.golang.org/protobuf}), cliente Prometheus (\texttt{github.com/prometheus/client\_golang}) e geração de UUIDs (\texttt{github.com/google/uuid}).
 
-O código presente no Apêndice \ref{apendice:b} representa ....
+A containerização foi realizada através do \textit{Docker}, permitindo que ambos os servidores executem em ambientes isolados e padronizados. O \textit{Docker Compose} orquestra os serviços necessários (REST, gRPC, \textit{Prometheus}, \textit{Grafana} e \textit{cAdvisor}), simplificando o processo de execução e testes. Os \textit{Dockerfiles} utilizam \textit{builds} multi-estágio baseados em \textit{Alpine Linux}, resultando em imagens finais com aproximadamente 25-30MB.
+
+% \begin{figure}[htb]
+%     \begin{center}
+% 	    \includegraphics{images/figura3.png}
+% 	\end{center}
+% 	\caption{\label{fig:Fig_3}Modelo de banco de dados}
+% 	\fonte{Elaborado pelo autor deste trabalho com o uso da ferramenta StarUML (2018).}
+% \end{figure}
+
+% ----------------------------------------------------------
+\section{ESTRUTURA DO PROJETO}\label{sec:estrutura}
+% ----------------------------------------------------------
+
+A organização do código segue convenções da comunidade Go. O diretório \texttt{cmd/} contém os pontos de entrada das aplicações: \texttt{cmd/server/main.go} para o servidor REST e \texttt{cmd/grpc\_server/main.go} para o servidor gRPC. Esses arquivos são responsáveis apenas pela inicialização dos servidores e configuração básica.
+
+A lógica de negócio reside no diretório \texttt{internal/}, que está dividido em camadas. A pasta \texttt{internal/domain/} contém as estruturas de dados do domínio, como \texttt{Certificate} e \texttt{CertificateRequest}. A camada \texttt{internal/service/} implementa a lógica de geração de certificados X.509, sendo compartilhada por ambas as implementações de protocolo.
+
+Para REST, os controladores HTTP estão em \texttt{internal/api/controller/}, enquanto o middleware de métricas Prometheus fica em \texttt{internal/api/middleware/}. Para gRPC, a implementação do servidor está em \texttt{internal/grpc/server.go}. As definições Protocol Buffer residem em \texttt{proto/certificate.proto}, e o código Go gerado automaticamente pelo compilador protoc fica na mesma pasta.
+
+Os arquivos de configuração Docker ficam em \texttt{zarf/docker/}, incluindo \texttt{rest.dockerfile} e \texttt{grpc.dockerfile}. O diretório \texttt{zarf/keys/} armazena as chaves RSA necessárias para assinatura de certificados, enquanto \texttt{zarf/certificates/} recebe os certificados gerados em tempo de execução.
+
+% ----------------------------------------------------------
+\section{IMPLEMENTAÇÃO DOS SERVIDORES}\label{sec:servidores}
+% ----------------------------------------------------------
+
+\subsection{Servidor REST}
+
+O servidor REST foi implementado em \texttt{cmd/server/main.go} utilizando exclusivamente o pacote \texttt{net/http} da biblioteca padrão do Go, sem frameworks externos. O servidor escuta na porta 8000 e utiliza o multiplexador HTTP padrão para roteamento de requisições.
+
+A inicialização do servidor segue uma estrutura de três camadas: serviços são instanciados primeiro (recebendo paths para chave privada e diretório de certificados), seguidos pelos controladores que dependem dos serviços, e finalmente as rotas HTTP são registradas. Optei por esta arquitetura em camadas para permitir reutilização da lógica de negócio entre o servidor REST e o servidor gRPC.
+
+\begin{lstlisting}[language=Go, caption={Inicialização do servidor REST},label=lst:rest-init]
+func main() {
+    // Initialize services
+    certificateService := service.NewCertificateService(
+        "zarf/keys/private_key.pem",
+        "zarf/certificates")
+
+    // Initialize controllers
+    certificateController := controller.NewCertificateController(
+        certificateService)
+
+    // Setup routes with Prometheus middleware
+    http.HandleFunc("/certificate/all",
+        middleware.PrometheusMiddleware(
+            certificateController.GetAllCertificates))
+    http.Handle("/metrics", promhttp.Handler())
+
+    log.Fatal(http.ListenAndServe(":8000", nil))
+}
+\end{lstlisting}
+
+Todos os endpoints foram envolvidos pelo \texttt{PrometheusMiddleware} para coleta automática de métricas. O \textit{middleware} implementa três métricas principais: \texttt{http\_requests\_total} (contador de requisições por método, \textit{endpoint} e \textit{status}), \texttt{http\_request\_duration\_seconds} (histograma de latência com \textit{buckets} padrão do \textit{Prometheus}), e \texttt{active\_connections} (\textit{gauge} de conexões ativas). Esta instrumentação foi fundamental para as análises de desempenho apresentadas na Seção \ref{sec:resultados}.
+
+\begin{lstlisting}[language=Go, caption={Middleware Prometheus implementado},label=lst:prom-middleware]
+func PrometheusMiddleware(next http.HandlerFunc) http.HandlerFunc {
+    return func(w http.ResponseWriter, r *http.Request) {
+        start := time.Now()
+        activeConnections.Inc()
+        defer activeConnections.Dec()
+
+        rw := &responseWriter{ResponseWriter: w, statusCode: http.StatusOK}
+        next(rw, r)
+
+        duration := time.Since(start).Seconds()
+        httpRequestDuration.WithLabelValues(r.Method, r.URL.Path).Observe(duration)
+        httpRequestsTotal.WithLabelValues(r.Method, r.URL.Path,
+            strconv.Itoa(rw.statusCode)).Inc()
+    }
+}
+\end{lstlisting}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{images/rest-main.png}
+\caption{Código de inicialização do servidor REST em \texttt{cmd/server/main.go}.}
+\label{fig:rest-main}
+\fonte{Elaborado pelo autor (2025).}
+\end{figure}
+
+Os endpoints implementados no servidor REST são:
+
+\begin{itemize}
+    \item \texttt{POST /certificate}: Gera um novo certificado X.509 baseado nos parâmetros recebidos em JSON
+    \item \texttt{GET /certificate/get?filename=X}: Recupera um certificado específico por nome de arquivo
+    \item \texttt{GET /certificate/list}: Lista os nomes de todos os certificados armazenados
+    \item \texttt{GET /certificate/all}: Retorna um mapa completo com todos os certificados e seus conteúdos em formato JSON (endpoint principal utilizado nos testes de comparação)
+    \item \texttt{GET /certificate/benchmark}: Endpoint de medição que retorna estatísticas de tempo de busca, serialização e tamanho do payload JSON
+    \item \texttt{GET /metrics}: Expõe métricas do Prometheus para scraping
+    \item \texttt{GET /health}: Verifica o status de saúde do serviço
+\end{itemize}
+
+O \textit{endpoint} \texttt{/certificate/all} foi escolhido como base de comparação por retornar o volume completo de dados, permitindo avaliar o comportamento dos protocolos sob carga de transferência significativa. A serialização de resposta é feita com \texttt{json.Marshal} da biblioteca padrão Go.
+
+\subsection{Servidor gRPC}
+
+O servidor gRPC foi implementado em \texttt{cmd/grpc\_server/main.go} escutando na porta 50051. O contrato de serviço foi definido utilizando Protocol Buffers versão 3 no arquivo \texttt{proto/certificate.proto}.
+
+\begin{lstlisting}[caption={Definição do serviço em Protocol Buffers (certificate.proto)},label=lst:proto-def]
+syntax = "proto3";
+package certificate;
+
+service CertificateService {
+  rpc GetAllCertificates(GetAllRequest) returns (GetAllResponse);
+  rpc ListCertificates(ListRequest) returns (ListResponse);
+  rpc GetCertificate(GetRequest) returns (GetResponse);
+  rpc BenchmarkGetAll(GetAllRequest) returns (BenchmarkResponse);
+}
+
+message GetAllResponse {
+  map<string, string> certificates = 1;
+}
+
+message BenchmarkResponse {
+  int32 certificate_count = 1;
+  int64 payload_size_bytes = 2;
+  double payload_size_mb = 3;
+  int64 fetch_duration_ms = 4;
+  int64 serialize_duration_ms = 5;
+  int64 total_duration_ms = 6;
+  string serialization_format = 7;
+}
+\end{lstlisting}
+
+O método \texttt{GetAllCertificates} é equivalente ao endpoint REST \texttt{/certificate/all}, retornando um mapa de certificados. O método \texttt{BenchmarkGetAll} fornece estatísticas detalhadas de serialização Protobuf para comparação com JSON.
+
+O código Go foi gerado automaticamente a partir do arquivo \texttt{.proto} usando os comandos:
+
+\begin{lstlisting}[language=bash]
+protoc --go_out=. --go_opt=paths=source_relative \
+       --go-grpc_out=. --go-grpc_opt=paths=source_relative \
+       proto/certificate.proto
+\end{lstlisting}
+
+A inicialização do servidor gRPC configurou \texttt{MaxRecvMsgSize} e \texttt{MaxSendMsgSize} para 50 MB, necessário porque a transferência de 15.110 certificados gera payloads próximos a 19 MB, superando o limite padrão de 4 MB do gRPC.
+
+\begin{lstlisting}[language=Go, caption={Inicialização do servidor gRPC},label=lst:grpc-init]
+func main() {
+    certificateService := service.NewCertificateService(
+        "/zarf/keys/private_key.pem",
+        "/zarf/certificates")
+
+    maxMsgSize := 50 * 1024 * 1024 // 50MB
+    grpcServer := grpc.NewServer(
+        grpc.MaxRecvMsgSize(maxMsgSize),
+        grpc.MaxSendMsgSize(maxMsgSize),
+    )
+
+    certificateServer := grpcserver.NewCertificateServer(
+        certificateService)
+    pb.RegisterCertificateServiceServer(grpcServer, certificateServer)
+
+    listener, err := net.Listen("tcp", ":50051")
+    grpcServer.Serve(listener)
+}
+\end{lstlisting}
+
+A implementação dos métodos RPC em \texttt{internal/grpc/server.go} delega a lógica de negócio para o mesmo \texttt{CertificateService} utilizado pelo servidor REST, garantindo comportamento idêntico entre os protocolos. A diferença reside exclusivamente na camada de transporte (HTTP/2 vs HTTP/1.1) e serialização (Protobuf vs JSON).
+
+Cada método RPC foi implementado como uma função que recebe \texttt{context.Context} e uma mensagem de requisição, retornando uma mensagem de resposta e erro. Por exemplo, \texttt{GetAllCertificates} chama \texttt{certificateService.GetAllCertificates()}, recebe o mapa de certificados, e o encapsula em \texttt{pb.GetAllResponse\{Certificates: certificates\}}. O framework gRPC automaticamente serializa essa resposta em Protobuf binário antes de transmitir pela rede.
+
+O método \texttt{BenchmarkGetAll} implementa medições detalhadas similares ao \textit{endpoint} REST equivalente. Ele mede o tempo de busca dos certificados, serializa manualmente a resposta usando \texttt{proto.Marshal} para obter o tamanho exato do \textit{payload} \textit{Protobuf}, e retorna estatísticas incluindo contagem de certificados, tamanho em \textit{bytes}, tempos de busca e serialização. Esta implementação foi essencial para comparar o desempenho de serialização entre JSON e Protobuf de forma controlada.
+
+O servidor gRPC foi containerizado usando \textit{Dockerfile multi-stage} em \texttt{zarf/docker/grpc.dockerfile}. O primeiro estágio compila o código Go com \texttt{CGO\_ENABLED=0} para gerar binário estático, e o segundo estágio copia o binário para imagem \textit{Alpine Linux} mínima. Os volumes Docker mapeiam \texttt{zarf/keys} em modo read-only (fornecendo a chave privada RSA) e \texttt{zarf/certificates} em modo read-write (compartilhado com o servidor REST para armazenar certificados). Este compartilhamento de volumes garante que ambos os servidores acessem exatamente os mesmos arquivos de certificados durante os testes.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{images/grpc-main.png}
+\caption{Código de inicialização do servidor gRPC em \texttt{cmd/grpc\_server/main.go}.}
+\label{fig:grpc-main}
+\fonte{Elaborado pelo autor (2025).}
+\end{figure}
+
+Os métodos RPC implementados em \texttt{internal/grpc/server.go} são:
+
+\begin{itemize}
+    \item \texttt{GetAllCertificates}: Retorna todos os certificados como mapa (método principal usado nos testes)
+    \item \texttt{ListCertificates}: Lista apenas os nomes dos arquivos de certificados
+    \item \texttt{GetCertificate}: Recupera um certificado específico por nome
+    \item \texttt{BenchmarkGetAll}: Retorna estatísticas de tempo de busca, serialização Protobuf e tamanho do payload binário
+\end{itemize}
+
+% ----------------------------------------------------------
+\section{LÓGICA DE NEGÓCIO COMPARTILHADA}\label{sec:logica}
+% ----------------------------------------------------------
+
+Ambos os servidores (REST e gRPC) compartilham a mesma implementação de lógica de negócio através do \texttt{CertificateService}, definido em \texttt{internal/service/certificate.go}. Esta decisão arquitetural foi fundamental para garantir que a comparação avalie exclusivamente as diferenças de protocolo e serialização, não diferenças na lógica de negócio.
+
+A interface do serviço define quatro operações:
+
+\begin{lstlisting}[language=Go, caption={Interface CertificateService},label=lst:cert-service-interface]
+type CertificateService interface {
+    GenerateCertificate(req domain.CertificateRequest) (*domain.Certificate, error)
+    GetCertificate(filename string) (string, error)
+    ListCertificates() ([]string, error)
+    GetAllCertificates() (map[string]string, error)
+}
+\end{lstlisting}
+
+O método \texttt{GetAllCertificates} é o mais relevante para os testes de comparação, pois retorna todos os certificados armazenados:
+
+\begin{lstlisting}[language=Go, caption={Implementação de GetAllCertificates},label=lst:getall-impl]
+func (s *certificateService) GetAllCertificates() (map[string]string, error) {
+    files, err := filepath.Glob(filepath.Join(s.outputDir, "certificate_*.crt"))
+    if err != nil {
+        return nil, fmt.Errorf("failed to list certificates: %w", err)
+    }
+
+    certificates := make(map[string]string)
+    for _, file := range files {
+        filename := filepath.Base(file)
+        certBytes, err := os.ReadFile(file)
+        if err != nil {
+            return nil, fmt.Errorf("failed to read certificate %s: %w", filename, err)
+        }
+        certificates[filename] = string(certBytes)
+    }
+
+    return certificates, nil
+}
+\end{lstlisting}
+
+Este método busca todos os arquivos \texttt{.crt} no diretório configurado, lê cada arquivo e retorna um mapa onde a chave é o nome do arquivo e o valor é o conteúdo do certificado em formato PEM. Este mapa é então serializado em JSON (no servidor REST) ou Protobuf (no servidor gRPC).
+
+A geração de certificados X.509 utiliza os pacotes \texttt{crypto/x509} e \texttt{crypto/rsa} da biblioteca padrão Go. Os certificados são autoassinados com chave RSA carregada de \texttt{zarf/keys/private\_key.pem}, têm validade de 1 ano, e incluem Conteúdo configurável. Cada certificado recebe número de série baseado no \textit{timestamp} Unix e é salvo com nome único incluindo timestamp e nanosegundos para evitar colisões.
+
+% ----------------------------------------------------------
+\section{INTEGRAÇÃO COM OBSERVABILIDADE}\label{sec:observabilidade}
+% ----------------------------------------------------------
+
+A stack de observabilidade foi configurada usando Docker Compose com cinco serviços: rest-app, grpc-app, prometheus, grafana e cadvisor. O Prometheus coleta métricas de três fontes: endpoint \texttt{/metrics} do servidor REST (porta 8000), endpoint \texttt{/metrics} do servidor gRPC (porta 8000), e métricas de containers do cAdvisor (porta 8080).
+
+A configuração do \textit{Prometheus} em \texttt{prometheus.yml} define intervalos de \textit{scraping} diferenciados:
+
+\begin{lstlisting}[caption={Configuração do Prometheus (prometheus.yml)},label=lst:prometheus-config]
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'rest-app'
+    static_configs:
+      - targets: ['rest-app:8000']
+    scrape_interval: 5s
+    metrics_path: '/metrics'
+
+  - job_name: 'grpc-app'
+    static_configs:
+      - targets: ['grpc-app:8000']
+    scrape_interval: 5s
+    metrics_path: '/metrics'
+
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+    scrape_interval: 5s
+    metrics_path: '/metrics'
+\end{lstlisting}
+
+Configurei scrape\_interval de 5 segundos para os servidores de aplicação (3x mais frequente que o padrão de 15s) para capturar picos de CPU e memória durante as transferências de certificados, que têm duração de poucos segundos. O Prometheus foi configurado com retenção de 200 horas (\texttt{--storage.tsdb.retention.time=200h}).
+
+O cAdvisor foi configurado em \texttt{docker-compose.yaml} para coletar métricas de containers Docker com \texttt{housekeeping\_interval} de 10 segundos:
+
+\begin{lstlisting}[caption={Configuração do cAdvisor (docker-compose.yaml)},label=lst:cadvisor-config]
+cadvisor:
+  image: gcr.io/cadvisor/cadvisor:latest
+  ports:
+    - "8080:8080"
+  command:
+    - --store_container_labels=true
+    - --docker_only=true
+    - --housekeeping_interval=10s
+  volumes:
+    - /:/rootfs:ro
+    - /var/run:/var/run:ro
+    - /sys:/sys:ro
+    - /var/lib/docker/:/var/lib/docker:ro
+  privileged: true
+\end{lstlisting}
+
+O \textit{Grafana} foi configurado com credenciais admin/admin e acessa os dados do \textit{Prometheus} para visualização. Os \textit{dashboards} criados exibem as métricas de CPU e memória coletadas pelo \textit{cAdvisor}, que são apresentadas nas Figuras \ref{fig:grafana-rest}, \ref{fig:grafana-grpc}, \ref{fig:grafana-rest-5k} e \ref{fig:grafana-grpc-5k}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{images/grafana-cpu-memory.png}
+\caption{Dashboard do Grafana exibindo métricas de CPU e memória dos contêineres.}
+\label{fig:grafana-dashboard}
+\fonte{Elaborado pelo autor (2025).}
+\end{figure}
+
+% ----------------------------------------------------------
+\section{METODOLOGIA DE COMPARAÇÃO}\label{sec:metodologia}
+% ----------------------------------------------------------
+
+Para viabilizar a comparação quantitativa entre REST e gRPC, foram implementados endpoints especializados de benchmark em ambos os servidores. Esses endpoints executam operações idênticas: recuperam todos os certificados armazenados, serializam os dados e retornam métricas detalhadas sem transmitir o payload completo pela rede.
+
+O endpoint REST \texttt{/certificate/benchmark} mede o tempo de leitura dos arquivos do disco e o tempo de serialização JSON através de \texttt{json.Marshal}. O endpoint gRPC \texttt{BenchmarkGetAll} realiza medições equivalentes utilizando \texttt{proto.Marshal} para serialização Protobuf. Ambos retornam um objeto de resposta contendo:
+
+\begin{itemize}
+    \item Contagem de certificados processados
+    \item Tamanho total do payload em bytes e megabytes
+    \item Tempo gasto na leitura do disco
+    \item Tempo gasto na serialização
+    \item Tempo total da operação
+    \item Formato de serialização utilizado (JSON ou Protobuf)
+\end{itemize}
+
+\textit{Scripts} em \textit{shell} foram desenvolvidos para automatizar os testes de carga. O \textit{script} \texttt{compare.sh} executa requisições para ambos os \textit{endpoints} de \textit{benchmark}, extrai as métricas usando \texttt{jq} para \textit{parsing} JSON e calcula percentuais de redução de tamanho e ganhos de velocidade. Outro \textit{script}, \texttt{load\_test.sh}, permite executar múltiplas requisições concorrentes para simular carga e avaliar comportamento sob \textit{stress}.
+
+% ----------------------------------------------------------
+\section{CONTAINERIZAÇÃO E ORQUESTRAÇÃO}\label{sec:containers}
+% ----------------------------------------------------------
+
+Os \textit{Dockerfiles} utilizam \textit{build} multi-estágio para otimizar o tamanho final das imagens. O primeiro estágio compila o código Go com \texttt{CGO\_ENABLED=0} para gerar binários estáticos que não dependem de bibliotecas C externas. O segundo estágio copia apenas o binário compilado para uma imagem Alpine Linux mínima.
+
+Usuários não-root foram configurados nos contêineres por questões de segurança. Os volumes Docker mapeiam o diretório \texttt{zarf/keys} em modo read-only para fornecer as chaves de assinatura, e \texttt{zarf/certificates} em modo read-write para armazenar certificados gerados.
+
+O \textit{Docker Compose} orquestra cinco serviços simultaneamente: \texttt{rest-app} na porta 8000, \texttt{grpc-app} na porta 50051, \texttt{prometheus} na porta 9090, \texttt{grafana} na porta 3000 com credenciais admin/admin, e \texttt{cadvisor} na porta 8080. Todos os serviços se comunicam através de uma rede \textit{bridge} padrão criada automaticamente.
+
+\textit{Volumes} nomeados garantem a persistência de dados do \textit{Prometheus} e configurações do \textit{Grafana} mesmo após reinicialização dos contêineres. O comando \texttt{make dev} definido no \textit{Makefile} simplifica todo o processo de \textit{build} e inicialização da \textit{stack} completa.
+
+% ----------------------------------------------------------
+\section{RESULTADOS DA COMPARAÇÃO}\label{sec:resultados}
+% ----------------------------------------------------------
+
+Para avaliar empiricamente as diferenças entre REST e gRPC, foi desenvolvido o script \texttt{compare\_full.sh} que automatiza a execução de testes comparativos. O script realiza requisições para o endpoint \texttt{/certificate/all} no servidor REST e para o método RPC \texttt{GetAllCertificates} no servidor gRPC, ambos retornando o conjunto completo de certificados armazenados.
+
+Os testes foram executados com duas bases distintas de certificados para avaliar o comportamento dos protocolos em diferentes escalas. O primeiro teste utilizou 5.110 certificados (aproximadamente 6,4 MB) e o segundo utilizou 15.110 certificados (aproximadamente 19 MB). O \textit{script} mede três aspectos principais: tamanho do \textit{payload} transmitido, tempo de transferência completa e calcula métricas derivadas como redução de tamanho, fator de \textit{speedup} e economia de largura de banda em cenários de múltiplas requisições.
+
+O script \texttt{compare\_full.sh} implementa a metodologia de teste completa. Para o servidor REST, o script utiliza \texttt{curl} para requisitar o endpoint \texttt{/certificate/all}, salva a resposta JSON em arquivo temporário, e mede o tempo total usando \texttt{date +\%s.\%N} antes e depois da requisição. O comando \texttt{wc -c} extrai o tamanho do arquivo em bytes, e \texttt{jq '.|length'} conta o número de certificados no JSON retornado.
+
+Para o servidor gRPC, o \textit{script} compila dinamicamente um cliente Go temporário que importa o \textit{package} \texttt{proto} gerado, conecta ao servidor na porta 50051, invoca \texttt{GetAllCertificates}, e serializa a resposta completa usando \texttt{proto.Marshal} para obter o tamanho binário exato do \textit{payload Protobuf}. Este cliente também mede o tempo de transferência completa. A compilação em tempo de execução permite que o \textit{script} seja executado sem dependências pré-compiladas.
+
+O \textit{script} calcula automaticamente três métricas principais: redução de tamanho (percentual e absoluto), fator de \textit{speedup} (razão entre tempos de REST e gRPC), e economia de largura de banda projetada para 100 requisições. Os resultados são formatados em tabela ASCII e salvos em arquivo de \textit{log} com \textit{timestamp}. Esta automação permitiu executar múltiplas iterações dos testes para validar a consistência dos resultados.
+
+Os certificados utilizados nos testes foram gerados previamente usando o \textit{endpoint} \texttt{POST /certificate} do servidor REST. Cada certificado contém \textit{Subject} padrão (\textit{CommonName}="localhost", \textit{Organization}="Test"), validade de 1 ano, e \textit{payload} JSON vazio. Os arquivos foram armazenados em \texttt{zarf/certificates/} com nomenclatura \texttt{certificate\_YYYYMMDD\_HHMMSS\_nnnnnnnnn.crt}, onde os nanosegundos garantem unicidade. Este formato PEM padrão ocupa aproximadamente 1,3 KB por certificado.
+
+Entre cada teste, os servidores foram reiniciados usando \texttt{docker-compose restart rest-app grpc-app} para limpar caches de memória e garantir condições iniciais equivalentes. Aguardamos 10 segundos após a reinicialização para estabilização completa dos processos antes de executar as requisições de teste. Esta metodologia elimina variáveis de estado residual que poderiam influenciar os resultados.
+
+As Figuras \ref{fig:comparison-results-5k} e \ref{fig:comparison-results-15k} apresentam os resultados obtidos nas execuções do script de comparação, capturando screenshots do terminal durante a execução dos testes.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{images/comparison-results.png}
+\caption{Resultados da comparação entre REST/JSON e gRPC/Protobuf na transferência de 5.110 certificados.}
+\label{fig:comparison-results-5k}
+\fonte{Elaborado pelo autor (2025).}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{images/comparasio-results-15110.png}
+\caption{Resultados da comparação entre REST/JSON e gRPC/Protobuf na transferência de 15.110 certificados.}
+\label{fig:comparison-results-15k}
+\fonte{Elaborado pelo autor (2025).}
+\end{figure}
+
+
+
+\subsection{Análise do Tamanho de Payload}
+
+Nos testes executados, observamos os seguintes tamanhos de payload:
+
+**Teste com 5.110 certificados:**
+\begin{itemize}
+    \item REST/JSON: 6.750.564 bytes (6,43 MB)
+    \item gRPC/Protobuf: 6.653.472 bytes (6,35 MB)
+    \item Redução: 97.092 bytes (2\%)
+\end{itemize}
+
+**Teste com 15.110 certificados:**
+\begin{itemize}
+    \item REST/JSON: 19.960.564 bytes (19,03 MB)
+    \item gRPC/Protobuf: 19.673.472 bytes (18,76 MB)
+    \item Redução: 287.092 bytes (2\%)
+\end{itemize}
+
+A redução de payload manteve-se consistente em 2\% em ambos os testes, independentemente da escala (5k ou 15k certificados).
+
+\subsection{Análise do Tempo de Transferência}
+
+Nos testes de tempo de transferência, observamos:
+
+**Teste com 5.110 certificados:**
+\begin{itemize}
+    \item REST: 1,985 segundos
+    \item gRPC: 0,657 segundos
+    \item Speedup: 3,02x (gRPC 3 vezes mais rápido)
+    \item Diferença absoluta: 1,328 segundos
+\end{itemize}
+
+**Teste com 15.110 certificados:**
+\begin{itemize}
+    \item REST: 3,438 segundos
+    \item gRPC: 1,944 segundos
+    \item Speedup: 1,76x (gRPC 76\% mais rápido)
+    \item Diferença absoluta: 1,494 segundos
+\end{itemize}
+
+O speedup foi mais pronunciado no teste de 5k certificados (3,02x) comparado ao teste de 15k certificados (1,76x). A diferença absoluta de tempo manteve-se próxima em ambos os cenários (~1,4-1,5 segundos).
+
+\subsection{Projeção de Economia de Largura de Banda}
+
+O script calcula projeções para cenários de múltiplas requisições. No teste com 5.110 certificados, 100 requisições consumiriam 643 MB com REST e 634,52 MB com gRPC, economizando 8,48 MB. No teste com 15.110 certificados, 100 requisições totalizariam 1.903 MB com REST e 1.876,21 MB com gRPC, economizando 26,79 MB.
+
+A economia proporcional se mantém constante em 2\%, mas o volume absoluto economizado escala linearmente com o tamanho dos dados. Em sistemas de alta escala com milhões de requisições diárias, essa diferença se torna significativa. Considerando o cenário maior, 1 milhão de requisições economizaria aproximadamente 268 GB de tráfego de rede, reduzindo custos de transferência em ambientes cloud que cobram por largura de banda.
+
+Além da economia financeira, a redução de largura de banda beneficia usuários em redes com capacidade limitada ou tarifadas por volume de dados, como conexões móveis. O tempo total economizado em 1 milhão de requisições no cenário de 15.110 certificados seria de aproximadamente 415 horas (17 dias) considerando o speedup de 1,76x, representando ganho substancial de eficiência operacional.
+
+\subsection{Análise de Consumo de Recursos via Observabilidade}
+
+As métricas de CPU e memória foram coletadas pelo cAdvisor com resolução de 1 segundo e armazenadas no Prometheus. Foram realizados testes com dois volumes de dados: 15.110 certificados (19 MB) e 5.000 certificados (6,4 MB).
+
+\subsubsection{Resultados do Teste com 15.110 Certificados}
+
+As Figuras \ref{fig:grafana-rest} e \ref{fig:grafana-grpc} apresentam as métricas coletadas durante a transferência de 15.110 certificados. Os gráficos exibem o consumo de CPU em percentual e o uso de memória em mebibytes (MiB) ao longo de todo o período de execução do teste, capturando tanto o momento da requisição quanto o período de estabilização posterior.
+
+As métricas foram visualizadas através de \textit{dashboards} personalizados criados no \textit{Grafana}. Configurei \textit{queries} PromQL específicas para extrair as métricas do \textit{cAdvisor}: \texttt{container\_cpu\_usage\_seconds\_total} para utilização de CPU normalizada por número de cores, e \texttt{container\_memory\_working\_set\_bytes} para consumo de memória RSS excluindo cache. Os gráficos foram configurados com janela de tempo sincronizada para permitir comparação visual direta entre os servidores.
+
+Durante a execução dos testes, mantive o \textit{Grafana} aberto em modo de atualização automática (\textit{refresh} de 5 segundos) para observar o comportamento em tempo real. Executei o comando \texttt{curl http://localhost:8000/certificate/all} para REST e o cliente gRPC equivalente, observando os picos de recursos no momento exato da transferência. Os gráficos capturados nas figuras representam uma janela temporal de aproximadamente 10 minutos, incluindo o período antes, durante e após a requisição.
+
+Os servidores estavam em estado \textit{idle} antes de cada teste, com consumo de CPU próximo a zero e memória base (\textit{footprint} do processo Go e suas estruturas). Após a requisição, observei o pico de utilização durante o processamento, seguido de declínio gradual à medida que o \textit{garbage collector} do Go liberava memória não utilizada. O período de estabilização completo levou cerca de 2-3 minutos em ambos os servidores.
+
+Para garantir captura precisa dos picos, sincronizei manualmente a execução do comando \texttt{curl} com a observação do \textit{timestamp} no \textit{Grafana}. Aguardei o servidor estabilizar completamente (CPU < 0,1\% por pelo menos 30 segundos) antes de executar cada requisição de teste. Após a execução, aguardei o consumo de memória retornar a valores próximos ao baseline antes de tirar o \textit{screenshot}. Esta metodologia assegurou que os gráficos capturassem o ciclo completo de carga-processamento-estabilização.
+
+Os \textit{screenshots} foram salvos em resolução 1920x1080 diretamente do navegador \textit{Chrome} em tela cheia, com \textit{zoom} de 100\% para garantir legibilidade dos valores numéricos nas legendas. Editei as imagens apenas para recortar bordas desnecessárias do navegador, mantendo toda a área de gráficos intacta.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{images/grafana-rest-15k.png}
+\caption{Métricas de CPU e memória do servidor REST durante transferência de 15.110 certificados.}
+\label{fig:grafana-rest}
+\fonte{Elaborado pelo autor (2025).}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{images/grafana-grpc-15k.png}
+\caption{Métricas de CPU e memória do servidor gRPC durante transferência de 15.110 certificados.}
+\label{fig:grafana-grpc}
+\fonte{Elaborado pelo autor (2025).}
+\end{figure}
+
+Métricas observadas no teste com 15.110 certificados:
+
+**Servidor REST:**
+\begin{itemize}
+    \item CPU: média 0,340\%, pico 0,431\%
+    \item Memória: média 86,1 MiB, pico 99,7 MiB
+\end{itemize}
+
+**Servidor gRPC:**
+\begin{itemize}
+    \item CPU: média 0,273\%, pico 0,337\%
+    \item Memória: média 49,7 MiB, pico 59,3 MiB
+\end{itemize}
+
+O servidor gRPC apresentou consumo de memória 40,4 MiB inferior ao REST (diferença de 40\% no pico). A utilização de CPU foi 0,094 pontos percentuais menor no gRPC.
+
+\subsubsection{Resultados do Teste com 5.000 Certificados}
+
+As Figuras \ref{fig:grafana-rest-5k} e \ref{fig:grafana-grpc-5k} apresentam as métricas coletadas durante a transferência de 5.000 certificados. A metodologia de coleta foi idêntica ao teste anterior (resolução de 1 segundo). Os servidores foram reiniciados entre os testes para eliminar efeitos de cache.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{images/grafana-rest-5k.png}
+\caption{Métricas de CPU e memória do servidor REST durante transferência de 5.000 certificados.}
+\label{fig:grafana-rest-5k}
+\fonte{Elaborado pelo autor (2025).}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{images/grafana-grpc-5k.png}
+\caption{Métricas de CPU e memória do servidor gRPC durante transferência de 5.000 certificados.}
+\label{fig:grafana-grpc-5k}
+\fonte{Elaborado pelo autor (2025).}
+\end{figure}
+
+Métricas observadas no teste com 5.000 certificados:
+
+**Servidor REST:**
+\begin{itemize}
+    \item CPU: média 0,164\%, pico 0,406\%
+    \item Memória: média 23,9 MiB, pico 44,0 MiB
+\end{itemize}
+
+**Servidor gRPC:**
+\begin{itemize}
+    \item CPU: média 0,297\%, pico 0,340\%
+    \item Memória: média 31,2 MiB, pico 43,1 MiB
+\end{itemize}
+
+Os valores de pico de memória foram praticamente equivalentes (diferença de 0,9 MiB ou 2\%). O REST apresentou maior variação entre média e pico de CPU (0,242 pontos percentuais) comparado ao gRPC (0,043 pontos percentuais).
+
+Comparando os dois testes, o consumo de recursos escalou linearmente com o volume de dados: de 5k para 15k certificados, a CPU aumentou proporcionalmente (REST de 0,406\% para 0,431\%, gRPC de 0,340\% para 0,337\%), assim como a memória (REST de 44,0 MiB para 99,7 MiB, gRPC de 43,1 MiB para 59,3 MiB).
