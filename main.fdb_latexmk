@@ -1,19 +1,18 @@
 # Fdb version 4
-["biber main"] 1762105680.74594 "main.bcf" "main.bbl" "main" 1762105696.96241 0
-  "main.bcf" 1762105696.78473 128779 84c39f0b9e184538674dd4c3d07a5b46 "pdflatex"
+["biber main"] 1762471087.6452 "main.bcf" "main.bbl" "main" 1762471105.73885 0
+  "main.bcf" 1762471105.49885 128779 84c39f0b9e184538674dd4c3d07a5b46 "pdflatex"
   "references.bib" 1750361360.13524 5267 fde24b46b4582b743d1b129369ae1d79 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["makeindex main.idx"] 1761690562.77464 "main.idx" "main.ind" "main" 1762105696.96231 2
-  "main.idx" 1762105690.88506 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1762471077.42225 "main.idx" "main.ind" "main" 1762471105.73875 0
+  "main.idx" 1762471098.9355 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1762105689.63748 "/Users/matheusgcoppi/college/tcc/main.tex" "main.pdf" "main" 1762105696.96281 0
-  "/Users/matheusgcoppi/college/tcc/main.tex" 1761502911.51214 9773 cea929f30b0ef708bba0904e4feaeb3c ""
+["pdflatex"] 1762471097.60041 "main.tex" "main.pdf" "main" 1762471105.73912 0
   "/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -251,7 +250,8 @@
   "beforetext/resumo.tex" 1750361360.10182 1295 8a659dd005dc6b8cc8fe407cee95cc10 ""
   "chapters/01-chapter.tex" 1750361360.10198 13310 b3a0d98d76a7626db0a75ce7a644bd57 ""
   "chapters/02-chapter.tex" 1750361360.10224 82707 5b6a245fdb760a17f884597a932973bd ""
-  "chapters/03-chapter.tex" 1762105657.03317 40671 a6d6c1e99a141ddc9b886751ba606faf ""
+  "chapters/03-chapter.tex" 1762471016.43814 27703 22bb16a2bb82a4adf0e873afd5565ee3 ""
+  "chapters/04-chapter.tex" 1762470871.81244 13545 0b321803f041af796bd6c3a4159b92b3 ""
   "images/automacao.png" 1750361360.1037 1239175 49fb0f541d366ee500230b86d255b47c ""
   "images/circuit_breaker.png" 1750361360.10425 134334 6e27a09aadc50daf48a94b881e20182b ""
   "images/comparasio-results-15110.png" 1761693997.29014 87003 6c50232e159634c30f2be8e70e15f98c ""
@@ -274,14 +274,14 @@
   "images/rest.png" 1750361360.11453 891277 7fd7ddf44f4149b0ed42fbf96434d931 ""
   "images/serverless.png" 1750361360.1149 94475 3cc0c1259aa0bf47ebab5159765f2a0a ""
   "images/teoria-controle.png" 1750361360.11612 1271519 84293653646ed2d6a7b6a00357649cb3 ""
-  "main.aux" 1762105696.76538 62640 1043d638e9b1a360a0b093b872fe11f5 "pdflatex"
-  "main.bbl" 1762105682.20743 20747 864961cfa8ba7a9fd6ed18b5fba7ab92 "biber main"
-  "main.ind" 0 -1 0 "makeindex main.idx"
-  "main.lof" 1762105696.7856 4586 529bd1e60dc4a4bffa8bd36b5fdbb9a4 "pdflatex"
-  "main.lot" 1762105696.78574 409 44be03721ff75d12e70a34e68d16e413 "pdflatex"
-  "main.run.xml" 1762105696.78552 2510 a9329479f4b528d21d17670ed8613de5 "pdflatex"
-  "main.tex" 1761502911.51214 9773 cea929f30b0ef708bba0904e4feaeb3c ""
-  "main.toc" 1762105696.78578 5581 5050df841da47dac302a00fe8fcbc3c6 "pdflatex"
+  "main.aux" 1762471105.47871 63708 a2afe274246202228beb8ecb14ed0263 "pdflatex"
+  "main.bbl" 1762471089.33481 20747 864961cfa8ba7a9fd6ed18b5fba7ab92 "biber main"
+  "main.ind" 1762471077.51562 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
+  "main.lof" 1762471105.49977 4586 5fd424d1f0448bd6156f3e7fec2dda12 "pdflatex"
+  "main.lot" 1762471105.49984 409 44be03721ff75d12e70a34e68d16e413 "pdflatex"
+  "main.run.xml" 1762471105.49968 2510 a9329479f4b528d21d17670ed8613de5 "pdflatex"
+  "main.tex" 1762470953.56076 9771 f3c8eaa2d29e3baf6490d0c3380518b1 ""
+  "main.toc" 1762471105.49987 5818 665ff5dec8101971aae5f46016e9af63 "pdflatex"
   "setup/information.tex" 1750364519.07353 2646 371c8411639ce685156817def85bd699 ""
   "setup/list_of_acron_symbols.tex" 1750361360.13544 1249 0a0e074c86aff60b36d6d7f083f30bdd ""
   "setup/logo.png" 1750361360.13564 7280 93e2c0d319a417c99c40faf4bbf8fe1c ""

@@ -16,9 +16,9 @@
 \contentsline {figure}{\numberline {14}{\ignorespaces Código de inicialização do servidor REST em \texttt {cmd/server/main.go}.}}{47}{figure.caption.25}%
 \contentsline {figure}{\numberline {15}{\ignorespaces Código de inicialização do servidor gRPC em \texttt {cmd/grpc\_server/main.go}.}}{50}{figure.caption.26}%
 \contentsline {figure}{\numberline {16}{\ignorespaces Dashboard do Grafana exibindo métricas de CPU e memória dos contêineres.}}{53}{figure.caption.27}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Resultados da comparação entre REST/JSON e gRPC/Protobuf na transferência de 5.110 certificados.}}{56}{figure.caption.28}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Resultados da comparação entre REST/JSON e gRPC/Protobuf na transferência de 15.110 certificados.}}{57}{figure.caption.29}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Métricas de CPU e memória do servidor REST durante transferência de 15.110 certificados.}}{60}{figure.caption.30}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Métricas de CPU e memória do servidor gRPC durante transferência de 15.110 certificados.}}{60}{figure.caption.31}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Métricas de CPU e memória do servidor REST durante transferência de 5.000 certificados.}}{61}{figure.caption.32}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Métricas de CPU e memória do servidor gRPC durante transferência de 5.000 certificados.}}{61}{figure.caption.33}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Resultados da comparação entre REST/JSON e gRPC/Protobuf na transferência de 5.110 certificados.}}{58}{figure.caption.28}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Resultados da comparação entre REST/JSON e gRPC/Protobuf na transferência de 15.110 certificados.}}{59}{figure.caption.29}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Métricas de CPU e memória do servidor REST durante transferência de 15.110 certificados.}}{62}{figure.caption.30}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Métricas de CPU e memória do servidor gRPC durante transferência de 15.110 certificados.}}{62}{figure.caption.31}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Métricas de CPU e memória do servidor REST durante transferência de 5.000 certificados.}}{63}{figure.caption.32}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Métricas de CPU e memória do servidor gRPC durante transferência de 5.000 certificados.}}{64}{figure.caption.33}%
