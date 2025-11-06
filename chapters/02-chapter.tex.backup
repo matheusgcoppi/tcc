@@ -85,11 +85,11 @@ A arquitetura \textit{serverless} tem se destacado com o avanço das plataformas
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{images/serverless.png}
-\caption{Arquitetura Serverless típica, mostrando os componentes principais: \textit{API Gateway}, Funções como Serviço (FaaS), e serviços gerenciados. Fonte: Adaptado de \cite{shekhar2023microservices}.}
+\caption{Arquitetura Serverless típica, mostrando os componentes principais: API Gateway, Funções como Serviço (FaaS), e serviços gerenciados. Fonte: Adaptado de \cite{shekhar2023microservices}.}
 \label{fig:serverless}
 \end{figure}
 
-A Figura \ref{fig:serverless} ilustra um exemplo de arquitetura serverless, destacando seus componentes principais. O \textit{API Gateway} atua como o ponto de entrada único para todas as requisições, roteando o tráfego para as funções de \textit{backend}. As \textit{Funções como Serviço (FaaS)}, como AWS Lambda ou Azure Functions, permitem a execução de código sob demanda, sem a necessidade de provisionar ou gerenciar servidores. Além disso, a arquitetura serverless utiliza \textit{Serviços Gerenciados}, como bancos de dados e filas de mensagens, que são providos e mantidos pelo provedor de nuvem, simplificando ainda mais a operação e a manutenção da aplicação.
+A Figura \ref{fig:serverless} ilustra um exemplo de arquitetura serverless, destacando seus componentes principais. O \textit{API Gateway} atua como o ponto de entrada único para todas as requisições, roteando o tráfego para as funções de backend. As \textit{Funções como Serviço (FaaS)}, como AWS Lambda ou Azure Functions, permitem a execução de código sob demanda, sem a necessidade de provisionar ou gerenciar servidores. Além disso, a arquitetura serverless utiliza \textit{Serviços Gerenciados}, como bancos de dados e filas de mensagens, que são providos e mantidos pelo provedor de nuvem, simplificando ainda mais a operação e a manutenção da aplicação.
 
 A adoção do padrão serverless elimina a necessidade de gerenciamento de servidores, permitindo que os desenvolvedores foquem exclusivamente na implementação da lógica de negócios \cite{shekhar2023microservices}. A escolha do padrão arquitetural mais adequado depende de fatores como requisitos do sistema, contexto de negócio, equipe envolvida e recursos disponíveis. Compreender as vantagens e limitações de cada abordagem é essencial para alinhar a arquitetura às necessidades presentes e futuras do projeto \cite{jamshidi2016systematic, nizami2020comparison}.
 
@@ -115,7 +115,7 @@ Por fim, a orquestração de microsserviços envolve o gerenciamento automatizad
 
 O \textit{Circuit Breaker} é um padrão arquitetural amplamente utilizado em sistemas distribuídos para aumentar a resiliência e evitar falhas em cascata \cite{Nair2019CircuitBreaker, Fowler2012CircuitBreaker}. Ele atua como um "interruptor" que monitora as chamadas a um serviço externo. Seu funcionamento é dividido em três estados principais: fechado, aberto e meio-aberto.
 
-No estado fechado, todas as requisições são encaminhadas normalmente ao serviço. Se o número de falhas ultrapassar um limite configurado, o circuito entra no estado aberto, bloqueando novas tentativas e retornando imediatamente uma resposta de erro ou acionando um mecanismo de \textit{fallback} uma solução alternativa, como dados em \textit{cache} ou uma resposta padrão, para manter a aplicação funcionando de forma degradada. Após um tempo de espera, o circuito passa para o estado meio-aberto, permitindo algumas requisições de teste. Se essas requisições forem bem-sucedidas, o circuito retorna ao estado fechado; caso contrário, volta ao estado aberto, protegendo o sistema de sobrecarga e falhas sucessivas \cite{Nair2019CircuitBreaker, Fowler2012CircuitBreaker}.
+No estado fechado, todas as requisições são encaminhadas normalmente ao serviço. Se o número de falhas ultrapassar um limite configurado, o circuito entra no estado aberto, bloqueando novas tentativas e retornando imediatamente uma resposta de erro ou acionando um mecanismo de \textit{fallback} uma solução alternativa, como dados em cache ou uma resposta padrão, para manter a aplicação funcionando de forma degradada. Após um tempo de espera, o circuito passa para o estado meio-aberto, permitindo algumas requisições de teste. Se essas requisições forem bem-sucedidas, o circuito retorna ao estado fechado; caso contrário, volta ao estado aberto, protegendo o sistema de sobrecarga e falhas sucessivas \cite{Nair2019CircuitBreaker, Fowler2012CircuitBreaker}.
 
 Esse padrão é fundamental para garantir a robustez de sistemas baseados em microsserviços, pois impede que falhas em um serviço se propaguem e comprometam toda a aplicação. Estudos recentes destacam a importância do \textit{Circuit Breaker} em arquiteturas resilientes, especialmente em ambientes de alta disponibilidade e missão crítica \cite{Nair2019CircuitBreaker}. 
 
@@ -128,7 +128,7 @@ Além disso, a escolha dos protocolos de comunicação entre microsserviços (\t
 A arquitetura de microsserviços representa uma evolução paradigmática no desenvolvimento de software, decompondo sistemas complexos em serviços autônomos especializados. Conforme \cite{jamshidi2016systematic}, esta abordagem oferece:
 
 \begin{itemize}
-    \item Autonomia tecnológica: Cada serviço pode utilizar linguagens e tecnologias distintas (\textit{Java}, \textit{Python}, \textit{Node.js})
+    \item Autonomia tecnológica: Cada serviço pode utilizar linguagens e tecnologias distintas (Java, Python, Node.js)
     \item Resiliência aprimorada: Isolamento de falhas através de padrões como \textit{Circuit Breaker}
     \item Entrega contínua: \textit{Deploys} independentes permitindo múltiplas implantações diárias
 \end{itemize}
@@ -141,20 +141,20 @@ A utilização de conteineres Docker facilita a criação de ambientes isolados 
 
 Além disso, o Docker simplifica o processo de implantação e escalonamento de microsserviços, pois os contêineres podem ser facilmente replicados e distribuídos em diferentes servidores ou ambientes de nuvem \cite{farhan2023performance}. Essa flexibilidade é essencial para garantir a escalabilidade e a resiliência das aplicações em produção.
 
-A combinação de Docker e microsserviços também impulsiona a adoção de práticas \textit{DevOps}, como a integração e a entrega contínua (\textit{CI/CD}). Os contêineres Docker podem ser integrados em \textit{pipeline}s automatizados, permitindo que novas versões dos serviços sejam testadas e implantadas de forma rápida e segura \cite{farhan2023performance}.
+A combinação de Docker e microsserviços também impulsiona a adoção de práticas \textit{DevOps}, como a integração e a entrega contínua (\textit{CI/CD}). Os contêineres Docker podem ser integrados em pipelines automatizados, permitindo que novas versões dos serviços sejam testadas e implantadas de forma rápida e segura \cite{farhan2023performance}.
 
 \textit{DevOps} é uma abordagem cultural e técnica que busca integrar as áreas de desenvolvimento e operações por meio da automação de processos e da promoção da melhoria contínua. No contexto de arquiteturas baseadas em microsserviços, essa cultura se reflete na autonomia das equipes, que passam a ser responsáveis por todo o ciclo de vida dos seus serviços desde o desenvolvimento até a implantação, monitoramento e manutenção \cite{farhan2023performance}.
 
-\textit{CI/CD} (Integração Contínua/Entrega Contínua) são práticas que automatizam o \textit{pipeline} de desenvolvimento, desde a integração do código até a entrega em produção. A \textit{CI} garante que as mudanças no código sejam integradas, testadas e validadas automaticamente, enquanto a \textit{CD} automatiza a implantação dessas mudanças em ambientes de teste e produção, permitindo entregas mais rápidas e seguras \cite{farhan2023performance}.
+\textit{CI/CD} (Integração Contínua/Entrega Contínua) são práticas que automatizam o pipeline de desenvolvimento, desde a integração do código até a entrega em produção. A \textit{CI} garante que as mudanças no código sejam integradas, testadas e validadas automaticamente, enquanto a \textit{CD} automatiza a implantação dessas mudanças em ambientes de teste e produção, permitindo entregas mais rápidas e seguras \cite{farhan2023performance}.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.65\textwidth]{images/docker.png}
-  \caption{Estrutura do Docker: cada contêiner encapsula uma aplicação, suas dependências e bibliotecas, todos isolados uns dos outros, rodando sobre o Docker Engine e compartilhando o mesmo sistema operacional do \textit{host}.}
+  \caption{Estrutura do Docker: cada contêiner encapsula uma aplicação, suas dependências e bibliotecas, todos isolados uns dos outros, rodando sobre o Docker Engine e compartilhando o mesmo sistema operacional do host.}
   \label{fig:docker-estrutura}
 \end{figure}
 
-A Figura~\ref{fig:docker-estrutura} ilustra a arquitetura do Docker, mostrando como múltiplos contêineres podem ser executados de forma isolada sobre o mesmo \textit{host} físico ou virtual. Cada contêiner possui sua própria aplicação, dependências e bibliotecas, garantindo portabilidade e consistência, enquanto compartilham o sistema operacional subjacente por meio do Docker Engine.
+A Figura~\ref{fig:docker-estrutura} ilustra a arquitetura do Docker, mostrando como múltiplos contêineres podem ser executados de forma isolada sobre o mesmo host físico ou virtual. Cada contêiner possui sua própria aplicação, dependências e bibliotecas, garantindo portabilidade e consistência, enquanto compartilham o sistema operacional subjacente por meio do Docker Engine.
 
 Em resumo, o Docker desempenha um papel crucial na arquitetura de microsserviços, fornecendo a base para a portabilidade, o isolamento, a escalabilidade e a automação das aplicações. Sua adoção é fundamental para garantir o sucesso e a eficiência de projetos baseados em microsserviços \cite{farhan2023performance}.
 
@@ -171,7 +171,7 @@ Protocolo & Latência & Complexidade & Casos de Uso \\
 \hline
 REST/HTTP & Alta & Baixa & Sistemas com baixa frequência \\
 gRPC & Baixa & Média & Microserviços acoplados \\
-Eventos (\textit{Kafka}) & Assíncrona & Alta & Sistemas escaláveis \\
+Eventos (Kafka) & Assíncrona & Alta & Sistemas escaláveis \\
 \hline
 \end{tabular}
 \label{tab:protocolos}
@@ -179,7 +179,7 @@ Eventos (\textit{Kafka}) & Assíncrona & Alta & Sistemas escaláveis \\
 
 Conforme demonstrado na Tabela~\ref{tab:protocolos}, a seleção do protocolo de comunicação deve considerar o perfil de uso e os requisitos de cada aplicação. O protocolo REST/HTTP é amplamente adotado devido à sua simplicidade e compatibilidade com diferentes plataformas, sendo indicado para cenários em que a frequência de requisições não é elevada e a interoperabilidade é prioridade \cite{fielding2000rest, aws:1}. Por outro lado, o gRPC destaca-se pela baixa latência e eficiência na serialização de dados, tornando-se uma escolha adequada para integrações entre microsserviços que exigem alto desempenho e comunicação síncrona \cite{niswar2023performance, ibm:7}.
 
-Já os mecanismos baseados em eventos, como o uso de filas e \textit{brokers} (exemplo: \textit{Kafka}), possibilitam comunicação assíncrona e desacoplamento entre os serviços, favorecendo a escalabilidade horizontal e a resiliência do sistema \cite{jamshidi2016systematic, shekhar2023microservices}. Essa abordagem é especialmente recomendada para sistemas que processam grandes volumes de dados ou que demandam alta disponibilidade, pois permite que os serviços operem de forma independente, reduzindo o risco de falhas em cascata.
+Já os mecanismos baseados em eventos, como o uso de filas e \textit{brokers} (exemplo: Kafka), possibilitam comunicação assíncrona e desacoplamento entre os serviços, favorecendo a escalabilidade horizontal e a resiliência do sistema \cite{jamshidi2016systematic, shekhar2023microservices}. Essa abordagem é especialmente recomendada para sistemas que processam grandes volumes de dados ou que demandam alta disponibilidade, pois permite que os serviços operem de forma independente, reduzindo o risco de falhas em cascata.
 
 Além dos aspectos técnicos, a complexidade de implementação e manutenção também deve ser considerada. Protocolos como REST tendem a ser mais simples de configurar e depurar, enquanto soluções baseadas em eventos exigem infraestrutura adicional e monitoramento especializado para garantir a integridade e a ordem das mensagens \cite{maso2024comparativo, observability2023}. Dessa forma, a decisão sobre o mecanismo de comunicação deve ser pautada por uma análise criteriosa das necessidades do projeto, visando sempre o equilíbrio entre desempenho, escalabilidade e simplicidade operacional.
 
@@ -253,8 +253,8 @@ Conforme dados na Tabela \ref{tab:impacto}, organizações reportam melhorias si
 A adoção deve considerar:
 
 \begin{itemize}
-    \item Pré-requisitos: Maturidade em \textit{DevOps} e cultura de automação
-    \item Critérios: Complexidade sistêmica > 50k \textit{LOC} > 15 desenvolvedores
+    \item Pré-requisitos: Maturidade em DevOps e cultura de automação
+    \item Critérios: Complexidade sistêmica > 50k LOC > 15 desenvolvedores
     \item Alternativas: Arquiteturas híbridas para transição gradual
     \item Anti-padrões: Decomposição excessiva ("nanoserviços")
 \end{itemize}
@@ -276,7 +276,7 @@ O \gls{REST}, formalizado por Fielding \cite{fielding2000rest} em sua tese semin
 
 Limitações em cenários complexos:
 \begin{itemize}
-\item Overhead de comunicação: Serialização textual aumenta latência e consumo de \gls{CPU}, especialmente em \textit{payload}s grandes \cite{niswar2023performance}.
+\item Overhead de comunicação: Serialização textual aumenta latência e consumo de \gls{CPU}, especialmente em payloads grandes \cite{niswar2023performance}.
 \item Modelo síncrono: Suporta apenas comunicação unária (request/response), inviabilizando fluxos assíncronos \cite{niswar2023performance}.
 \item Falta de contratos rígidos: Validação de esquemas depende de implementações adicionais \cite{maso2024comparativo}.
 \end{itemize}
@@ -346,14 +346,14 @@ No padrão \textit{unary} (A), o cliente realiza uma chamada simples, enviando u
 
 O padrão \textit{server streaming} (B) ocorre quando o cliente envia uma requisição e o servidor responde com um fluxo contínuo de mensagens. Esse padrão é útil em situações em que o servidor precisa retornar uma grande quantidade de dados ou fornecer atualizações progressivas, como em relatórios extensos ou notificações em tempo real.
 
-No padrão \textit{client streaming} (C), o cliente envia um fluxo de mensagens ao servidor, que processa todas as informações recebidas e retorna uma única resposta ao final. Esse modelo é apropriado para cenários em que múltiplos dados precisam ser enviados de forma agrupada, como \textit{uploads} de arquivos ou envio de lotes de registros.
+No padrão \textit{client streaming} (C), o cliente envia um fluxo de mensagens ao servidor, que processa todas as informações recebidas e retorna uma única resposta ao final. Esse modelo é apropriado para cenários em que múltiplos dados precisam ser enviados de forma agrupada, como uploads de arquivos ou envio de lotes de registros.
 
-Por fim, o padrão \textit{bidirectional streaming} (D) permite que tanto o cliente quanto o servidor enviem múltiplas mensagens de forma independente e assíncrona, compartilhando um canal de comunicação contínuo. Esse padrão é especialmente poderoso para aplicações que exigem troca dinâmica de dados em tempo real, como \textit{chat}s, jogos \textit{online} ou monitoramento de sensores, proporcionando máxima flexibilidade e desempenho na comunicação entre microsserviços \cite{niswar2023performance, shekhar2023microservices}.
+Por fim, o padrão \textit{bidirectional streaming} (D) permite que tanto o cliente quanto o servidor enviem múltiplas mensagens de forma independente e assíncrona, compartilhando um canal de comunicação contínuo. Esse padrão é especialmente poderoso para aplicações que exigem troca dinâmica de dados em tempo real, como chats, jogos online ou monitoramento de sensores, proporcionando máxima flexibilidade e desempenho na comunicação entre microsserviços \cite{niswar2023performance, shekhar2023microservices}.
 
 Vantagens Técnicas Comprovadas: Estudos empíricos demonstram ganhos operacionais mensuráveis \cite{niswar2023performance}:
 \begin{itemize}
     \item Redução de 35-45\% no consumo de CPU durante serialização;
-    \item Até 7x maior \textit{throughput} em comunicações inter-serviços.
+    \item Até 7x maior throughput em comunicações inter-serviços.
 \end{itemize}
 % ----------------------------------------------------------
 \section{OBSERVABILIDADE EM ARQUITETURAS DE MICROSSERVIÇOS}
@@ -377,9 +377,9 @@ Essa visão permite identificar gargalos de desempenho, erros e outros problemas
 A adoção da observabilidade não é apenas uma questão de tecnologia, mas também de cultura e processos \cite{shekhar2023microservices}. As equipes precisam adotar uma mentalidade de responsabilidade compartilhada, onde os desenvolvedores monitoram e mantêm os serviços que criam \cite{observability2023}.
 
 \subsection{Kubernetes}
-Kubernetes é uma plataforma \textit{open source} para orquestração de contêineres, amplamente utilizada em arquiteturas de microsserviços devido à sua capacidade de automatizar o gerenciamento, a implantação e o escalonamento de aplicações distribuídas \cite{shekhar2023microservices}. Sua adoção permite que empresas operem ambientes altamente dinâmicos, com múltiplos serviços sendo criados, atualizados e removidos de forma contínua.
+Kubernetes é uma plataforma open source para orquestração de contêineres, amplamente utilizada em arquiteturas de microsserviços devido à sua capacidade de automatizar o gerenciamento, a implantação e o escalonamento de aplicações distribuídas \cite{shekhar2023microservices}. Sua adoção permite que empresas operem ambientes altamente dinâmicos, com múltiplos serviços sendo criados, atualizados e removidos de forma contínua.
 
-A arquitetura do Kubernetes é composta por dois grandes blocos: o \textit{Control Plane} e os nós de trabalho (\textit{workers}). O \textit{Control Plane} é responsável por gerenciar o estado desejado do \textit{cluster}, tomando decisões sobre agendamento, monitoramento e controle dos recursos \cite{shekhar2023microservices}.
+A arquitetura do Kubernetes é composta por dois grandes blocos: o \textit{Control Plane} e os nós de trabalho (\textit{workers}). O \textit{Control Plane} é responsável por gerenciar o estado desejado do cluster, tomando decisões sobre agendamento, monitoramento e controle dos recursos \cite{shekhar2023microservices}.
 
 A crescente adoção de microsserviços impulsionou a necessidade de soluções de orquestração de contêineres que pudessem lidar com a complexidade do gerenciamento de aplicações distribuídas em larga escala \cite{jamshidi2016systematic}. O Kubernetes surgiu como uma resposta a essa demanda, oferecendo uma plataforma completa para automatizar o deploy, o escalonamento e a operação de contêineres em ambientes de produção.
 
@@ -387,30 +387,30 @@ Um dos principais diferenciais do Kubernetes é a sua capacidade de abstrair a i
 
 Além disso, o Kubernetes oferece recursos avançados de auto-escalonamento, auto-recuperação e balanceamento de carga, garantindo que as aplicações permaneçam disponíveis e responsivas mesmo diante de picos de tráfego ou falhas de hardware \cite{shekhar2023microservices}. Essa resiliência é fundamental para garantir a satisfação dos usuários e a continuidade dos negócios em ambientes de alta demanda.
 
-No topo da Figura~\ref{fig:k8s-arquitetura}, a interface do usuário representa as formas de interação com o Kubernetes, seja por meio de interfaces gráficas (UI), linha de comando (CLI) ou a ferramenta \textit{kubectl}, que permite executar comandos diretamente no \textit{cluster}.
+No topo da Figura~\ref{fig:k8s-arquitetura}, a interface do usuário representa as formas de interação com o Kubernetes, seja por meio de interfaces gráficas (UI), linha de comando (CLI) ou a ferramenta \textit{kubectl}, que permite executar comandos diretamente no cluster.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.65\textwidth]{images/kube-arch.png}
-    \caption{Arquitetura do Kubernetes: componentes principais, \textit{control plane}, nós de trabalho, \textit{pods} e \textit{containers}.}
+    \caption{Arquitetura do Kubernetes: componentes principais, control plane, nós de trabalho, pods e containers.}
     \label{fig:k8s-arquitetura}
 \end{figure}
 
-O \textit{control plane} centraliza os principais componentes de controle do Kubernetes. O \textit{API Server} é o ponto de entrada para todas as requisições, servindo como interface entre usuários, automações e o \textit{cluster}. O \textit{Scheduler} é responsável por decidir em qual nó os \textit{pods} serão alocados, considerando recursos disponíveis e restrições. O \textit{Controller Manager} gerencia os controladores que garantem que o estado real do \textit{cluster} esteja sempre alinhado ao estado desejado. O \textit{etcd} é o banco de dados chave-valor distribuído que armazena todas as informações de configuração e estado do \textit{cluster} \cite{shekhar2023microservices}.
+O control plane centraliza os principais componentes de controle do Kubernetes. O \textit{API Server} é o ponto de entrada para todas as requisições, servindo como interface entre usuários, automações e o cluster. O \textit{Scheduler} é responsável por decidir em qual nó os pods serão alocados, considerando recursos disponíveis e restrições. O \textit{Controller Manager} gerencia os controladores que garantem que o estado real do cluster esteja sempre alinhado ao estado desejado. O \textit{etcd} é o banco de dados chave-valor distribuído que armazena todas as informações de configuração e estado do cluster \cite{shekhar2023microservices}.
 
-Nas laterais da figura estão os nós de trabalho (Nó de Trabalho 1 e Nó de Trabalho 2), que são servidores físicos ou virtuais responsáveis por executar as aplicações. Cada nó contém múltiplos \textit{pods}, que são as menores unidades de implantação do Kubernetes. Cada pod pode conter um ou mais \textit{containers}, que executam as aplicações e compartilham recursos de rede e armazenamento \cite{shekhar2023microservices}.
+Nas laterais da figura estão os nós de trabalho (Nó de Trabalho 1 e Nó de Trabalho 2), que são servidores físicos ou virtuais responsáveis por executar as aplicações. Cada nó contém múltiplos pods, que são as menores unidades de implantação do Kubernetes. Cada pod pode conter um ou mais containers, que executam as aplicações e compartilham recursos de rede e armazenamento \cite{shekhar2023microservices}.
 
-Na base de cada nó, encontram-se três componentes essenciais: o \textit{Docker}, responsável por criar e gerenciar os \textit{containers} o \textit{Kubelet}, agente que garante que os \textit{containers} estejam rodando conforme especificado pelo \textit{control plane} e o \textit{Kube-proxy}, que gerencia a comunicação de rede dentro e fora do nó, garantindo o roteamento correto das requisições \cite{shekhar2023microservices}.
+Na base de cada nó, encontram-se três componentes essenciais: o \textit{Docker}, responsável por criar e gerenciar os containers o \textit{Kubelet}, agente que garante que os containers estejam rodando conforme especificado pelo control plane e o \textit{Kube-proxy}, que gerencia a comunicação de rede dentro e fora do nó, garantindo o roteamento correto das requisições \cite{shekhar2023microservices}.
 
-As setas pontilhadas na figura indicam a comunicação entre o \textit{control plane} e os nós de trabalho, evidenciando como o gerenciamento centralizado do \textit{cluster} é realizado. Essa arquitetura modular e distribuída permite ao Kubernetes oferecer alta disponibilidade, escalabilidade e resiliência, características essenciais para ambientes de microsserviços modernos.
+As setas pontilhadas na figura indicam a comunicação entre o control plane e os nós de trabalho, evidenciando como o gerenciamento centralizado do cluster é realizado. Essa arquitetura modular e distribuída permite ao Kubernetes oferecer alta disponibilidade, escalabilidade e resiliência, características essenciais para ambientes de microsserviços modernos.
 
-A observabilidade em Kubernetes é desafiadora, pois o ciclo de vida dos \textit{pods} é efêmero e os serviços podem ser realocados entre nós do \textit{cluster} a qualquer momento \cite{ahmed2022observability}. Isso exige soluções que acompanhem essas mudanças em tempo real, garantindo visibilidade sobre o estado de cada componente do sistema.
+A observabilidade em Kubernetes é desafiadora, pois o ciclo de vida dos pods é efêmero e os serviços podem ser realocados entre nós do cluster a qualquer momento \cite{ahmed2022observability}. Isso exige soluções que acompanhem essas mudanças em tempo real, garantindo visibilidade sobre o estado de cada componente do sistema.
 
-Ferramentas como Prometheus, Grafana e Jaeger são essenciais nesse cenário. O Prometheus coleta métricas detalhadas de recursos, \textit{pods} e serviços, enquanto o Grafana permite a visualização dessas métricas em \textit{dashboard}s customizáveis \cite{ahmed2022observability}. O Jaeger, por sua vez, realiza o rastreamento distribuído, possibilitando a análise do caminho das requisições entre diferentes microsserviços.
+Ferramentas como Prometheus, Grafana e Jaeger são essenciais nesse cenário. O Prometheus coleta métricas detalhadas de recursos, pods e serviços, enquanto o Grafana permite a visualização dessas métricas em dashboards customizáveis \cite{ahmed2022observability}. O Jaeger, por sua vez, realiza o rastreamento distribuído, possibilitando a análise do caminho das requisições entre diferentes microsserviços.
 
-Além dessas ferramentas, o Kubernetes integra nativamente eventos e logs que podem ser coletados por soluções como Fluentd e Elasticsearch, facilitando a centralização e análise dos dados \cite{ahmed2022observability}. Essa integração é fundamental para detectar anomalias, identificar falhas e otimizar o uso de recursos do \textit{cluster}.
+Além dessas ferramentas, o Kubernetes integra nativamente eventos e logs que podem ser coletados por soluções como Fluentd e Elasticsearch, facilitando a centralização e análise dos dados \cite{ahmed2022observability}. Essa integração é fundamental para detectar anomalias, identificar falhas e otimizar o uso de recursos do cluster.
 
-Outro ponto relevante é o uso de \textit{service mesh}, como Istio, que adiciona camadas de observabilidade sem necessidade de modificar o código das aplicações. O \textit{service mesh} coleta métricas, logs e traces automaticamente, aumentando a granularidade e a precisão das informações \cite{kim2021servicemesh}.
+Outro ponto relevante é o uso de service mesh, como Istio, que adiciona camadas de observabilidade sem necessidade de modificar o código das aplicações. O service mesh coleta métricas, logs e traces automaticamente, aumentando a granularidade e a precisão das informações \cite{kim2021servicemesh}.
 
 A observabilidade em Kubernetes também permite a implementação de alertas inteligentes e automação de respostas a incidentes. Isso reduz o tempo de detecção e resolução de problemas, contribuindo para a alta disponibilidade e confiabilidade dos serviços \cite{ahmed2022observability}.
 
@@ -427,7 +427,7 @@ Por fim, a adoção de práticas avançadas de observabilidade em Kubernetes con
     \label{fig:k8s-observability}
 \end{figure}
 
-A Figura~\ref{fig:k8s-observability} ilustra como as principais ferramentas de observabilidade se integram ao Kubernetes, coletando dados de diferentes camadas do \textit{cluster} e fornecendo uma visão unificada do ambiente.
+A Figura~\ref{fig:k8s-observability} ilustra como as principais ferramentas de observabilidade se integram ao Kubernetes, coletando dados de diferentes camadas do cluster e fornecendo uma visão unificada do ambiente.
 
 Em resumo, a combinação de Kubernetes e práticas avançadas de observabilidade é indispensável para garantir a eficiência operacional, a escalabilidade e a resiliência de sistemas baseados em microsserviços \cite{shekhar2023microservices,ahmed2022observability}.
 
@@ -454,9 +454,9 @@ Essa visão teórica fundamenta a importância de práticas avançadas de observ
 
 % \begin{description}
 %   \item[1980–2000] Ferramentas de \textit{Application Performance
-%   Monitoring} (APM) centradas em métricas de \textit{host} (CPU, memória).
+%   Monitoring} (APM) centradas em métricas de host (CPU, memória).
 %   \item[2000–2010] Monitoring 2.0: \textit{time-series databases}
-%   (RRDtool, Graphite) e \textit{dashboard}s mais ricos.
+%   (RRDtool, Graphite) e dashboards mais ricos.
 %   \item[2010–2020] Era \textit{cloud native}: surgimento de Prometheus,
 %   Jaeger, Grafana, e do termo observabilidade como união de
 %   \textit{metrics + logs + traces} \cite{observability2023}.
@@ -472,7 +472,7 @@ A implementação da observabilidade em arquiteturas de microsserviços traz div
 
 Um dos principais desafios é a grande quantidade de dados gerados pelos microsserviços, que podem sobrecarregar os sistemas de monitoramento e dificultar a identificação de informações relevantes \cite{ahmed2022observability}. Para lidar com esse volume de dados, é fundamental adotar técnicas de agregação, filtragem e amostragem, além de investir em ferramentas de análise escaláveis e eficientes.
 
-Outro desafio importante é a necessidade de integrar diferentes fontes de dados, como métricas, logs e rastreamento distribuído, para obter uma visão holística do sistema \cite{observability2023}. Essa integração exige a padronização dos formatos de dados, a definição de modelos de correlação e a implementação de \textit{dashboard}s unificados, permitindo que as equipes compreendam o comportamento do sistema em tempo real e identifiquem rapidamente as causas de problemas.
+Outro desafio importante é a necessidade de integrar diferentes fontes de dados, como métricas, logs e rastreamento distribuído, para obter uma visão holística do sistema \cite{observability2023}. Essa integração exige a padronização dos formatos de dados, a definição de modelos de correlação e a implementação de dashboards unificados, permitindo que as equipes compreendam o comportamento do sistema em tempo real e identifiquem rapidamente as causas de problemas.
 
 A adoção dos pilares da observabilidade também impacta diretamente a cultura organizacional das equipes de desenvolvimento e operações \cite{shekhar2023microservices}. É necessário promover uma mentalidade de responsabilidade compartilhada, em que todos os envolvidos estejam atentos à saúde dos serviços e participem ativamente do processo de monitoramento e análise dos dados coletados.
 
@@ -509,7 +509,7 @@ A adoção de automação na resposta a incidentes também facilita a implementa
 
 Outro ponto relevante é a rastreabilidade das ações automáticas executadas durante um incidente. O registro detalhado de cada etapa do processo, incluindo os alertas gerados, as decisões tomadas e as ações realizadas, é fundamental para auditoria, conformidade e aprendizado organizacional \cite{observability2023}. Essa rastreabilidade permite analisar a eficácia das respostas e aprimorar continuamente os fluxos de automação.
 
-Por fim, a integração entre automação e resposta a incidentes com plataformas de comunicação, como sistemas de \textit{chat} corporativo ou gerenciamento de tickets, potencializa a colaboração entre equipes \cite{ahmed2022observability}. Notificações automáticas e relatórios detalhados garantem que todos os envolvidos estejam informados em tempo real, promovendo uma atuação coordenada e eficiente diante de eventos críticos.
+Por fim, a integração entre automação e resposta a incidentes com plataformas de comunicação, como sistemas de chat corporativo ou gerenciamento de tickets, potencializa a colaboração entre equipes \cite{ahmed2022observability}. Notificações automáticas e relatórios detalhados garantem que todos os envolvidos estejam informados em tempo real, promovendo uma atuação coordenada e eficiente diante de eventos críticos.
 
 \begin{figure}[H]
     \centering
@@ -525,11 +525,11 @@ A eficácia desse ciclo de automação depende da qualidade dos dados de telemet
 \chapter{Proposta}
 \label{cap:Proposta}
 
-O presente Trabalho de Conclusão de Curso propõe-se a realizar uma análise comparativa entre os protocolos de comunicação REST e gRPC em arquiteturas de microsserviços, utilizando métricas de observabilidade para avaliar aspectos de desempenho como latência, \textit{throughput} e uso de recursos. A motivação central reside na crescente adoção de microsserviços em ambientes corporativos e acadêmicos, onde a escolha do protocolo de comunicação pode impactar diretamente a eficiência, escalabilidade e manutenção dos sistemas.
+O presente Trabalho de Conclusão de Curso propõe-se a realizar uma análise comparativa entre os protocolos de comunicação REST e gRPC em arquiteturas de microsserviços, utilizando métricas de observabilidade para avaliar aspectos de desempenho como latência, throughput e uso de recursos. A motivação central reside na crescente adoção de microsserviços em ambientes corporativos e acadêmicos, onde a escolha do protocolo de comunicação pode impactar diretamente a eficiência, escalabilidade e manutenção dos sistemas.
 
 A proposta consiste em implementar dois microserviços equivalentes, cada um utilizando um dos protocolos em análise. Ambos os serviços serão desenvolvidos para executar a mesma funcionalidade, garantindo assim a comparabilidade dos resultados obtidos. A instrumentação dos microserviços será realizada de modo a expor métricas relevantes por meio de rotas específicas, permitindo a coleta automatizada de dados por ferramentas de monitoramento.
 
-O ambiente experimental será configurado em um \textit{cluster} de orquestração de contêineres, possibilitando a simulação de cenários reais de operação e a execução de testes de carga controlados. Serão definidos diferentes perfis de carga, variando o número de requisições e o volume de dados trafegados, com o objetivo de avaliar o comportamento dos protocolos sob distintas condições de uso. As métricas de latência, \textit{throughput} e consumo de recursos computacionais serão coletadas de forma sistemática durante os experimentos.
+O ambiente experimental será configurado em um cluster de orquestração de contêineres, possibilitando a simulação de cenários reais de operação e a execução de testes de carga controlados. Serão definidos diferentes perfis de carga, variando o número de requisições e o volume de dados trafegados, com o objetivo de avaliar o comportamento dos protocolos sob distintas condições de uso. As métricas de latência, throughput e consumo de recursos computacionais serão coletadas de forma sistemática durante os experimentos.
 
 A análise dos dados será conduzida de maneira quantitativa, buscando identificar padrões de desempenho, gargalos e possíveis vantagens de cada protocolo em cenários específicos. Serão aplicadas técnicas estatísticas para comparar os resultados e garantir a validade das conclusões. O estudo pretende, ainda, discutir as implicações práticas das escolhas arquiteturais, considerando aspectos como facilidade de implementação, manutenção e escalabilidade dos serviços.
 
@@ -551,14 +551,14 @@ Por fim, o trabalho buscará contribuir para o debate sobre boas práticas em ar
 
 % \begin{figure}[H]
 %   \centering
-%   \includegraphics[width=.9\textwidth]{images/otel_\textit{pipeline}.png}
+%   \includegraphics[width=.9\textwidth]{images/otel_pipeline.png}
 %   \caption{Pipeline OpenTelemetry: Instrumentação $\rightarrow$
 %            Collector $\rightarrow$ Backend.}
 %   \label{fig:otel}
 % \end{figure}
 
 % \noindent
-% O \textit{pipeline} (Fig.~\ref{fig:otel}) é composto por:
+% O pipeline (Fig.~\ref{fig:otel}) é composto por:
 
 % \begin{enumerate}
 %   \item \textbf{Instrumentação}: SDKs ou auto-instrumentação via eBPF.
@@ -588,8 +588,8 @@ Por fim, o trabalho buscará contribuir para o debate sobre boas práticas em ar
 %   \begin{tabular}{|l|c|c|}
 %     \hline
 %     Método & Latência (\textmu s) & Fonte \\ \hline
-%     Manual SDK (\textit{Java}) & 75 & \cite{sha2023automating} \\
-%     Auto (\textit{Java} Agent) & 130 & \cite{sha2023automating} \\
+%     Manual SDK (Java) & 75 & \cite{sha2023automating} \\
+%     Auto (Java Agent) & 130 & \cite{sha2023automating} \\
 %     eBPF (kernel) & 22 & \cite{kim2021servicemesh} \\ \hline
 %   \end{tabular}
 % \end{table}
@@ -645,8 +645,8 @@ Por fim, o trabalho buscará contribuir para o debate sobre boas práticas em ar
 % Modelo de quatro níveis:
 
 % \begin{enumerate}
-%   \item \textbf{L0 — Visibility}: apenas métricas de \textit{host}.
-%   \item \textbf{L1 — Monitoring}: \textit{dashboard}s gráficos, alertas básicos.
+%   \item \textbf{L0 — Visibility}: apenas métricas de host.
+%   \item \textbf{L1 — Monitoring}: dashboards gráficos, alertas básicos.
 %   \item \textbf{L2 — Observability}: correlação \textit{metrics+logs+traces},
 %         detecção de anomalias.
 %   \item \textbf{L3 — Predictive Ops}: AIOps, SLO automáticos,
@@ -671,7 +671,7 @@ Por fim, o trabalho buscará contribuir para o debate sobre boas práticas em ar
 
 % \begin{enumerate}
 %   \item Observabilidade \textit{shift-left}: coletar dados já no
-%         \textit{pipeline} CI / CD.
+%         pipeline CI / CD.
 %   \item eBPF + WASM para filtros seguros e portáveis.
 %   \item Telemetria zero-copy (OTel-Arrow) para reduzir overhead.
 % \end{enumerate}
