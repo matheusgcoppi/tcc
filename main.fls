@@ -2,7 +2,7 @@ PWD /Users/matheusgcoppi/college/tcc
 INPUT /usr/local/texlive/2025basic/texmf.cnf
 INPUT /usr/local/texlive/2025basic/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025basic/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT main.tex
+INPUT /Users/matheusgcoppi/college/tcc/main.tex
 OUTPUT main.log
 INPUT ./setup/uniavan.cls
 INPUT setup/uniavan.cls
