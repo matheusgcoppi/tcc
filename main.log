@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.19)  6 NOV 2025 20:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.19)  6 NOV 2025 20:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2160,7 +2160,7 @@ Package pdftex.def Info: images/docker.png  used on input line 152.
 <images/microservice.png, id=535, 639.89063pt x 391.4625pt>
 File: images/microservice.png Graphic file (type png)
 <use images/microservice.png>
-Package pdftex.def Info: images/microservice.png  used on input line 188.
+Package pdftex.def Info: images/microservice.png  used on input line 189.
 (pdftex.def)             Requested size: 318.49861pt x 194.84673pt.
 
 
@@ -2172,7 +2172,7 @@ Package pdftex.def Info: images/microservice.png  used on input line 188.
 <images/rest.png, id=602, 1027.84pt x 657.45625pt>
 File: images/rest.png Graphic file (type png)
 <use images/rest.png>
-Package pdftex.def Info: images/rest.png  used on input line 311.
+Package pdftex.def Info: images/rest.png  used on input line 312.
 (pdftex.def)             Requested size: 318.49861pt x 203.72908pt.
 
 
@@ -2182,7 +2182,7 @@ Package pdftex.def Info: images/rest.png  used on input line 311.
 <images/grpc.png, id=634, 1094.0875pt x 517.935pt>
 File: images/grpc.png Graphic file (type png)
 <use images/grpc.png>
-Package pdftex.def Info: images/grpc.png  used on input line 339.
+Package pdftex.def Info: images/grpc.png  used on input line 340.
 (pdftex.def)             Requested size: 455.0pt x 215.39738pt.
 
 
@@ -2194,7 +2194,7 @@ Package pdftex.def Info: images/grpc.png  used on input line 339.
 <images/kube-arch.png, id=698, 1027.84pt x 1027.84pt>
 File: images/kube-arch.png Graphic file (type png)
 <use images/kube-arch.png>
-Package pdftex.def Info: images/kube-arch.png  used on input line 393.
+Package pdftex.def Info: images/kube-arch.png  used on input line 394.
 (pdftex.def)             Requested size: 295.74722pt x 295.7448pt.
 
 
@@ -2204,12 +2204,12 @@ Package pdftex.def Info: images/kube-arch.png  used on input line 393.
 <images/k8s-observability-architecture.png, id=733, 1027.84pt x 1027.84pt>
 File: images/k8s-observability-architecture.png Graphic file (type png)
 <use images/k8s-observability-architecture.png>
-Package pdftex.def Info: images/k8s-observability-architecture.png  used on input line 424.
+Package pdftex.def Info: images/k8s-observability-architecture.png  used on input line 425.
 (pdftex.def)             Requested size: 364.00139pt x 363.99963pt.
 <images/teoria-controle.png, id=743, 1027.84pt x 1027.84pt>
 File: images/teoria-controle.png Graphic file (type png)
 <use images/teoria-controle.png>
-Package pdftex.def Info: images/teoria-controle.png  used on input line 439.
+Package pdftex.def Info: images/teoria-controle.png  used on input line 440.
 (pdftex.def)             Requested size: 364.00139pt x 363.99963pt.
 
 
@@ -2221,7 +2221,7 @@ Package pdftex.def Info: images/teoria-controle.png  used on input line 439.
 <images/pillars-observability.png, id=786, 1027.84pt x 1027.84pt>
 File: images/pillars-observability.png Graphic file (type png)
 <use images/pillars-observability.png>
-Package pdftex.def Info: images/pillars-observability.png  used on input line 484.
+Package pdftex.def Info: images/pillars-observability.png  used on input line 485.
 (pdftex.def)             Requested size: 273.00278pt x 273.00365pt.
 
 
@@ -2231,7 +2231,7 @@ Package pdftex.def Info: images/pillars-observability.png  used on input line 48
 <images/automacao.png, id=816, 1027.84pt x 1027.84pt>
 File: images/automacao.png Graphic file (type png)
 <use images/automacao.png>
-Package pdftex.def Info: images/automacao.png  used on input line 515.
+Package pdftex.def Info: images/automacao.png  used on input line 516.
 (pdftex.def)             Requested size: 318.49861pt x 318.50163pt.
 
 
@@ -2438,7 +2438,7 @@ Here is how much of TeX's memory you used:
  1143 hyphenation exceptions out of 8191
  196i,13n,292p,2560b,4447s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (67 pages, 10678493 bytes).
+Output written on main.pdf (67 pages, 10678495 bytes).
 PDF statistics:
  1389 PDF objects out of 1440 (max. 8388607)
  1256 compressed objects within 13 object streams
