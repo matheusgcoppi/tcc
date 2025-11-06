@@ -2194,4 +2194,254 @@ Package pdftex.def Info: images/grpc.png  used on input line 340.
 <images/kube-arch.png, id=698, 1027.84pt x 1027.84pt>
 File: images/kube-arch.png Graphic file (type png)
 <use images/kube-arch.png>
-Package pdftex.def Info: images/kube-arch.png  used on input
+Package pdftex.def Info: images/kube-arch.png  used on input line 394.
+(pdftex.def)             Requested size: 295.74722pt x 295.7448pt.
+
+
+[34 <./images/kube-arch.png (PNG copy)>]
+
+[35]
+<images/k8s-observability-architecture.png, id=733, 1027.84pt x 1027.84pt>
+File: images/k8s-observability-architecture.png Graphic file (type png)
+<use images/k8s-observability-architecture.png>
+Package pdftex.def Info: images/k8s-observability-architecture.png  used on input line 425.
+(pdftex.def)             Requested size: 364.00139pt x 363.99963pt.
+<images/teoria-controle.png, id=743, 1027.84pt x 1027.84pt>
+File: images/teoria-controle.png Graphic file (type png)
+<use images/teoria-controle.png>
+Package pdftex.def Info: images/teoria-controle.png  used on input line 440.
+(pdftex.def)             Requested size: 364.00139pt x 363.99963pt.
+
+
+[36 <./images/k8s-observability-architecture.png (PNG copy)>]
+
+[37 <./images/teoria-controle.png (PNG copy)>]
+
+[38]
+<images/pillars-observability.png, id=786, 1027.84pt x 1027.84pt>
+File: images/pillars-observability.png Graphic file (type png)
+<use images/pillars-observability.png>
+Package pdftex.def Info: images/pillars-observability.png  used on input line 485.
+(pdftex.def)             Requested size: 273.00278pt x 273.00365pt.
+
+
+[39 <./images/pillars-observability.png (PNG copy)>]
+
+[40]
+<images/automacao.png, id=816, 1027.84pt x 1027.84pt>
+File: images/automacao.png Graphic file (type png)
+<use images/automacao.png>
+Package pdftex.def Info: images/automacao.png  used on input line 516.
+(pdftex.def)             Requested size: 318.49861pt x 318.50163pt.
+
+
+[41 <./images/automacao.png (PNG copy)>]
+
+[42
+
+]) (./chapters/03-chapter.tex
+
+[43]
+Overfull \hbox (90.3359pt too wide) in paragraph at lines 111--112
+\T1/phv/m/n/12 (-10) Pro-metheus (\T1/cmtt/m/n/12 github.com/prometheus/client_-golang\T1/phv/m/n/12 (-10) ) e ge-ra-ção de UUIDs (\T1/cmtt/m/n/12 github.com/google/uuid\T1/phv/m/n/12 (-10) ). 
+ []
+
+
+
+[44
+
+]
+Overfull \hbox (43.23296pt too wide) in paragraph at lines 133--134
+[]\T1/phv/m/n/12 (-10) Os ar-qui-vos de con-fi-gu-ra-ção Doc-ker fi-cam em \T1/cmtt/m/n/12 zarf/docker/\T1/phv/m/n/12 (-10) , in-clu-indo \T1/cmtt/m/n/12 rest.dockerfile
+ []
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2024/09/23 1.10c listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 145.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 146.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 146.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 146.
+
+
+[45]
+Overfull \hbox (12.99356pt too wide) in paragraph at lines 166--167
+\T1/cmtt/m/n/12 requests_-total \T1/phv/m/n/12 (-10) (con-ta-dor de re-qui-si-ções por mé-todo, \T1/phv/m/sl/12 (-10) end-po-int \T1/phv/m/n/12 (-10) e \T1/phv/m/sl/12 (-10) sta-tus\T1/phv/m/n/12 (-10) ), \T1/cmtt/m/n/12 http_-request_-
+ []
+
+<images/rest-main.png, id=853, 1343.0175pt x 854.19125pt>
+File: images/rest-main.png Graphic file (type png)
+<use images/rest-main.png>
+Package pdftex.def Info: images/rest-main.png  used on input line 188.
+(pdftex.def)             Requested size: 409.49722pt x 260.44324pt.
+
+
+[46]
+
+[47 <./images/rest-main.png>]
+Overfull \hbox (18.6672pt too wide) in paragraph at lines 238--239
+[]\T1/phv/m/n/12 (-10) O mé-todo \T1/cmtt/m/n/12 GetAllCertificates \T1/phv/m/n/12 (-10) é equi-va-lente ao end-po-int REST \T1/cmtt/m/n/12 /certificate/all\T1/phv/m/n/12 (-10) ,
+ []
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+
+[48]
+Overfull \hbox (22.43718pt too wide) in paragraph at lines 273--274
+[]\T1/phv/m/n/12 (-10) Cada mé-todo RPC foi im-ple-men-tado como uma fun-ção que re-cebe \T1/cmtt/m/n/12 context.Context
+ []
+
+
+
+[49]
+Overfull \hbox (110.0417pt too wide) in paragraph at lines 277--278
+[]\T1/phv/m/n/12 (-10) O ser-vi-dor gRPC foi con-tai-ne-ri-zado usando \T1/phv/m/sl/12 (-10) Doc-ker-file multi-stage \T1/phv/m/n/12 (-10) em \T1/cmtt/m/n/12 zarf/docker/grpc.dockerfile\T1/phv/m/n/12 (-10) .
+ []
+
+<images/grpc-main.png, id=950, 1339.0025pt x 854.19125pt>
+File: images/grpc-main.png Graphic file (type png)
+<use images/grpc-main.png>
+Package pdftex.def Info: images/grpc-main.png  used on input line 281.
+(pdftex.def)             Requested size: 409.49722pt x 261.22527pt.
+
+Overfull \hbox (67.63182pt too wide) in paragraph at lines 300--301
+\T1/phv/m/n/12 (-10) ló-gica de ne-gó-cio atra-vés do \T1/cmtt/m/n/12 CertificateService\T1/phv/m/n/12 (-10) , de-fi-nido em \T1/cmtt/m/n/12 internal/service/certificate.go\T1/phv/m/n/12 (-10) .
+ []
+
+
+
+[50 <./images/grpc-main.png>]
+
+[51]
+Overfull \hbox (28.69171pt too wide) in paragraph at lines 372--373
+\T1/phv/m/n/12 (-10) metheus foi con-fi-gu-rado com re-ten-ção de 200 ho-ras (\T1/cmtt/m/n/12 --storage.tsdb.retention.time=200h\T1/phv/m/n/12 (-10) ). 
+ []
+
+
+
+[52]
+<images/grafana-cpu-memory.png, id=1016, 1915.155pt x 811.03pt>
+File: images/grafana-cpu-memory.png Graphic file (type png)
+<use images/grafana-cpu-memory.png>
+Package pdftex.def Info: images/grafana-cpu-memory.png  used on input line 397.
+(pdftex.def)             Requested size: 455.0pt x 192.6835pt.
+
+
+[53 <./images/grafana-cpu-memory.png>]) (./chapters/04-chapter.tex
+
+[54]
+
+[55]
+Overfull \hbox (13.08199pt too wide) in paragraph at lines 21--22
+[]\T1/phv/m/n/12 (-10) Entre cada teste, os ser-vi-do-res fo-ram rei-ni-ci-a-dos usando \T1/cmtt/m/n/12 docker-compose restart
+ []
+
+
+
+[56
+
+]
+<images/comparison-results.png, id=1053, 453.695pt x 692.5875pt>
+File: images/comparison-results.png Graphic file (type png)
+<use images/comparison-results.png>
+Package pdftex.def Info: images/comparison-results.png  used on input line 31.
+(pdftex.def)             Requested size: 318.49861pt x 486.20291pt.
+
+
+[57]
+<images/comparasio-results-15110.png, id=1058, 453.695pt x 701.62125pt>
+File: images/comparasio-results-15110.png Graphic file (type png)
+<use images/comparasio-results-15110.png>
+Package pdftex.def Info: images/comparasio-results-15110.png  used on input line 39.
+(pdftex.def)             Requested size: 318.49861pt x 492.5447pt.
+
+
+[58 <./images/comparison-results.png>]
+
+[59 <./images/comparasio-results-15110.png>]
+
+[60]
+
+[61]
+<images/grafana-rest-15k.png, id=1080, 1608.0075pt x 701.62125pt>
+File: images/grafana-rest-15k.png Graphic file (type png)
+<use images/grafana-rest-15k.png>
+Package pdftex.def Info: images/grafana-rest-15k.png  used on input line 119.
+(pdftex.def)             Requested size: 455.0pt x 198.52954pt.
+<images/grafana-grpc-15k.png, id=1081, 1608.0075pt x 701.62125pt>
+File: images/grafana-grpc-15k.png Graphic file (type png)
+<use images/grafana-grpc-15k.png>
+Package pdftex.def Info: images/grafana-grpc-15k.png  used on input line 127.
+(pdftex.def)             Requested size: 455.0pt x 198.52954pt.
+
+
+[62 <./images/grafana-rest-15k.png> <./images/grafana-grpc-15k.png>]
+<images/grafana-rest-5k.png, id=1090, 1608.0075pt x 714.67pt>
+File: images/grafana-rest-5k.png Graphic file (type png)
+<use images/grafana-rest-5k.png>
+Package pdftex.def Info: images/grafana-rest-5k.png  used on input line 155.
+(pdftex.def)             Requested size: 455.0pt x 202.22179pt.
+<images/grafana-grpc-5k.png, id=1091, 1608.0075pt x 714.67pt>
+File: images/grafana-grpc-5k.png Graphic file (type png)
+<use images/grafana-grpc-5k.png>
+Package pdftex.def Info: images/grafana-grpc-5k.png  used on input line 163.
+(pdftex.def)             Requested size: 455.0pt x 202.22179pt.
+
+
+[63 <./images/grafana-rest-5k.png>])
+
+[64 <./images/grafana-grpc-5k.png>]
+
+[65
+
+]
+
+[66]
+\tf@lof=\write6
+\openout6 = `main.lof'.
+
+\tf@lot=\write7
+\openout7 = `main.lot'.
+
+\tf@toc=\write8
+\openout8 = `main.toc'.
+
+ (./main.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2020/03/25>
+ ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 45735 strings out of 473190
+ 837759 string characters out of 5713195
+ 2163164 words of memory out of 5000000
+ 67808 multiletter control sequences out of 15000+600000
+ 625598 words of font info for 280 fonts, out of 8000000 for 9000
+ 1143 hyphenation exceptions out of 8191
+ 196i,13n,292p,2560b,4447s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on main.pdf (67 pages, 10678892 bytes).
+PDF statistics:
+ 1389 PDF objects out of 1440 (max. 8388607)
+ 1256 compressed objects within 13 object streams
+ 328 named destinations out of 1000 (max. 500000)
+ 71220 words of extra memory for PDF output out of 74296 (max. 10000000)
+
