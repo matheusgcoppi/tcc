@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.19)  13 NOV 2025 19:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.19)  13 NOV 2025 20:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2236,19 +2236,26 @@ Package pdftex.def Info: images/automacao.png  used on input line 516.
 
 
 [41 <./images/automacao.png (PNG copy)>]
+Overfull \hbox (5.5192pt too wide) in paragraph at lines 538--539
+\T1/cmtt/m/n/12 usage_-seconds_-total \T1/phv/m/n/12 (-10) para uti-li-za-ção de CPU e \T1/cmtt/m/n/12 container_-memory_-working_-set_-bytes
+ []
+
+
 
 [42
 
-]) (./chapters/03-chapter.tex
+]
 
-[43]
+[43]) (./chapters/03-chapter.tex
+
+[44]
 Overfull \hbox (90.3359pt too wide) in paragraph at lines 111--112
 \T1/phv/m/n/12 (-10) Pro-metheus (\T1/cmtt/m/n/12 github.com/prometheus/client_-golang\T1/phv/m/n/12 (-10) ) e ge-ra-ção de UUIDs (\T1/cmtt/m/n/12 github.com/google/uuid\T1/phv/m/n/12 (-10) ). 
  []
 
 
 
-[44
+[45
 
 ]
 Overfull \hbox (43.23296pt too wide) in paragraph at lines 133--134
@@ -2271,21 +2278,21 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 146.
 
 
-[45]
+[46]
 Overfull \hbox (12.99356pt too wide) in paragraph at lines 166--167
 \T1/cmtt/m/n/12 requests_-total \T1/phv/m/n/12 (-10) (con-ta-dor de re-qui-si-ções por mé-todo, \T1/phv/m/sl/12 (-10) end-po-int \T1/phv/m/n/12 (-10) e \T1/phv/m/sl/12 (-10) sta-tus\T1/phv/m/n/12 (-10) ), \T1/cmtt/m/n/12 http_-request_-
  []
 
-<images/rest-main.png, id=855, 1343.0175pt x 854.19125pt>
+<images/rest-main.png, id=859, 1343.0175pt x 854.19125pt>
 File: images/rest-main.png Graphic file (type png)
 <use images/rest-main.png>
 Package pdftex.def Info: images/rest-main.png  used on input line 188.
 (pdftex.def)             Requested size: 409.49722pt x 260.44324pt.
 
 
-[46]
+[47]
 
-[47 <./images/rest-main.png>]
+[48 <./images/rest-main.png>]
 Overfull \hbox (18.6672pt too wide) in paragraph at lines 238--239
 []\T1/phv/m/n/12 (-10) O mé-todo \T1/cmtt/m/n/12 GetAllCertificates \T1/phv/m/n/12 (-10) é equi-va-lente ao end-po-int REST \T1/cmtt/m/n/12 /certificate/all\T1/phv/m/n/12 (-10) ,
  []
@@ -2296,19 +2303,19 @@ File: lstlang1.sty 2024/09/23 1.10c listings language file
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
 
-[48]
+[49]
 Overfull \hbox (22.43718pt too wide) in paragraph at lines 273--274
 []\T1/phv/m/n/12 (-10) Cada mé-todo RPC foi im-ple-men-tado como uma fun-ção que re-cebe \T1/cmtt/m/n/12 context.Context
  []
 
 
 
-[49]
+[50]
 Overfull \hbox (110.0417pt too wide) in paragraph at lines 277--278
 []\T1/phv/m/n/12 (-10) O ser-vi-dor gRPC foi con-tai-ne-ri-zado usando \T1/phv/m/sl/12 (-10) Doc-ker-file multi-stage \T1/phv/m/n/12 (-10) em \T1/cmtt/m/n/12 zarf/docker/grpc.dockerfile\T1/phv/m/n/12 (-10) .
  []
 
-<images/grpc-main.png, id=952, 1339.0025pt x 854.19125pt>
+<images/grpc-main.png, id=956, 1339.0025pt x 854.19125pt>
 File: images/grpc-main.png Graphic file (type png)
 <use images/grpc-main.png>
 Package pdftex.def Info: images/grpc-main.png  used on input line 281.
@@ -2320,97 +2327,97 @@ Overfull \hbox (67.63182pt too wide) in paragraph at lines 300--301
 
 
 
-[50 <./images/grpc-main.png>]
+[51 <./images/grpc-main.png>]
 
-[51]
+[52]
 Overfull \hbox (28.69171pt too wide) in paragraph at lines 372--373
 \T1/phv/m/n/12 (-10) metheus foi con-fi-gu-rado com re-ten-ção de 200 ho-ras (\T1/cmtt/m/n/12 --storage.tsdb.retention.time=200h\T1/phv/m/n/12 (-10) ). 
  []
 
 
 
-[52]
-<images/grafana-cpu-memory.png, id=1018, 1915.155pt x 811.03pt>
+[53]
+<images/grafana-cpu-memory.png, id=1022, 1915.155pt x 811.03pt>
 File: images/grafana-cpu-memory.png Graphic file (type png)
 <use images/grafana-cpu-memory.png>
 Package pdftex.def Info: images/grafana-cpu-memory.png  used on input line 397.
 (pdftex.def)             Requested size: 455.0pt x 192.6835pt.
 
 
-[53 <./images/grafana-cpu-memory.png>]) (./chapters/04-chapter.tex
+[54 <./images/grafana-cpu-memory.png>]) (./chapters/04-chapter.tex
 
-[54]
+[55]
 Overfull \hbox (13.08199pt too wide) in paragraph at lines 21--22
 []\T1/phv/m/n/12 (-10) Entre cada teste, os ser-vi-do-res fo-ram rei-ni-ci-a-dos usando \T1/cmtt/m/n/12 docker-compose restart
  []
 
 
 
-[55
+[56
 
 ]
-<images/comparison-results.png, id=1051, 453.695pt x 692.5875pt>
+<images/comparison-results.png, id=1055, 453.695pt x 692.5875pt>
 File: images/comparison-results.png Graphic file (type png)
 <use images/comparison-results.png>
 Package pdftex.def Info: images/comparison-results.png  used on input line 31.
 (pdftex.def)             Requested size: 318.49861pt x 486.20291pt.
-<images/comparasio-results-15110.png, id=1052, 453.695pt x 701.62125pt>
+<images/comparasio-results-15110.png, id=1056, 453.695pt x 701.62125pt>
 File: images/comparasio-results-15110.png Graphic file (type png)
 <use images/comparasio-results-15110.png>
 Package pdftex.def Info: images/comparasio-results-15110.png  used on input line 39.
 (pdftex.def)             Requested size: 318.49861pt x 492.5447pt.
 
 
-[56 <./images/comparison-results.png>]
+[57 <./images/comparison-results.png>]
 
-[57 <./images/comparasio-results-15110.png>]
+[58 <./images/comparasio-results-15110.png>]
 
-[58]
-<images/grafana-rest-15k.png, id=1069, 1608.0075pt x 701.62125pt>
+[59]
+<images/grafana-rest-15k.png, id=1073, 1608.0075pt x 701.62125pt>
 File: images/grafana-rest-15k.png Graphic file (type png)
 <use images/grafana-rest-15k.png>
 Package pdftex.def Info: images/grafana-rest-15k.png  used on input line 111.
 (pdftex.def)             Requested size: 455.0pt x 198.52954pt.
-<images/grafana-grpc-15k.png, id=1070, 1608.0075pt x 701.62125pt>
+<images/grafana-grpc-15k.png, id=1074, 1608.0075pt x 701.62125pt>
 File: images/grafana-grpc-15k.png Graphic file (type png)
 <use images/grafana-grpc-15k.png>
 Package pdftex.def Info: images/grafana-grpc-15k.png  used on input line 119.
 (pdftex.def)             Requested size: 455.0pt x 198.52954pt.
 
 
-[59 <./images/grafana-rest-15k.png>]
-<images/grafana-rest-5k.png, id=1078, 1608.0075pt x 714.67pt>
+[60 <./images/grafana-rest-15k.png>]
+<images/grafana-rest-5k.png, id=1083, 1608.0075pt x 714.67pt>
 File: images/grafana-rest-5k.png Graphic file (type png)
 <use images/grafana-rest-5k.png>
 Package pdftex.def Info: images/grafana-rest-5k.png  used on input line 151.
 (pdftex.def)             Requested size: 455.0pt x 202.22179pt.
 
 
-[60 <./images/grafana-grpc-15k.png>]
-<images/grafana-grpc-5k.png, id=1085, 1608.0075pt x 714.67pt>
+[61 <./images/grafana-grpc-15k.png>]
+<images/grafana-grpc-5k.png, id=1089, 1608.0075pt x 714.67pt>
 File: images/grafana-grpc-5k.png Graphic file (type png)
 <use images/grafana-grpc-5k.png>
 Package pdftex.def Info: images/grafana-grpc-5k.png  used on input line 159.
 (pdftex.def)             Requested size: 455.0pt x 202.22179pt.
 ) (./chapters/05-chapter.tex
 
-[61 <./images/grafana-rest-5k.png> <./images/grafana-grpc-5k.png>]
+[62 <./images/grafana-rest-5k.png> <./images/grafana-grpc-5k.png>]
 
-[62]
+[63]
 
-[63
-
-]
-
-[64])
-
-[65]
-
-[66
+[64
 
 ]
 
-[67]
+[65])
+
+[66]
+
+[67
+
+]
+
+[68]
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
@@ -2434,18 +2441,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45747 strings out of 473190
- 838010 string characters out of 5713195
+ 45748 strings out of 473190
+ 838017 string characters out of 5713195
  2163198 words of memory out of 5000000
  67815 multiletter control sequences out of 15000+600000
  625598 words of font info for 280 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  196i,13n,292p,2560b,4447s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (68 pages, 10684606 bytes).
+Output written on main.pdf (69 pages, 10686682 bytes).
 PDF statistics:
- 1401 PDF objects out of 1440 (max. 8388607)
- 1267 compressed objects within 13 object streams
- 330 named destinations out of 1000 (max. 500000)
+ 1406 PDF objects out of 1440 (max. 8388607)
+ 1271 compressed objects within 13 object streams
+ 331 named destinations out of 1000 (max. 500000)
  71228 words of extra memory for PDF output out of 74296 (max. 10000000)
 
