@@ -727,6 +727,11 @@ INPUT ./images/grafana-grpc-5k.png
 INPUT ./images/grafana-grpc-5k.png
 INPUT ./images/grafana-grpc-5k.png
 INPUT ./images/grafana-grpc-5k.png
+INPUT ./chapters/05-chapter.tex
+INPUT ./chapters/05-chapter.tex
+INPUT ./chapters/05-chapter.tex
+INPUT ./chapters/05-chapter.tex
+INPUT chapters/05-chapter.tex
 OUTPUT main.lof
 OUTPUT main.lot
 OUTPUT main.toc

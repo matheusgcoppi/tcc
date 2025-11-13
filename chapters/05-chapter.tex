@@ -2,22 +2,50 @@
 \chapter{CONSIDERAÇÕES FINAIS} \label{cap:consideracoes}
 % ----------------------------------------------------------
 
-Você deve iniciar as considerações “olhando” para os objetivos apresentados na Seção \ref{sec:objetivos}. Inicie falando sobre como os objetivos foram alcançados.
-Em seguida fale sobre as suas experiências e descobertas ao realizar o trabalho, por exemplo, as vantagens e desvantagens das tecnologias utilizadas e as dificuldades encontradas no desenvolvimento da solução.
-Encerre as considerações com narrativas mais gerais, expondo sua visão do trabalho como um todo.
+Este trabalho teve como objetivo geral comparar o desempenho dos protocolos de comunicação \textit{REST} e \textit{gRPC} em arquiteturas de microsserviços, conforme estabelecido na Seção \ref{sec:objetivos}. A comparação foi conduzida por meio de métricas de observabilidade, incluindo latência e uso de recursos, possibilitando uma análise empírica fundamentada dos dois protocolos em cenários controlados.
+
+Os objetivos específicos propostos foram integralmente alcançados. Foram implementados dois microsserviços funcionalmente equivalentes, um utilizando \textit{REST} com JSON e outro empregando \textit{gRPC} com \textit{Protocol Buffers}, ambos desenvolvidos em Go e compartilhando a mesma lógica de negócio para garantir uma comparação justa, conforme detalhado no Capítulo \ref{cap:desenvolvimento}. A instrumentação dos serviços foi realizada com sucesso, expondo métricas através do Prometheus e possibilitando a coleta contínua de dados de desempenho. A execução de testes de carga controlados foi conduzida com dois volumes distintos de dados (5.110 e 15.110 certificados), permitindo avaliar o comportamento dos protocolos em diferentes escalas.
+
+A coleta e análise das métricas revelaram diferenças significativas entre os protocolos, apresentadas no Capítulo \ref{cap:resultados}. O \textit{gRPC} demonstrou superioridade em múltiplos aspectos: redução consistente de 2\% no tamanho do \textit{payload}, \textit{speedup} variando de 1,76x a 3,02x dependendo do volume de dados, e consumo de memória 40\% inferior ao \textit{REST} no teste com 15.110 certificados. A comparação estatística dos resultados evidenciou que o \textit{gRPC} é particularmente vantajoso em cenários que demandam alta eficiência na serialização de dados e redução de latência, enquanto o \textit{REST} mantém sua relevância pela simplicidade de implementação e ampla compatibilidade com ferramentas existentes.
+
+Durante o desenvolvimento deste trabalho, diversas experiências e descobertas enriqueceram a compreensão dos protocolos avaliados. A implementação revelou que o \textit{gRPC}, embora superior em desempenho, impõe uma curva de aprendizado mais acentuada devido à necessidade de definição prévia de contratos através de \textit{Protocol Buffers} e à menor disponibilidade de ferramentas de \textit{debugging} visuais quando comparado ao \textit{REST}. A geração de código a partir de arquivos \texttt{.proto}, embora automatize a criação de clientes e servidores \textit{type-safe}, adiciona uma etapa ao processo de desenvolvimento que pode impactar a agilidade em projetos com requisitos frequentemente mutáveis.
+
+Por outro lado, o \textit{REST} demonstrou maior facilidade de integração com ferramentas existentes, como navegadores \textit{web}, \texttt{curl} e \textit{Postman}, facilitando testes manuais e depuração. A natureza textual do JSON, embora resulte em \textit{payloads} maiores, proporciona maior legibilidade e simplicidade no processo de desenvolvimento, especialmente em equipes com menor experiência em sistemas distribuídos. Essa característica torna o \textit{REST} uma escolha pragmática para \textit{APIs} públicas e sistemas onde a interoperabilidade com clientes heterogêneos é prioritária.
+
+No contexto de observabilidade, ambos os protocolos apresentaram boa integração com ferramentas modernas como Prometheus e Grafana. Entretanto, o \textit{gRPC} oferece vantagens nativas para rastreamento distribuído através de \textit{metadata} binário e suporte integrado a \textit{tracing}, aspectos que não foram explorados em profundidade neste trabalho mas que se mostraram promissores para investigações futuras.
+
+As dificuldades encontradas incluíram a necessidade de sincronização precisa entre a execução dos testes e a captura de métricas no Grafana, solucionada através de \textit{scripts} automatizados que garantiram a repetibilidade dos experimentos. Além disso, a configuração inicial do ambiente \textit{Docker} com múltiplos contêineres (servidores \textit{REST} e \textit{gRPC}, Prometheus, Grafana e cAdvisor) demandou atenção especial para garantir o isolamento adequado e evitar interferências entre os testes.
+
+De forma geral, este trabalho evidencia que a escolha entre \textit{REST} e \textit{gRPC} não deve ser pautada exclusivamente por métricas de desempenho, mas também por considerações pragmáticas relacionadas à maturidade da equipe, requisitos de interoperabilidade e complexidade do domínio de negócio. O \textit{gRPC} se destaca como escolha superior para comunicação interna entre microsserviços em ambientes controlados, onde o desempenho é crítico e há controle sobre ambos os lados da comunicação. O \textit{REST}, por sua vez, mantém-se como padrão recomendado para \textit{APIs} públicas e cenários onde simplicidade e compatibilidade são prioritárias.
 
 % ----------------------------------------------------------
-\section{CONTRIBUIÇÕES} 
+\section{CONTRIBUIÇÕES}
 % ----------------------------------------------------------
 
-Quais foram as constituições do seu trabalho? É importante destacar que não são contribuições para você, mas sim para quem irá utilizar o trabalho como referência! Por exemplo, você pode citar como contribuições os estudos, especificações, modelos e outros recursos disponíveis no trabalho e que podem ser utilizados por terceiros como base para o desenvolvimento de novos trabalhos ou pesquisas.
+Este trabalho oferece contribuições práticas e teóricas para a área de arquitetura de microsserviços e engenharia de \textit{software}. Em primeiro lugar, a comparação empírica documentada entre \textit{REST} e \textit{gRPC} fornece dados quantitativos concretos que podem orientar decisões arquiteturais em projetos reais, preenchendo uma lacuna na literatura que frequentemente aborda os protocolos de forma isolada.
 
-% ----------------------------------------------------------
-\section{TRABALHOS FUTUROS} 
-% ----------------------------------------------------------
+A metodologia de teste desenvolvida, incluindo o \textit{script} automatizado \texttt{compare\_full.sh} e a configuração de infraestrutura de observabilidade com Prometheus e Grafana, pode ser reutilizada por pesquisadores e desenvolvedores para realizar comparações similares em outros contextos ou com diferentes protocolos. A documentação detalhada do processo de instrumentação, coleta de métricas e análise estatística constitui um recurso valioso para equipes que buscam implementar práticas de observabilidade em arquiteturas distribuídas.
 
-Listar o que pode ser melhorado ou adicionado na solução desenvolvida.
+Os \textit{benchmarks} e métricas coletadas (latência, \textit{throughput}, consumo de recursos) fornecem valores de referência para sistemas de geração e gerenciamento de certificados X.509, um domínio de aplicação relevante para segurança de sistemas. As análises de escalabilidade, demonstrando como os protocolos se comportam com volumes de dados de 5k e 15k certificados, oferecem \textit{insights} sobre os limites operacionais de cada abordagem.
 
-% \gls{Palavra}
+Adicionalmente, a implementação em Go com arquitetura modular e a definição de contratos claros através de \textit{Protocol Buffers} exemplificam boas práticas de engenharia de \textit{software} aplicadas a microsserviços, servindo como material didático para estudantes e profissionais que buscam aprofundar seus conhecimentos nessa área.
 
-% \gls{OutraPalavra}
+Por fim, a integração completa de ferramentas de observabilidade (Prometheus, Grafana, cAdvisor) em um ambiente \textit{Docker Compose} demonstra uma abordagem prática e replicável para monitoramento de microsserviços.
+
+% % ----------------------------------------------------------
+% \section{TRABALHOS FUTUROS}
+% % ----------------------------------------------------------
+
+% Diversas oportunidades de extensão e aprofundamento emergem a partir deste trabalho. Recomenda-se a condução de testes em ambientes de produção ou ambientes de homologação com características mais próximas de cenários reais, incluindo variações de carga ao longo do tempo, simulação de falhas de rede e avaliação de comportamento sob condições adversas como latência elevada e \textit{packet loss}.
+
+% A inclusão de outros protocolos de comunicação na análise comparativa, como \textit{GraphQL} e \textit{Apache Thrift}, ampliaria o escopo da investigação e forneceria um panorama mais abrangente das opções disponíveis para comunicação entre microsserviços. Cada protocolo apresenta características distintas que podem ser mais adequadas a contextos específicos.
+
+% Aspectos de segurança, autenticação e autorização não foram abordados neste estudo, mas constituem elementos críticos em sistemas de produção. Trabalhos futuros poderiam investigar o \textit{overhead} introduzido por mecanismos de segurança como \textit{TLS mutual authentication}, \textit{JWT tokens}, e políticas de autorização baseadas em \textit{role-based access control} (RBAC) ou \textit{attribute-based access control} (ABAC).
+
+% A avaliação de rastreamento distribuído (\textit{distributed tracing}) utilizando ferramentas como \textit{Jaeger} ou \textit{Zipkin} complementaria os três pilares da observabilidade explorados neste trabalho, permitindo visualizar o fluxo completo de requisições através de múltiplos serviços e identificar gargalos em cadeias de comunicação complexas.
+
+% Testes de escalabilidade horizontal, avaliando o comportamento dos protocolos ao escalar o número de réplicas dos serviços e ao introduzir balanceamento de carga, forneceriam \textit{insights} sobre a operação em ambientes de alta disponibilidade e \textit{cloud-native}.
+
+% A implementação de \textit{circuit breakers}, \textit{retry policies} e \textit{timeouts} configuráveis permitiria avaliar a resiliência dos protocolos em cenários de falha parcial, aspecto fundamental para a confiabilidade de arquiteturas de microsserviços.
+
+% Por fim, a realização de comparações em diferentes linguagens de programação (Java, Python, Node.js) e a avaliação do impacto de diferentes estratégias de serialização (JSON vs. Protocol Buffers vs. MessagePack) complementariam a compreensão sobre os \textit{trade-offs} envolvidos na escolha de tecnologias para microsserviços.

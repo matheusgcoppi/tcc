@@ -71,12 +71,33 @@
       \field{note}{Acesso em: 31 maio 2025}
       \field{title}{Diferenças entre gRPC e REST}
       \field{year}{2023}
-      \verb{urlraw}
-      \verb https://aws.amazon.com/pt/compare/the-difference-between-grpc-and-rest/
-      \endverb
-      \verb{url}
-      \verb https://aws.amazon.com/pt/compare/the-difference-between-grpc-and-rest/
-      \endverb
+    \endentry
+    \entry{sandeep2022observability}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b254342bb16fd6f8ef289eb5695c71fa}{%
+           family={Chinamanagonda},
+           familyi={C\bibinitperiod},
+           given={Sandeep},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b254342bb16fd6f8ef289eb5695c71fa}
+      \strng{fullhash}{b254342bb16fd6f8ef289eb5695c71fa}
+      \strng{fullhashraw}{b254342bb16fd6f8ef289eb5695c71fa}
+      \strng{bibnamehash}{b254342bb16fd6f8ef289eb5695c71fa}
+      \strng{authorbibnamehash}{b254342bb16fd6f8ef289eb5695c71fa}
+      \strng{authornamehash}{b254342bb16fd6f8ef289eb5695c71fa}
+      \strng{authorfullhash}{b254342bb16fd6f8ef289eb5695c71fa}
+      \strng{authorfullhashraw}{b254342bb16fd6f8ef289eb5695c71fa}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{MZ Research Journal}
+      \field{title}{Observability in Microservices Architectures -Advanced observability tools for microservices environments}
+      \field{year}{2022}
     \endentry
     \entry{farhan2023performance}{misc}{}{}
       \true{moreauthor}
@@ -105,6 +126,91 @@
       \field{labeltitlesource}{title}
       \field{title}{Performance Comparison between Monolith and Microservice Using Docker and Kubernetes}
       \field{year}{2023}
+    \endentry
+    \entry{fielding2000rest}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=87dbbd44b3977c28b71d826a931add3e}{%
+           family={Fielding},
+           familyi={F\bibinitperiod},
+           given={Roy\bibnamedelima Thomas},
+           giveni={R\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {University of California}%
+      }
+      \list{location}{1}{%
+        {Irvine, EUA}%
+      }
+      \strng{namehash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{fullhash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{fullhashraw}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{bibnamehash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{authorbibnamehash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{authornamehash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{authorfullhash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{authorfullhashraw}{87dbbd44b3977c28b71d826a931add3e}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{bookpagination}{sheet}
+      \field{note}{Tese de Doutorado}
+      \field{title}{Architectural Styles and the Design of Network-based Software Architectures}
+      \field{type}{phdthesis}
+      \field{year}{2000}
+    \endentry
+    \entry{Fowler2012CircuitBreaker}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=312ac886938a9b2be4f8eb607567fe4c}{%
+           family={Fowler},
+           familyi={F\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{fullhashraw}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{bibnamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorbibnamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authornamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorfullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorfullhashraw}{312ac886938a9b2be4f8eb607567fe4c}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Circuit Breaker}
+      \field{year}{2012}
+    \endentry
+    \entry{ibm:7}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=cbf44511d041dc6d1dd73cc0c033122c}{%
+           family={{IBM}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{fullhash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{fullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{bibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorbibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authornamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorfullhash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorfullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Acesso em: 31 maio 2025}
+      \field{title}{gRPC vs. REST}
+      \field{year}{2025}
     \endentry
     \entry{jamshidi2016systematic}{article}{}{}
       \true{moreauthor}
@@ -135,6 +241,44 @@
       \field{title}{A Systematic Mapping Study in Microservice Architecture}
       \field{year}{2016}
     \endentry
+    \entry{kim2021servicemesh}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b2236af712a294693dcea632d195b1fb}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa5a7c8780167efaa3ed45566a0806a0}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{db097df803ff3f6e73eed2683be0a911}
+      \strng{fullhash}{db097df803ff3f6e73eed2683be0a911}
+      \strng{fullhashraw}{db097df803ff3f6e73eed2683be0a911}
+      \strng{bibnamehash}{db097df803ff3f6e73eed2683be0a911}
+      \strng{authorbibnamehash}{db097df803ff3f6e73eed2683be0a911}
+      \strng{authornamehash}{db097df803ff3f6e73eed2683be0a911}
+      \strng{authorfullhash}{db097df803ff3f6e73eed2683be0a911}
+      \strng{authorfullhashraw}{db097df803ff3f6e73eed2683be0a911}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2021 International Conference on Information Networking (ICOIN)}
+      \field{title}{Service Mesh Based Distributed Tracing System}
+      \field{year}{2021}
+      \field{pages}{105\bibrangedash 110}
+      \range{pages}{6}
+    \endentry
     \entry{observability2023}{misc}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=c33e1227ab694e714b9d9e02cdc10cf2}{%
@@ -160,6 +304,63 @@
       \field{labeltitlesource}{title}
       \field{title}{Observability in Microservices Architectures: Leveraging Logging, Metrics, and Distributed Tracing in Large-Scale Systems}
       \field{year}{2023}
+    \endentry
+    \entry{maso2024comparativo}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ab81c01a3a9ba372bfe0c65b1a5e2b84}{%
+           family={Maso},
+           familyi={M\bibinitperiod},
+           given={Nicolas\bibnamedelima Nascimento},
+           giveni={N\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ab81c01a3a9ba372bfe0c65b1a5e2b84}
+      \strng{fullhash}{ab81c01a3a9ba372bfe0c65b1a5e2b84}
+      \strng{fullhashraw}{ab81c01a3a9ba372bfe0c65b1a5e2b84}
+      \strng{bibnamehash}{ab81c01a3a9ba372bfe0c65b1a5e2b84}
+      \strng{authorbibnamehash}{ab81c01a3a9ba372bfe0c65b1a5e2b84}
+      \strng{authornamehash}{ab81c01a3a9ba372bfe0c65b1a5e2b84}
+      \strng{authorfullhash}{ab81c01a3a9ba372bfe0c65b1a5e2b84}
+      \strng{authorfullhashraw}{ab81c01a3a9ba372bfe0c65b1a5e2b84}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Repositório UFSC}
+      \field{note}{Trabalho de Conclusão de Curso}
+      \field{title}{Comparativo entre arquiteturas de APIs: REST, GraphQL e gRPC}
+      \field{year}{2024}
+    \endentry
+    \entry{Nair2019CircuitBreaker}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=df02fed690b29cfcc8d30c35814bf659}{%
+           family={Nair},
+           familyi={N\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8877478799bcee42506685e84d3ddec3}
+      \strng{fullhash}{8877478799bcee42506685e84d3ddec3}
+      \strng{fullhashraw}{8877478799bcee42506685e84d3ddec3}
+      \strng{bibnamehash}{8877478799bcee42506685e84d3ddec3}
+      \strng{authorbibnamehash}{8877478799bcee42506685e84d3ddec3}
+      \strng{authornamehash}{8877478799bcee42506685e84d3ddec3}
+      \strng{authorfullhash}{8877478799bcee42506685e84d3ddec3}
+      \strng{authorfullhashraw}{8877478799bcee42506685e84d3ddec3}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Recent Technology and Engineering}
+      \field{title}{A survey on circuit breaker pattern in microservices architecture}
+      \field{year}{2019}
     \endentry
     \entry{nizami2020comparison}{inproceedings}{}{}
       \true{moreauthor}
@@ -278,12 +479,6 @@
       \field{year}{2023}
     \endentry
   \enddatalist
-  \missing{adyog:8}
-  \missing{blog:2}
-  \missing{dreamfactory:2}
-  \missing{ibm:5}
-  \missing{postman:3}
-  \missing{shiftasia:7}
 \endrefsection
 \endinput
 

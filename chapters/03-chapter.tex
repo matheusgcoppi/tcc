@@ -106,11 +106,11 @@ Para viabilizar a observabilidade, o projeto integra Prometheus para coleta de m
 \section{AMBIENTE DE DESENVOLVIMENTO}\label{sec:ambiente}
 % ----------------------------------------------------------
 
-O ambiente de desenvolvimento foi configurado utilizando Go versão 1.24.6 como linguagem principal. A escolha do Go se justifica por suas características de \textit{performance}, suporte nativo a concorrência através de \textit{goroutines} e amplo ecossistema para desenvolvimento de microsserviços. Além disso, a linguagem possui bibliotecas maduras tanto para construção de APIs REST quanto para implementação de serviços gRPC.
+O ambiente de desenvolvimento foi configurado utilizando Go versão 1.24.6 como linguagem principal. A escolha do Go se justifica por suas características de performance, suporte nativo a concorrência através de \textit{goroutines} e amplo ecossistema para desenvolvimento de microsserviços. Além disso, a linguagem possui bibliotecas maduras tanto para construção de APIs REST quanto para implementação de serviços gRPC.
 
 Para o desenvolvimento foi utilizado o \textit{goland} como editor principal. O projeto utiliza Go \textit{Modules} para gerenciamento de dependências, facilitando a reprodutibilidade do ambiente. As principais dependências incluem o framework gRPC (\texttt{google.golang.org/grpc}), Protocol Buffers (\texttt{google.golang.org/protobuf}), cliente Prometheus (\texttt{github.com/prometheus/client\_golang}) e geração de UUIDs (\texttt{github.com/google/uuid}).
 
-A containerização foi realizada através do \textit{Docker}, permitindo que ambos os servidores executem em ambientes isolados e padronizados. O \textit{Docker Compose} orquestra os serviços necessários (REST, gRPC, \textit{Prometheus}, \textit{Grafana} e \textit{cAdvisor}), simplificando o processo de execução e testes. Os \textit{Dockerfiles} utilizam \textit{builds} multi-estágio baseados em \textit{Alpine Linux}, resultando em imagens finais com aproximadamente 25-30MB.
+A containerização foi realizada através do \textit{Docker}, permitindo que ambos os servidores executem em ambientes isolados e padronizados. O \textit{Docker Compose} orquestra os serviços necessários (REST, gRPC, \textit{Prometheus}, \textit{Grafana} e \textit{cAdvisor}), simplificando o processo de execução e testes.
 
 % \begin{figure}[htb]
 %     \begin{center}
@@ -429,4 +429,4 @@ Usuários não-root foram configurados nos contêineres por questões de seguran
 
 O \textit{Docker Compose} orquestra cinco serviços simultaneamente: \texttt{rest-app} na porta 8000, \texttt{grpc-app} na porta 50051, \texttt{prometheus} na porta 9090, \texttt{grafana} na porta 3000 com credenciais admin/admin, e \texttt{cadvisor} na porta 8080. Todos os serviços se comunicam através de uma rede \textit{bridge} padrão criada automaticamente.
 
-\textit{Volumes} nomeados garantem a persistência de dados do \textit{Prometheus} e configurações do \textit{Grafana} mesmo após reinicialização dos contêineres. O comando \texttt{make dev} definido no \textit{Makefile} simplifica todo o processo de \textit{build} e inicialização da \textit{stack} completa.
+\textit{Volumes} nomeados garantem a persistência de dados do \textit{Prometheus} e configurações do \textit{Grafana} mesmo após reinicialização dos contêineres.

@@ -24,7 +24,7 @@ Entre cada teste, os servidores foram reiniciados usando \texttt{docker-compose 
 \section{RESULTADOS OBTIDOS}\label{sec:resultados-obtidos}
 % ----------------------------------------------------------
 
-As Figuras \ref{fig:comparison-results-5k} e \ref{fig:comparison-results-15k} apresentam os resultados obtidos nas execuções do script de comparação, capturando screenshots do terminal durante a execução dos testes.
+As Figuras \ref{fig:comparison-results-5k} e \ref{fig:comparison-results-15k} apresentam os resultados obtidos.
 
 \begin{figure}[H]
 \centering
@@ -48,14 +48,14 @@ As Figuras \ref{fig:comparison-results-5k} e \ref{fig:comparison-results-15k} ap
 
 Nos testes executados, foram observados os seguintes tamanhos de payload:
 
-**Teste com 5.110 certificados:**
+Teste com 5.110 certificados:
 \begin{itemize}
     \item REST/JSON: 6.750.564 bytes (6,43 MB)
     \item gRPC/Protobuf: 6.653.472 bytes (6,35 MB)
     \item Redução: 97.092 bytes (2\%)
 \end{itemize}
 
-**Teste com 15.110 certificados:**
+Teste com 15.110 certificados:
 \begin{itemize}
     \item REST/JSON: 19.960.564 bytes (19,03 MB)
     \item gRPC/Protobuf: 19.673.472 bytes (18,76 MB)
@@ -68,7 +68,7 @@ A redução de payload manteve-se consistente em 2\% em ambos os testes, indepen
 
 Nos testes de tempo de transferência, foram observados:
 
-**Teste com 5.110 certificados:**
+Teste com 5.110 certificados:
 \begin{itemize}
     \item REST: 1,985 segundos
     \item gRPC: 0,657 segundos
@@ -76,7 +76,7 @@ Nos testes de tempo de transferência, foram observados:
     \item Diferença absoluta: 1,328 segundos
 \end{itemize}
 
-**Teste com 15.110 certificados:**
+Teste com 15.110 certificados:
 \begin{itemize}
     \item REST: 3,438 segundos
     \item gRPC: 1,944 segundos
@@ -84,15 +84,7 @@ Nos testes de tempo de transferência, foram observados:
     \item Diferença absoluta: 1,494 segundos
 \end{itemize}
 
-O speedup foi mais pronunciado no teste de 5k certificados (3,02x) comparado ao teste de 15k certificados (1,76x). A diferença absoluta de tempo manteve-se próxima em ambos os cenários (~1,4-1,5 segundos).
-
-\subsection{Projeção de Economia de Largura de Banda}
-
-O script calcula projeções para cenários de múltiplas requisições. No teste com 5.110 certificados, 100 requisições consumiriam 643 MB com REST e 634,52 MB com gRPC, economizando 8,48 MB. No teste com 15.110 certificados, 100 requisições totalizariam 1.903 MB com REST e 1.876,21 MB com gRPC, economizando 26,79 MB.
-
-A economia proporcional se mantém constante em 2\%, mas o volume absoluto economizado escala linearmente com o tamanho dos dados. Em sistemas de alta escala com milhões de requisições diárias, essa diferença se torna significativa. Considerando o cenário maior, 1 milhão de requisições economizaria aproximadamente 268 GB de tráfego de rede, reduzindo custos de transferência em ambientes cloud que cobram por largura de banda.
-
-Além da economia financeira, a redução de largura de banda beneficia usuários em redes com capacidade limitada ou tarifadas por volume de dados, como conexões móveis. O tempo total economizado em 1 milhão de requisições no cenário de 15.110 certificados seria de aproximadamente 415 horas (17 dias) considerando o speedup de 1,76x, representando ganho substancial de eficiência operacional.
+O textit{speedup} foi mais pronunciado no teste de 5k certificados (3,02x) comparado ao teste de 15k certificados (1,76x). A diferença absoluta de tempo manteve-se próxima em ambos os cenários (~1,4-1,5 segundos).
 
 % ----------------------------------------------------------
 \section{ANÁLISE DE CONSUMO DE RECURSOS}\label{sec:consumo-recursos}
@@ -108,7 +100,7 @@ As métricas foram visualizadas através de \textit{dashboards} personalizados c
 
 Durante a execução dos testes, o \textit{Grafana} foi mantido aberto em modo de atualização automática (\textit{refresh} de 5 segundos) para observar o comportamento em tempo real. Foi executado o comando \texttt{curl http://localhost:8000/certificate/all} para REST e o cliente gRPC equivalente, observando-se os picos de recursos no momento exato da transferência. Os gráficos capturados nas figuras representam uma janela temporal de aproximadamente 10 minutos, incluindo o período antes, durante e após a requisição.
 
-Os servidores estavam em estado \textit{idle} antes de cada teste, com consumo de CPU próximo a zero e memória base (\textit{footprint} do processo Go e suas estruturas). Após a requisição, foi observado o pico de utilização durante o processamento, seguido de declínio gradual à medida que o \textit{garbage collector} do Go liberava memória não utilizada. O período de estabilização completo levou cerca de 2-3 minutos em ambos os servidores.
+Os servidores estavam em estado \textit{idle} antes de cada teste, com consumo de CPU próximo a zero e memória base. Após a requisição, foi observado o pico de utilização durante o processamento, seguido de declínio gradual à medida que o \textit{garbage collector} do Go liberava memória não utilizada. O período de estabilização completo levou cerca de 2-3 minutos em ambos os servidores.
 
 Para garantir captura precisa dos picos, foi sincronizada manualmente a execução do comando \texttt{curl} com a observação do \textit{timestamp} no \textit{Grafana}. Aguardou-se o servidor estabilizar completamente (CPU < 0,1\% por pelo menos 30 segundos) antes de executar cada requisição de teste. Após a execução, aguardou-se o consumo de memória retornar a valores próximos ao \textit{baseline} antes de capturar o \textit{screenshot}. Esta metodologia assegurou que os gráficos capturassem o ciclo completo de carga-processamento-estabilização.
 
@@ -132,13 +124,13 @@ Os \textit{screenshots} foram salvos em resolução 1920x1080 diretamente do nav
 
 Métricas observadas no teste com 15.110 certificados:
 
-**Servidor REST:**
+Servidor REST:
 \begin{itemize}
     \item CPU: média 0,340\%, pico 0,431\%
     \item Memória: média 86,1 MiB, pico 99,7 MiB
 \end{itemize}
 
-**Servidor gRPC:**
+Servidor gRPC:
 \begin{itemize}
     \item CPU: média 0,273\%, pico 0,337\%
     \item Memória: média 49,7 MiB, pico 59,3 MiB
@@ -149,6 +141,10 @@ O servidor gRPC apresentou consumo de memória 40,4 MiB inferior ao REST (difere
 \subsection{Resultados do Teste com 5.000 Certificados}
 
 As Figuras \ref{fig:grafana-rest-5k} e \ref{fig:grafana-grpc-5k} apresentam as métricas coletadas durante a transferência de 5.000 certificados. A metodologia de coleta foi idêntica ao teste anterior (resolução de 1 segundo). Os servidores foram reiniciados entre os testes para eliminar efeitos de cache.
+
+Este teste com volume reduzido de dados (5.000 certificados, aproximadamente 6,4 MB) permite avaliar o comportamento dos protocolos em cenários de menor carga, representando requisições típicas em sistemas de produção com volumes moderados de dados. A comparação entre os dois volumes (5k e 15k) possibilita identificar se as diferenças de desempenho observadas são consistentes ou se há variações significativas dependendo da escala dos dados transferidos.
+
+O procedimento de execução seguiu os mesmos critérios de sincronização temporal estabelecidos no teste anterior.
 
 \begin{figure}[H]
 \centering
@@ -168,13 +164,13 @@ As Figuras \ref{fig:grafana-rest-5k} e \ref{fig:grafana-grpc-5k} apresentam as m
 
 Métricas observadas no teste com 5.000 certificados:
 
-**Servidor REST:**
+Servidor REST:
 \begin{itemize}
     \item CPU: média 0,164\%, pico 0,406\%
     \item Memória: média 23,9 MiB, pico 44,0 MiB
 \end{itemize}
 
-**Servidor gRPC:**
+Servidor gRPC:
 \begin{itemize}
     \item CPU: média 0,297\%, pico 0,340\%
     \item Memória: média 31,2 MiB, pico 43,1 MiB
