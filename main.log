@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.19)  13 NOV 2025 20:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.19)  13 NOV 2025 20:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2097,7 +2097,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 ]
 
 [15]
-<images/monolito.png, id=347, 1275.76625pt x 1217.54875pt>
+<images/monolito.png, id=345, 1275.76625pt x 1217.54875pt>
 File: images/monolito.png Graphic file (type png)
 <use images/monolito.png>
 Package pdftex.def Info: images/monolito.png  used on input line 45.
@@ -2109,7 +2109,7 @@ Package pdftex.def Info: images/monolito.png  used on input line 45.
 [17 <./images/monolito.png>]
 
 [18]
-<images/event-driven.png, id=388, 1027.84pt x 1027.84pt>
+<images/event-driven.png, id=386, 1027.84pt x 1027.84pt>
 File: images/event-driven.png Graphic file (type png)
 <use images/event-driven.png>
 Package pdftex.def Info: images/event-driven.png  used on input line 72.
@@ -2127,7 +2127,7 @@ Overfull \hbox (26.00456pt too wide) in paragraph at lines 80--81
 
 
 [19 <./images/event-driven.png (PNG copy)>]
-<images/serverless.png, id=397, 866.23625pt x 458.71375pt>
+<images/serverless.png, id=395, 866.23625pt x 458.71375pt>
 File: images/serverless.png Graphic file (type png)
 <use images/serverless.png>
 Package pdftex.def Info: images/serverless.png  used on input line 87.
@@ -2137,7 +2137,7 @@ Package pdftex.def Info: images/serverless.png  used on input line 87.
 [20 <./images/serverless.png>]
 
 [21]
-<./images/circuit_breaker.png, id=438, 907.89188pt x 654.94687pt>
+<./images/circuit_breaker.png, id=436, 907.89188pt x 654.94687pt>
 File: ./images/circuit_breaker.png Graphic file (type png)
 <use ./images/circuit_breaker.png>
 Package pdftex.def Info: ./images/circuit_breaker.png  used on input line 111.
@@ -2147,7 +2147,7 @@ Package pdftex.def Info: ./images/circuit_breaker.png  used on input line 111.
 [22 <./images/circuit_breaker.png (PNG copy)>]
 
 [23]
-<images/docker.png, id=496, 1027.84pt x 1027.84pt>
+<images/docker.png, id=494, 1027.84pt x 1027.84pt>
 File: images/docker.png Graphic file (type png)
 <use images/docker.png>
 Package pdftex.def Info: images/docker.png  used on input line 152.
@@ -2157,7 +2157,7 @@ Package pdftex.def Info: images/docker.png  used on input line 152.
 [24 <./images/docker.png (PNG copy)>]
 
 [25]
-<images/microservice.png, id=537, 639.89063pt x 391.4625pt>
+<images/microservice.png, id=535, 639.89063pt x 391.4625pt>
 File: images/microservice.png Graphic file (type png)
 <use images/microservice.png>
 Package pdftex.def Info: images/microservice.png  used on input line 189.
@@ -2169,7 +2169,7 @@ Package pdftex.def Info: images/microservice.png  used on input line 189.
 [27]
 
 [28]
-<images/rest.png, id=604, 1027.84pt x 657.45625pt>
+<images/rest.png, id=602, 1027.84pt x 657.45625pt>
 File: images/rest.png Graphic file (type png)
 <use images/rest.png>
 Package pdftex.def Info: images/rest.png  used on input line 312.
@@ -2179,7 +2179,7 @@ Package pdftex.def Info: images/rest.png  used on input line 312.
 [29]
 
 [30 <./images/rest.png>]
-<images/grpc.png, id=636, 1094.0875pt x 517.935pt>
+<images/grpc.png, id=634, 1094.0875pt x 517.935pt>
 File: images/grpc.png Graphic file (type png)
 <use images/grpc.png>
 Package pdftex.def Info: images/grpc.png  used on input line 340.
@@ -2191,7 +2191,7 @@ Package pdftex.def Info: images/grpc.png  used on input line 340.
 [32]
 
 [33]
-<images/kube-arch.png, id=700, 1027.84pt x 1027.84pt>
+<images/kube-arch.png, id=698, 1027.84pt x 1027.84pt>
 File: images/kube-arch.png Graphic file (type png)
 <use images/kube-arch.png>
 Package pdftex.def Info: images/kube-arch.png  used on input line 394.
@@ -2201,12 +2201,12 @@ Package pdftex.def Info: images/kube-arch.png  used on input line 394.
 [34 <./images/kube-arch.png (PNG copy)>]
 
 [35]
-<images/k8s-observability-architecture.png, id=735, 1027.84pt x 1027.84pt>
+<images/k8s-observability-architecture.png, id=733, 1027.84pt x 1027.84pt>
 File: images/k8s-observability-architecture.png Graphic file (type png)
 <use images/k8s-observability-architecture.png>
 Package pdftex.def Info: images/k8s-observability-architecture.png  used on input line 425.
 (pdftex.def)             Requested size: 364.00139pt x 363.99963pt.
-<images/teoria-controle.png, id=745, 1027.84pt x 1027.84pt>
+<images/teoria-controle.png, id=743, 1027.84pt x 1027.84pt>
 File: images/teoria-controle.png Graphic file (type png)
 <use images/teoria-controle.png>
 Package pdftex.def Info: images/teoria-controle.png  used on input line 440.
@@ -2218,7 +2218,7 @@ Package pdftex.def Info: images/teoria-controle.png  used on input line 440.
 [37 <./images/teoria-controle.png (PNG copy)>]
 
 [38]
-<images/pillars-observability.png, id=788, 1027.84pt x 1027.84pt>
+<images/pillars-observability.png, id=786, 1027.84pt x 1027.84pt>
 File: images/pillars-observability.png Graphic file (type png)
 <use images/pillars-observability.png>
 Package pdftex.def Info: images/pillars-observability.png  used on input line 485.
@@ -2228,7 +2228,7 @@ Package pdftex.def Info: images/pillars-observability.png  used on input line 48
 [39 <./images/pillars-observability.png (PNG copy)>]
 
 [40]
-<images/automacao.png, id=818, 1027.84pt x 1027.84pt>
+<images/automacao.png, id=816, 1027.84pt x 1027.84pt>
 File: images/automacao.png Graphic file (type png)
 <use images/automacao.png>
 Package pdftex.def Info: images/automacao.png  used on input line 516.
@@ -2283,7 +2283,7 @@ Overfull \hbox (12.99356pt too wide) in paragraph at lines 166--167
 \T1/cmtt/m/n/12 requests_-total \T1/phv/m/n/12 (-10) (con-ta-dor de re-qui-si-ções por mé-todo, \T1/phv/m/sl/12 (-10) end-po-int \T1/phv/m/n/12 (-10) e \T1/phv/m/sl/12 (-10) sta-tus\T1/phv/m/n/12 (-10) ), \T1/cmtt/m/n/12 http_-request_-
  []
 
-<images/rest-main.png, id=859, 1343.0175pt x 854.19125pt>
+<images/rest-main.png, id=857, 1343.0175pt x 854.19125pt>
 File: images/rest-main.png Graphic file (type png)
 <use images/rest-main.png>
 Package pdftex.def Info: images/rest-main.png  used on input line 188.
@@ -2315,7 +2315,7 @@ Overfull \hbox (110.0417pt too wide) in paragraph at lines 277--278
 []\T1/phv/m/n/12 (-10) O ser-vi-dor gRPC foi con-tai-ne-ri-zado usando \T1/phv/m/sl/12 (-10) Doc-ker-file multi-stage \T1/phv/m/n/12 (-10) em \T1/cmtt/m/n/12 zarf/docker/grpc.dockerfile\T1/phv/m/n/12 (-10) .
  []
 
-<images/grpc-main.png, id=956, 1339.0025pt x 854.19125pt>
+<images/grpc-main.png, id=954, 1339.0025pt x 854.19125pt>
 File: images/grpc-main.png Graphic file (type png)
 <use images/grpc-main.png>
 Package pdftex.def Info: images/grpc-main.png  used on input line 281.
@@ -2337,7 +2337,7 @@ Overfull \hbox (28.69171pt too wide) in paragraph at lines 372--373
 
 
 [53]
-<images/grafana-cpu-memory.png, id=1022, 1915.155pt x 811.03pt>
+<images/grafana-cpu-memory.png, id=1020, 1915.155pt x 811.03pt>
 File: images/grafana-cpu-memory.png Graphic file (type png)
 <use images/grafana-cpu-memory.png>
 Package pdftex.def Info: images/grafana-cpu-memory.png  used on input line 397.
@@ -2356,12 +2356,12 @@ Overfull \hbox (13.08199pt too wide) in paragraph at lines 21--22
 [56
 
 ]
-<images/comparison-results.png, id=1055, 453.695pt x 692.5875pt>
+<images/comparison-results.png, id=1053, 453.695pt x 692.5875pt>
 File: images/comparison-results.png Graphic file (type png)
 <use images/comparison-results.png>
 Package pdftex.def Info: images/comparison-results.png  used on input line 31.
 (pdftex.def)             Requested size: 318.49861pt x 486.20291pt.
-<images/comparasio-results-15110.png, id=1056, 453.695pt x 701.62125pt>
+<images/comparasio-results-15110.png, id=1054, 453.695pt x 701.62125pt>
 File: images/comparasio-results-15110.png Graphic file (type png)
 <use images/comparasio-results-15110.png>
 Package pdftex.def Info: images/comparasio-results-15110.png  used on input line 39.
@@ -2373,12 +2373,12 @@ Package pdftex.def Info: images/comparasio-results-15110.png  used on input line
 [58 <./images/comparasio-results-15110.png>]
 
 [59]
-<images/grafana-rest-15k.png, id=1073, 1608.0075pt x 701.62125pt>
+<images/grafana-rest-15k.png, id=1071, 1608.0075pt x 701.62125pt>
 File: images/grafana-rest-15k.png Graphic file (type png)
 <use images/grafana-rest-15k.png>
 Package pdftex.def Info: images/grafana-rest-15k.png  used on input line 111.
 (pdftex.def)             Requested size: 455.0pt x 198.52954pt.
-<images/grafana-grpc-15k.png, id=1074, 1608.0075pt x 701.62125pt>
+<images/grafana-grpc-15k.png, id=1072, 1608.0075pt x 701.62125pt>
 File: images/grafana-grpc-15k.png Graphic file (type png)
 <use images/grafana-grpc-15k.png>
 Package pdftex.def Info: images/grafana-grpc-15k.png  used on input line 119.
@@ -2386,7 +2386,7 @@ Package pdftex.def Info: images/grafana-grpc-15k.png  used on input line 119.
 
 
 [60 <./images/grafana-rest-15k.png>]
-<images/grafana-rest-5k.png, id=1083, 1608.0075pt x 714.67pt>
+<images/grafana-rest-5k.png, id=1081, 1608.0075pt x 714.67pt>
 File: images/grafana-rest-5k.png Graphic file (type png)
 <use images/grafana-rest-5k.png>
 Package pdftex.def Info: images/grafana-rest-5k.png  used on input line 151.
@@ -2394,7 +2394,7 @@ Package pdftex.def Info: images/grafana-rest-5k.png  used on input line 151.
 
 
 [61 <./images/grafana-grpc-15k.png>]
-<images/grafana-grpc-5k.png, id=1089, 1608.0075pt x 714.67pt>
+<images/grafana-grpc-5k.png, id=1087, 1608.0075pt x 714.67pt>
 File: images/grafana-grpc-5k.png Graphic file (type png)
 <use images/grafana-grpc-5k.png>
 Package pdftex.def Info: images/grafana-grpc-5k.png  used on input line 159.
@@ -2407,17 +2407,15 @@ Package pdftex.def Info: images/grafana-grpc-5k.png  used on input line 159.
 
 [64
 
-]
+])
 
-[65])
+[65]
 
-[66]
-
-[67
+[66
 
 ]
 
-[68]
+[67]
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
@@ -2441,18 +2439,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45748 strings out of 473190
- 838017 string characters out of 5713195
+ 45745 strings out of 473190
+ 837993 string characters out of 5713195
  2163198 words of memory out of 5000000
- 67815 multiletter control sequences out of 15000+600000
+ 67814 multiletter control sequences out of 15000+600000
  625598 words of font info for 280 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  196i,13n,292p,2560b,4447s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (69 pages, 10686682 bytes).
+Output written on main.pdf (68 pages, 10684332 bytes).
 PDF statistics:
- 1406 PDF objects out of 1440 (max. 8388607)
- 1271 compressed objects within 13 object streams
- 331 named destinations out of 1000 (max. 500000)
- 71228 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1396 PDF objects out of 1440 (max. 8388607)
+ 1262 compressed objects within 13 object streams
+ 329 named destinations out of 1000 (max. 500000)
+ 71220 words of extra memory for PDF output out of 74296 (max. 10000000)
 

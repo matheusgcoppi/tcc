@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber main"] 1763074569.21942 "main.bcf" "main.bbl" "main" 1763074891.83078 0
-  "main.bcf" 1763074891.54913 128779 84c39f0b9e184538674dd4c3d07a5b46 "pdflatex"
+["biber main"] 1763074569.21942 "main.bcf" "main.bbl" "main" 1763075584.44533 0
+  "main.bcf" 1763075584.21865 128779 84c39f0b9e184538674dd4c3d07a5b46 "pdflatex"
   "references.bib" 1750361360.13524 5267 fde24b46b4582b743d1b129369ae1d79 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["makeindex main.idx"] 1763074557.15968 "main.idx" "main.ind" "main" 1763074891.83054 0
-  "main.idx" 1763074883.72562 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1763074557.15968 "main.idx" "main.ind" "main" 1763075584.44518 0
+  "main.idx" 1763075576.60841 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1763074882.1026 "/Users/matheusgcoppi/college/tcc/main.tex" "main.pdf" "main" 1763074891.83115 0
+["pdflatex"] 1763075575.06394 "/Users/matheusgcoppi/college/tcc/main.tex" "main.pdf" "main" 1763075584.44568 0
   "/Users/matheusgcoppi/college/tcc/main.tex" 1762472323.62926 9769 1e40b4ba0efd7002dabb6330edc5caa4 ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -253,7 +253,7 @@
   "chapters/02-chapter.tex" 1763074881.76603 84852 74fbb8da1c3f80fe54d6337a0c51810e ""
   "chapters/03-chapter.tex" 1762626171.52985 27388 4249bb560aca2fe0893974637df37f3f ""
   "chapters/04-chapter.tex" 1762712876.577 12720 1c09305c8c4fdb96e4308ce262e110cc ""
-  "chapters/05-chapter.tex" 1762712192.33594 9969 73f1a81a2e4435caa1a793986ac67665 ""
+  "chapters/05-chapter.tex" 1763075572.44334 9981 e4176de57f3c30c37db416a3cb7d639b ""
   "images/automacao.png" 1750361360.1037 1239175 49fb0f541d366ee500230b86d255b47c ""
   "images/circuit_breaker.png" 1750361360.10425 134334 6e27a09aadc50daf48a94b881e20182b ""
   "images/comparasio-results-15110.png" 1761693997.29014 87003 6c50232e159634c30f2be8e70e15f98c ""
@@ -276,14 +276,14 @@
   "images/rest.png" 1750361360.11453 891277 7fd7ddf44f4149b0ed42fbf96434d931 ""
   "images/serverless.png" 1750361360.1149 94475 3cc0c1259aa0bf47ebab5159765f2a0a ""
   "images/teoria-controle.png" 1750361360.11612 1271519 84293653646ed2d6a7b6a00357649cb3 ""
-  "main.aux" 1763074891.52279 64132 0229fd765cd8e7905f4461690263462e "pdflatex"
+  "main.aux" 1763075584.19441 63794 213bba8df60ab4b82768a52feb8094b3 "pdflatex"
   "main.bbl" 1763074571.55718 20747 864961cfa8ba7a9fd6ed18b5fba7ab92 "biber main"
   "main.ind" 1763074557.23313 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.lof" 1763074891.55013 4636 1f59cc14e613fc2e76b841617ad044a1 "pdflatex"
-  "main.lot" 1763074891.55028 409 3c2a8dcb078c77acd5215378f56360fc "pdflatex"
-  "main.run.xml" 1763074891.55004 2510 a9329479f4b528d21d17670ed8613de5 "pdflatex"
+  "main.lof" 1763075584.21969 4636 1f59cc14e613fc2e76b841617ad044a1 "pdflatex"
+  "main.lot" 1763075584.21979 409 3c2a8dcb078c77acd5215378f56360fc "pdflatex"
+  "main.run.xml" 1763075584.2196 2510 a9329479f4b528d21d17670ed8613de5 "pdflatex"
   "main.tex" 1762472323.62926 9769 1e40b4ba0efd7002dabb6330edc5caa4 ""
-  "main.toc" 1763074891.55032 5980 7c1c2e4eb3646120cf110fdc013db5b3 "pdflatex"
+  "main.toc" 1763075584.21982 5904 d59169939f3a0121570e989c87e2fe01 "pdflatex"
   "setup/information.tex" 1750364519.07353 2646 371c8411639ce685156817def85bd699 ""
   "setup/list_of_acron_symbols.tex" 1750361360.13544 1249 0a0e074c86aff60b36d6d7f083f30bdd ""
   "setup/logo.png" 1750361360.13564 7280 93e2c0d319a417c99c40faf4bbf8fe1c ""
