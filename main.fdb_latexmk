@@ -1,19 +1,18 @@
 # Fdb version 4
-["biber main"] 1763074569.21942 "main.bcf" "main.bbl" "main" 1763075584.44533 0
-  "main.bcf" 1763075584.21865 128779 84c39f0b9e184538674dd4c3d07a5b46 "pdflatex"
+["biber main"] 1765317885.9077 "main.bcf" "main.bbl" "main" 1765317997.14629 0
+  "main.bcf" 1765317996.97521 128779 84c39f0b9e184538674dd4c3d07a5b46 "pdflatex"
   "references.bib" 1750361360.13524 5267 fde24b46b4582b743d1b129369ae1d79 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["makeindex main.idx"] 1763074557.15968 "main.idx" "main.ind" "main" 1763075584.44518 0
-  "main.idx" 1763075576.60841 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1765317861.23453 "main.idx" "main.ind" "main" 1765317997.1461 0
+  "main.idx" 1765317991.02332 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1763075575.06394 "/Users/matheusgcoppi/college/tcc/main.tex" "main.pdf" "main" 1763075584.44568 0
-  "/Users/matheusgcoppi/college/tcc/main.tex" 1762472323.62926 9769 1e40b4ba0efd7002dabb6330edc5caa4 ""
+["pdflatex"] 1765317989.71992 "main.tex" "main.pdf" "main" 1765317997.14659 0
   "/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -247,12 +246,12 @@
   "/usr/local/texlive/2025basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1750363965 5523549 9971ef0da8d43575ad66bfc6e577da64 ""
   "/usr/local/texlive/2025basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1750364141 3345717 2387ef679b4bca6396fbcd0d48335a03 ""
   "/usr/local/texlive/2025basic/texmf.cnf" 1741448314 628 81d1ada0f601fb1ffa62f1323192d946 ""
-  "beforetext/abstract.tex" 1750361360.10156 1166 3a220d89f9e18fd1232b6e315690c9f4 ""
-  "beforetext/resumo.tex" 1750361360.10182 1295 8a659dd005dc6b8cc8fe407cee95cc10 ""
-  "chapters/01-chapter.tex" 1750361360.10198 13310 b3a0d98d76a7626db0a75ce7a644bd57 ""
-  "chapters/02-chapter.tex" 1763074881.76603 84852 74fbb8da1c3f80fe54d6337a0c51810e ""
-  "chapters/03-chapter.tex" 1762626171.52985 27388 4249bb560aca2fe0893974637df37f3f ""
-  "chapters/04-chapter.tex" 1762712876.577 12720 1c09305c8c4fdb96e4308ce262e110cc ""
+  "beforetext/abstract.tex" 1765317370.42192 1176 b04358d0574db355cf6d060aab358a4d ""
+  "beforetext/resumo.tex" 1765317293.75039 1320 dc14ea902e13da9512f75fd95fcbe82d ""
+  "chapters/01-chapter.tex" 1765317382.22131 13003 dfbba308a8803f625b7746d1a6378a8a ""
+  "chapters/02-chapter.tex" 1765317606.33198 84852 781a4c6443bb57ffb4e1a9f5819031d2 ""
+  "chapters/03-chapter.tex" 1765317534.91119 27442 6927c9a81b4ea3595e265c4a8962e92d ""
+  "chapters/04-chapter.tex" 1765317628.81332 12720 ea58507782235edce0e0f02884461cf4 ""
   "chapters/05-chapter.tex" 1763075572.44334 9981 e4176de57f3c30c37db416a3cb7d639b ""
   "images/automacao.png" 1750361360.1037 1239175 49fb0f541d366ee500230b86d255b47c ""
   "images/circuit_breaker.png" 1750361360.10425 134334 6e27a09aadc50daf48a94b881e20182b ""
@@ -276,15 +275,15 @@
   "images/rest.png" 1750361360.11453 891277 7fd7ddf44f4149b0ed42fbf96434d931 ""
   "images/serverless.png" 1750361360.1149 94475 3cc0c1259aa0bf47ebab5159765f2a0a ""
   "images/teoria-controle.png" 1750361360.11612 1271519 84293653646ed2d6a7b6a00357649cb3 ""
-  "main.aux" 1763075584.19441 63794 213bba8df60ab4b82768a52feb8094b3 "pdflatex"
-  "main.bbl" 1763074571.55718 20747 864961cfa8ba7a9fd6ed18b5fba7ab92 "biber main"
-  "main.ind" 1763074557.23313 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.lof" 1763075584.21969 4636 1f59cc14e613fc2e76b841617ad044a1 "pdflatex"
-  "main.lot" 1763075584.21979 409 3c2a8dcb078c77acd5215378f56360fc "pdflatex"
-  "main.run.xml" 1763075584.2196 2510 a9329479f4b528d21d17670ed8613de5 "pdflatex"
+  "main.aux" 1765317996.95471 63794 1ea49cbd0a638b5037c3b3e97bc089d4 "pdflatex"
+  "main.bbl" 1765317887.65818 20747 864961cfa8ba7a9fd6ed18b5fba7ab92 "biber main"
+  "main.ind" 1765317861.32729 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
+  "main.lof" 1765317996.97615 4636 e956a21174e303b8ece83a64e8a6fc0a "pdflatex"
+  "main.lot" 1765317996.97635 409 3c2a8dcb078c77acd5215378f56360fc "pdflatex"
+  "main.run.xml" 1765317996.97608 2510 a9329479f4b528d21d17670ed8613de5 "pdflatex"
   "main.tex" 1762472323.62926 9769 1e40b4ba0efd7002dabb6330edc5caa4 ""
-  "main.toc" 1763075584.21982 5904 d59169939f3a0121570e989c87e2fe01 "pdflatex"
-  "setup/information.tex" 1750364519.07353 2646 371c8411639ce685156817def85bd699 ""
+  "main.toc" 1765317996.97638 5904 dd415f8baf93e0af3cfb543492e52c40 "pdflatex"
+  "setup/information.tex" 1765317975.7338 2661 e26f931827d497cfcf6c673edb1ce621 ""
   "setup/list_of_acron_symbols.tex" 1750361360.13544 1249 0a0e074c86aff60b36d6d7f083f30bdd ""
   "setup/logo.png" 1750361360.13564 7280 93e2c0d319a417c99c40faf4bbf8fe1c ""
   "setup/my_packages.tex" 1750361360.1357 74 89706a0eee392471abafef5c9b20efff ""

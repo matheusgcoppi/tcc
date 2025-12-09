@@ -55,7 +55,7 @@
 \contentsline {subsection}{\numberline {5.2.2}Análise do Tempo de Transferência}{59}{subsection.5.2.2}%
 \contentsline {section}{\numberline {5.3}ANÁLISE DE CONSUMO DE RECURSOS}{59}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Resultados do Teste com 15.110 Certificados}{59}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Resultados do Teste com 5.000 Certificados}{61}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.2}Resultados do Teste com 5.110 Certificados}{61}{subsection.5.3.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{CONSIDERAÇÕES FINAIS}}{64}{chapter.6}%
 \vspace {\cftbeforechapterskip }
