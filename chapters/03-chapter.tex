@@ -163,7 +163,7 @@ func main() {
 }
 \end{lstlisting}
 
-Todos os endpoints foram envolvidos pelo \texttt{PrometheusMiddleware} para coleta automática de métricas. O \textit{middleware} implementa três métricas principais: \texttt{http\_requests\_total} (contador de requisições por método, \textit{endpoint} e \textit{status}), \texttt{http\_request\_duration\_seconds} (histograma de latência com \textit{buckets} padrão do \textit{Prometheus}), e \texttt{active\_connections} (\textit{gauge} de conexões ativas). Esta instrumentação foi fundamental para as análises de desempenho apresentadas no Capítulo \ref{cap:resultados}.
+Todos os \textit{endpoints} foram envolvidos pelo \texttt{PrometheusMiddleware} para coleta automática de métricas. O \textit{middleware} implementa três métricas principais: \texttt{http\_requests\_total} (contador de requisições por método, \textit{endpoint} e \textit{status}), \texttt{http\_request\_duration\_seconds} (histograma de latência com \textit{buckets} padrão do \textit{Prometheus}), e \texttt{active\_connections} (\textit{gauge} de conexões ativas). Esta instrumentação foi fundamental para as análises de desempenho apresentadas no Capítulo \ref{cap:resultados}.
 
 \begin{lstlisting}[language=Go, caption={Middleware Prometheus implementado},label=lst:prom-middleware]
 func PrometheusMiddleware(next http.HandlerFunc) http.HandlerFunc {
@@ -404,13 +404,13 @@ O \textit{Grafana} foi configurado com credenciais admin/admin e acessa os dados
 \section{METODOLOGIA DE COMPARAÇÃO}\label{sec:metodologia}
 % ----------------------------------------------------------
 
-Para viabilizar a comparação quantitativa entre REST e gRPC, foram implementados endpoints especializados de benchmark em ambos os servidores. Esses endpoints executam operações idênticas: recuperam todos os certificados armazenados, serializam os dados e retornam métricas detalhadas sem transmitir o payload completo pela rede.
+Para viabilizar a comparação quantitativa entre REST e gRPC, foram implementados \textit{endpoints} especializados de \textit{benchmark} em ambos os servidores. Esses \textit{endpoints} executam operações idênticas: recuperam todos os certificados armazenados, serializam os dados e retornam métricas detalhadas sem transmitir o \textit{payload} completo pela rede.
 
 O endpoint REST \texttt{/certificate/benchmark} mede o tempo de leitura dos arquivos do disco e o tempo de serialização JSON através de \texttt{json.Marshal}. O endpoint gRPC \texttt{BenchmarkGetAll} realiza medições equivalentes utilizando \texttt{proto.Marshal} para serialização Protobuf. Ambos retornam um objeto de resposta contendo:
 
 \begin{itemize}
     \item Contagem de certificados processados
-    \item Tamanho total do payload em bytes e megabytes
+    \item Tamanho total do \textit{payload} em bytes e megabytes
     \item Tempo gasto na leitura do disco
     \item Tempo gasto na serialização
     \item Tempo total da operação

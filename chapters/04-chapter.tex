@@ -90,7 +90,7 @@ O textit{speedup} foi mais pronunciado no teste de 5k certificados (3,02x) compa
 \section{ANÁLISE DE CONSUMO DE RECURSOS}\label{sec:consumo-recursos}
 % ----------------------------------------------------------
 
-As métricas de CPU e memória foram coletadas pelo cAdvisor com resolução de 1 segundo e armazenadas no Prometheus. Foram realizados testes com dois volumes de dados: 15.110 certificados (19 MB) e 5.000 certificados (6,4 MB).
+As métricas de CPU e memória foram coletadas pelo cAdvisor com resolução de 1 segundo e armazenadas no Prometheus. Foram realizados testes com dois volumes de dados: 15.110 certificados (19 MB) e 5.110 certificados (6,4 MB).
 
 \subsection{Resultados do Teste com 15.110 Certificados}
 
@@ -138,18 +138,18 @@ Servidor gRPC:
 
 O servidor gRPC apresentou consumo de memória 40,4 MiB inferior ao REST (diferença de 40\% no pico). A utilização de CPU foi 0,094 pontos percentuais menor no gRPC.
 
-\subsection{Resultados do Teste com 5.000 Certificados}
+\subsection{Resultados do Teste com 5.110 Certificados}
 
-As Figuras \ref{fig:grafana-rest-5k} e \ref{fig:grafana-grpc-5k} apresentam as métricas coletadas durante a transferência de 5.000 certificados. A metodologia de coleta foi idêntica ao teste anterior (resolução de 1 segundo). Os servidores foram reiniciados entre os testes para eliminar efeitos de cache.
+As Figuras \ref{fig:grafana-rest-5k} e \ref{fig:grafana-grpc-5k} apresentam as métricas coletadas durante a transferência de 5.110 certificados. A metodologia de coleta foi idêntica ao teste anterior (resolução de 1 segundo). Os servidores foram reiniciados entre os testes para eliminar efeitos de cache.
 
-Este teste com volume reduzido de dados (5.000 certificados, aproximadamente 6,4 MB) permite avaliar o comportamento dos protocolos em cenários de menor carga, representando requisições típicas em sistemas de produção com volumes moderados de dados. A comparação entre os dois volumes (5k e 15k) possibilita identificar se as diferenças de desempenho observadas são consistentes ou se há variações significativas dependendo da escala dos dados transferidos.
+Este teste com volume reduzido de dados (5.110 certificados, aproximadamente 6,4 MB) permite avaliar o comportamento dos protocolos em cenários de menor carga, representando requisições típicas em sistemas de produção com volumes moderados de dados. A comparação entre os dois volumes (5k e 15k) possibilita identificar se as diferenças de desempenho observadas são consistentes ou se há variações significativas dependendo da escala dos dados transferidos.
 
 O procedimento de execução seguiu os mesmos critérios de sincronização temporal estabelecidos no teste anterior.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=1.0\textwidth]{images/grafana-rest-5k.png}
-\caption{Métricas de CPU e memória do servidor REST durante transferência de 5.000 certificados.}
+\caption{Métricas de CPU e memória do servidor REST durante transferência de 5.110 certificados.}
 \label{fig:grafana-rest-5k}
 \fonte{Elaborado pelo autor (2025).}
 \end{figure}
@@ -157,12 +157,12 @@ O procedimento de execução seguiu os mesmos critérios de sincronização temp
 \begin{figure}[H]
 \centering
 \includegraphics[width=1.0\textwidth]{images/grafana-grpc-5k.png}
-\caption{Métricas de CPU e memória do servidor gRPC durante transferência de 5.000 certificados.}
+\caption{Métricas de CPU e memória do servidor gRPC durante transferência de 5.110 certificados.}
 \label{fig:grafana-grpc-5k}
 \fonte{Elaborado pelo autor (2025).}
 \end{figure}
 
-Métricas observadas no teste com 5.000 certificados:
+Métricas observadas no teste com 5.110 certificados:
 
 Servidor REST:
 \begin{itemize}
