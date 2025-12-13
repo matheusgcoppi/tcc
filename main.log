@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.19)  9 DEC 2025 19:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.19)  11 DEC 2025 18:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2290,12 +2290,6 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (9.82677pt too wide) in paragraph at lines 17--17
- [][] [][][]\T1/phv/m/n/12 (-10) Código de ini-ci-a-li-za-ção do ser-vi-dor gRP
-C em \T1/cmtt/m/n/12 cmd/grpc_-server/main.go\T1/phv/m/n/12 (-10) .[][] []  
- []
-
-
 
 [4
 
@@ -2360,7 +2354,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 ]
 
 [15]
-<images/monolito.png, id=345, 1275.76625pt x 1217.54875pt>
+<images/monolito.png, id=343, 1275.76625pt x 1217.54875pt>
 File: images/monolito.png Graphic file (type png)
 <use images/monolito.png>
 Package pdftex.def Info: images/monolito.png  used on input line 45.
@@ -2372,7 +2366,7 @@ Package pdftex.def Info: images/monolito.png  used on input line 45.
 [17 <./images/monolito.png>]
 
 [18]
-<images/event-driven.png, id=386, 1027.84pt x 1027.84pt>
+<images/event-driven.png, id=384, 1027.84pt x 1027.84pt>
 File: images/event-driven.png Graphic file (type png)
 <use images/event-driven.png>
 Package pdftex.def Info: images/event-driven.png  used on input line 72.
@@ -2393,7 +2387,7 @@ comunicam-
 
 
 [19 <./images/event-driven.png (PNG copy)>]
-<images/serverless.png, id=395, 866.23625pt x 458.71375pt>
+<images/serverless.png, id=393, 866.23625pt x 458.71375pt>
 File: images/serverless.png Graphic file (type png)
 <use images/serverless.png>
 Package pdftex.def Info: images/serverless.png  used on input line 87.
@@ -2403,7 +2397,7 @@ Package pdftex.def Info: images/serverless.png  used on input line 87.
 [20 <./images/serverless.png>]
 
 [21]
-<./images/circuit_breaker.png, id=436, 907.89188pt x 654.94687pt>
+<./images/circuit_breaker.png, id=434, 907.89188pt x 654.94687pt>
 File: ./images/circuit_breaker.png Graphic file (type png)
 <use ./images/circuit_breaker.png>
 Package pdftex.def Info: ./images/circuit_breaker.png  used on input line 111.
@@ -2413,7 +2407,7 @@ Package pdftex.def Info: ./images/circuit_breaker.png  used on input line 111.
 [22 <./images/circuit_breaker.png (PNG copy)>]
 
 [23]
-<images/docker.png, id=494, 1027.84pt x 1027.84pt>
+<images/docker.png, id=492, 1027.84pt x 1027.84pt>
 File: images/docker.png Graphic file (type png)
 <use images/docker.png>
 Package pdftex.def Info: images/docker.png  used on input line 152.
@@ -2423,7 +2417,7 @@ Package pdftex.def Info: images/docker.png  used on input line 152.
 [24 <./images/docker.png (PNG copy)>]
 
 [25]
-<images/microservice.png, id=535, 639.89063pt x 391.4625pt>
+<images/microservice.png, id=533, 639.89063pt x 391.4625pt>
 File: images/microservice.png Graphic file (type png)
 <use images/microservice.png>
 Package pdftex.def Info: images/microservice.png  used on input line 189.
@@ -2435,7 +2429,7 @@ Package pdftex.def Info: images/microservice.png  used on input line 189.
 [27]
 
 [28]
-<images/rest.png, id=602, 1027.84pt x 657.45625pt>
+<images/rest.png, id=600, 1027.84pt x 657.45625pt>
 File: images/rest.png Graphic file (type png)
 <use images/rest.png>
 Package pdftex.def Info: images/rest.png  used on input line 312.
@@ -2445,7 +2439,7 @@ Package pdftex.def Info: images/rest.png  used on input line 312.
 [29]
 
 [30 <./images/rest.png>]
-<images/grpc.png, id=634, 1094.0875pt x 517.935pt>
+<images/grpc.png, id=632, 1094.0875pt x 517.935pt>
 File: images/grpc.png Graphic file (type png)
 <use images/grpc.png>
 Package pdftex.def Info: images/grpc.png  used on input line 340.
@@ -2457,7 +2451,7 @@ Package pdftex.def Info: images/grpc.png  used on input line 340.
 [32]
 
 [33]
-<images/kube-arch.png, id=698, 1027.84pt x 1027.84pt>
+<images/kube-arch.png, id=696, 1027.84pt x 1027.84pt>
 File: images/kube-arch.png Graphic file (type png)
 <use images/kube-arch.png>
 Package pdftex.def Info: images/kube-arch.png  used on input line 394.
@@ -2467,13 +2461,13 @@ Package pdftex.def Info: images/kube-arch.png  used on input line 394.
 [34 <./images/kube-arch.png (PNG copy)>]
 
 [35]
-<images/k8s-observability-architecture.png, id=733, 1027.84pt x 1027.84pt>
+<images/k8s-observability-architecture.png, id=731, 1027.84pt x 1027.84pt>
 File: images/k8s-observability-architecture.png Graphic file (type png)
 <use images/k8s-observability-architecture.png>
 Package pdftex.def Info: images/k8s-observability-architecture.png  used on inp
 ut line 425.
 (pdftex.def)             Requested size: 364.00139pt x 363.99963pt.
-<images/teoria-controle.png, id=743, 1027.84pt x 1027.84pt>
+<images/teoria-controle.png, id=741, 1027.84pt x 1027.84pt>
 File: images/teoria-controle.png Graphic file (type png)
 <use images/teoria-controle.png>
 Package pdftex.def Info: images/teoria-controle.png  used on input line 440.
@@ -2485,57 +2479,31 @@ Package pdftex.def Info: images/teoria-controle.png  used on input line 440.
 [37 <./images/teoria-controle.png (PNG copy)>]
 
 [38]
-<images/pillars-observability.png, id=786, 1027.84pt x 1027.84pt>
+<images/pillars-observability.png, id=784, 770.88pt x 770.88pt>
 File: images/pillars-observability.png Graphic file (type png)
 <use images/pillars-observability.png>
 Package pdftex.def Info: images/pillars-observability.png  used on input line 4
 85.
-(pdftex.def)             Requested size: 273.00278pt x 273.00365pt.
+(pdftex.def)             Requested size: 273.00278pt x 272.99973pt.
 
 
 [39 <./images/pillars-observability.png (PNG copy)>]
 
 [40]
-<images/automacao.png, id=816, 1027.84pt x 1027.84pt>
+<images/automacao.png, id=814, 1027.84pt x 1027.84pt>
 File: images/automacao.png Graphic file (type png)
 <use images/automacao.png>
-Package pdftex.def Info: images/automacao.png  used on input line 516.
+Package pdftex.def Info: images/automacao.png  used on input line 517.
 (pdftex.def)             Requested size: 318.49861pt x 318.50163pt.
-
+) (./chapters/03-chapter.tex
 
 [41 <./images/automacao.png (PNG copy)>]
-Overfull \hbox (5.5192pt too wide) in paragraph at lines 538--539
-\T1/cmtt/m/n/12 usage_-seconds_-total \T1/phv/m/n/12 (-10) para uti-li-za-ção d
-e CPU e \T1/cmtt/m/n/12 container_-memory_-working_-set_-bytes
- []
 
+[42]
 
+[43
 
-[42
-
-]
-
-[43]) (./chapters/03-chapter.tex
-
-[44]
-Overfull \hbox (90.3359pt too wide) in paragraph at lines 111--112
-\T1/phv/m/n/12 (-10) Pro-metheus (\T1/cmtt/m/n/12 github.com/prometheus/client_
--golang\T1/phv/m/n/12 (-10) ) e ge-ra-ção de UUIDs (\T1/cmtt/m/n/12 github.com/
-google/uuid\T1/phv/m/n/12 (-10) ). 
- []
-
-
-
-[45
-
-]
-Overfull \hbox (43.23296pt too wide) in paragraph at lines 133--134
-[]\T1/phv/m/n/12 (-10) Os ar-qui-vos de con-fi-gu-ra-ção Doc-ker fi-cam em \T1/
-cmtt/m/n/12 zarf/docker/\T1/phv/m/n/12 (-10) , in-clu-indo \T1/cmtt/m/n/12 rest
-.dockerfile
- []
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstlang1.sty
+] (/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstlang2.sty
@@ -2554,77 +2522,46 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 146.
 
 
-[46]
+[44]
 Overfull \hbox (12.99356pt too wide) in paragraph at lines 166--167
 \T1/cmtt/m/n/12 requests_-total \T1/phv/m/n/12 (-10) (con-ta-dor de re-qui-si-ç
 ões por mé-todo, \T1/phv/m/sl/12 (-10) end-po-int \T1/phv/m/n/12 (-10) e \T1/ph
 v/m/sl/12 (-10) sta-tus\T1/phv/m/n/12 (-10) ), \T1/cmtt/m/n/12 http_-request_-
  []
 
-<images/rest-main.png, id=857, 1343.0175pt x 854.19125pt>
+<images/rest-main.png, id=848, 1343.0175pt x 854.19125pt>
 File: images/rest-main.png Graphic file (type png)
 <use images/rest-main.png>
 Package pdftex.def Info: images/rest-main.png  used on input line 188.
 (pdftex.def)             Requested size: 409.49722pt x 260.44324pt.
 
 
+[45]
+
+[46 <./images/rest-main.png>]
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+
 [47]
 
-[48 <./images/rest-main.png>]
-Overfull \hbox (18.6672pt too wide) in paragraph at lines 238--239
-[]\T1/phv/m/n/12 (-10) O mé-todo \T1/cmtt/m/n/12 GetAllCertificates \T1/phv/m/n
-/12 (-10) é equi-va-lente ao end-po-int REST \T1/cmtt/m/n/12 /certificate/all\T
-1/phv/m/n/12 (-10) ,
- []
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-)
-
-[49]
-Overfull \hbox (22.43718pt too wide) in paragraph at lines 273--274
-[]\T1/phv/m/n/12 (-10) Cada mé-todo RPC foi im-ple-men-tado como uma fun-ção qu
-e re-cebe \T1/cmtt/m/n/12 context.Context
- []
-
-
-
-[50]
-Overfull \hbox (110.0417pt too wide) in paragraph at lines 277--278
-[]\T1/phv/m/n/12 (-10) O ser-vi-dor gRPC foi con-tai-ne-ri-zado usando \T1/phv/
-m/sl/12 (-10) Doc-ker-file multi-stage \T1/phv/m/n/12 (-10) em \T1/cmtt/m/n/12 
-zarf/docker/grpc.dockerfile\T1/phv/m/n/12 (-10) .
- []
-
-<images/grpc-main.png, id=954, 1339.0025pt x 854.19125pt>
+[48]
+<images/grpc-main.png, id=944, 1339.0025pt x 854.19125pt>
 File: images/grpc-main.png Graphic file (type png)
 <use images/grpc-main.png>
 Package pdftex.def Info: images/grpc-main.png  used on input line 281.
 (pdftex.def)             Requested size: 409.49722pt x 261.22527pt.
 
-Overfull \hbox (67.63182pt too wide) in paragraph at lines 300--301
-\T1/phv/m/n/12 (-10) ló-gica de ne-gó-cio atra-vés do \T1/cmtt/m/n/12 Certifica
-teService\T1/phv/m/n/12 (-10) , de-fi-nido em \T1/cmtt/m/n/12 internal/service/
-certificate.go\T1/phv/m/n/12 (-10) .
- []
 
+[49 <./images/grpc-main.png>]
 
+[50]
 
-[51 <./images/grpc-main.png>]
-
-[52]
-Overfull \hbox (28.69171pt too wide) in paragraph at lines 372--373
-\T1/phv/m/n/12 (-10) metheus foi con-fi-gu-rado com re-ten-ção de 200 ho-ras (\
-T1/cmtt/m/n/12 --storage.tsdb.retention.time=200h\T1/phv/m/n/12 (-10) ). 
- []
-
-
-
-[53]
-<images/grafana-cpu-memory.png, id=1020, 1915.155pt x 811.03pt>
+[51]
+<images/grafana-cpu-memory.png, id=1010, 1915.155pt x 811.03pt>
 File: images/grafana-cpu-memory.png Graphic file (type png)
 <use images/grafana-cpu-memory.png>
 Package pdftex.def Info: images/grafana-cpu-memory.png  used on input line 397.
@@ -2632,80 +2569,74 @@ Package pdftex.def Info: images/grafana-cpu-memory.png  used on input line 397.
 (pdftex.def)             Requested size: 455.0pt x 192.6835pt.
 
 
-[54 <./images/grafana-cpu-memory.png>]) (./chapters/04-chapter.tex
+[52 <./images/grafana-cpu-memory.png>]) (./chapters/04-chapter.tex
 
-[55]
-Overfull \hbox (13.08199pt too wide) in paragraph at lines 21--22
-[]\T1/phv/m/n/12 (-10) Entre cada teste, os ser-vi-do-res fo-ram rei-ni-ci-a-do
-s usando \T1/cmtt/m/n/12 docker-compose restart
- []
+[53]
 
-
-
-[56
+[54
 
 ]
-<images/comparison-results.png, id=1053, 453.695pt x 692.5875pt>
+<images/comparison-results.png, id=1041, 453.695pt x 692.5875pt>
 File: images/comparison-results.png Graphic file (type png)
 <use images/comparison-results.png>
-Package pdftex.def Info: images/comparison-results.png  used on input line 31.
+Package pdftex.def Info: images/comparison-results.png  used on input line 29.
 (pdftex.def)             Requested size: 318.49861pt x 486.20291pt.
-<images/comparasio-results-15110.png, id=1054, 453.695pt x 701.62125pt>
+<images/comparasio-results-15110.png, id=1042, 453.695pt x 701.62125pt>
 File: images/comparasio-results-15110.png Graphic file (type png)
 <use images/comparasio-results-15110.png>
 Package pdftex.def Info: images/comparasio-results-15110.png  used on input lin
-e 39.
+e 37.
 (pdftex.def)             Requested size: 318.49861pt x 492.5447pt.
 
 
-[57 <./images/comparison-results.png>]
+[55 <./images/comparison-results.png>]
 
-[58 <./images/comparasio-results-15110.png>]
+[56 <./images/comparasio-results-15110.png>]
 
-[59]
-<images/grafana-rest-15k.png, id=1071, 1608.0075pt x 701.62125pt>
+[57]
+<images/grafana-rest-15k.png, id=1059, 1608.0075pt x 701.62125pt>
 File: images/grafana-rest-15k.png Graphic file (type png)
 <use images/grafana-rest-15k.png>
-Package pdftex.def Info: images/grafana-rest-15k.png  used on input line 111.
+Package pdftex.def Info: images/grafana-rest-15k.png  used on input line 109.
 (pdftex.def)             Requested size: 455.0pt x 198.52954pt.
-<images/grafana-grpc-15k.png, id=1072, 1608.0075pt x 701.62125pt>
+<images/grafana-grpc-15k.png, id=1060, 1608.0075pt x 701.62125pt>
 File: images/grafana-grpc-15k.png Graphic file (type png)
 <use images/grafana-grpc-15k.png>
-Package pdftex.def Info: images/grafana-grpc-15k.png  used on input line 119.
+Package pdftex.def Info: images/grafana-grpc-15k.png  used on input line 117.
 (pdftex.def)             Requested size: 455.0pt x 198.52954pt.
 
 
-[60 <./images/grafana-rest-15k.png>]
-<images/grafana-rest-5k.png, id=1081, 1608.0075pt x 714.67pt>
+[58 <./images/grafana-rest-15k.png>]
+<images/grafana-rest-5k.png, id=1068, 1608.0075pt x 714.67pt>
 File: images/grafana-rest-5k.png Graphic file (type png)
 <use images/grafana-rest-5k.png>
-Package pdftex.def Info: images/grafana-rest-5k.png  used on input line 151.
+Package pdftex.def Info: images/grafana-rest-5k.png  used on input line 149.
 (pdftex.def)             Requested size: 455.0pt x 202.22179pt.
 
 
-[61 <./images/grafana-grpc-15k.png>]
-<images/grafana-grpc-5k.png, id=1087, 1608.0075pt x 714.67pt>
+[59 <./images/grafana-grpc-15k.png>]
+<images/grafana-grpc-5k.png, id=1074, 1608.0075pt x 714.67pt>
 File: images/grafana-grpc-5k.png Graphic file (type png)
 <use images/grafana-grpc-5k.png>
-Package pdftex.def Info: images/grafana-grpc-5k.png  used on input line 159.
+Package pdftex.def Info: images/grafana-grpc-5k.png  used on input line 157.
 (pdftex.def)             Requested size: 455.0pt x 202.22179pt.
 ) (./chapters/05-chapter.tex
 
-[62 <./images/grafana-rest-5k.png> <./images/grafana-grpc-5k.png>]
+[60 <./images/grafana-rest-5k.png> <./images/grafana-grpc-5k.png>]
+
+[61]
+
+[62
+
+])
 
 [63]
 
 [64
 
-])
-
-[65]
-
-[66
-
 ]
 
-[67]
+[65]
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
@@ -2729,10 +2660,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45744 strings out of 473190
- 837896 string characters out of 5713195
- 2163304 words of memory out of 5000000
- 67814 multiletter control sequences out of 15000+600000
+ 45739 strings out of 473190
+ 837853 string characters out of 5713195
+ 2163079 words of memory out of 5000000
+ 67812 multiletter control sequences out of 15000+600000
  625598 words of font info for 280 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  196i,13n,292p,2527b,4447s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2744,10 +2675,10 @@ er/sftt1200.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/helvet
 ic/uhvb8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/helvetic
 /uhvr8a.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/urw/helvetic/u
 hvro8a.pfb>
-Output written on main.pdf (68 pages, 10684358 bytes).
+Output written on main.pdf (66 pages, 10674557 bytes).
 PDF statistics:
- 1396 PDF objects out of 1440 (max. 8388607)
- 1262 compressed objects within 13 object streams
- 329 named destinations out of 1000 (max. 500000)
- 71220 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1380 PDF objects out of 1440 (max. 8388607)
+ 1248 compressed objects within 13 object streams
+ 326 named destinations out of 1000 (max. 500000)
+ 71212 words of extra memory for PDF output out of 74296 (max. 10000000)
 

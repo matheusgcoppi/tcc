@@ -18,13 +18,11 @@ O \textit{script} calcula automaticamente três métricas principais: redução 
 
 Os certificados utilizados nos testes foram gerados previamente usando o \textit{endpoint} \texttt{POST /certificate} do servidor REST. Cada certificado contém \textit{Subject} padrão (\textit{CommonName}="localhost", \textit{Organization}="Test"), validade de 1 ano, e \textit{payload} JSON vazio. Os arquivos foram armazenados em \texttt{zarf/certificates/} com nomenclatura \texttt{certificate\_YYYYMMDD\_HHMMSS\_nnnnnnnnn.crt}, onde os nanosegundos garantem unicidade. Este formato PEM padrão ocupa aproximadamente 1,3 KB por certificado.
 
-Entre cada teste, os servidores foram reiniciados usando \texttt{docker-compose restart rest-app grpc-app} para limpar caches de memória e garantir condições iniciais equivalentes. Após a reinicialização, aguardou-se 10 segundos para estabilização completa dos processos antes de executar as requisições de teste. Esta metodologia elimina variáveis de estado residual que poderiam influenciar os resultados.
+Entre cada teste, os servidores foram reiniciados usando o comando que irá reiniciar que é \texttt{docker-compose restart rest-app grpc-app} para limpar caches de memória e garantir condições iniciais equivalentes. Após a reinicialização, aguardou-se 10 segundos para estabilização completa dos processos antes de executar as requisições de teste. Esta metodologia elimina variáveis de estado residual que poderiam influenciar os resultados.
 
 % ----------------------------------------------------------
 \section{RESULTADOS OBTIDOS}\label{sec:resultados-obtidos}
 % ----------------------------------------------------------
-
-As Figuras \ref{fig:comparison-results-5k} e \ref{fig:comparison-results-15k} apresentam os resultados obtidos.
 
 \begin{figure}[H]
 \centering

@@ -108,7 +108,7 @@ Para viabilizar a observabilidade, o projeto integra Prometheus para coleta de m
 
 O ambiente de desenvolvimento foi configurado utilizando Go versão 1.24.6 como linguagem principal. A escolha do Go se justifica por suas características de performance, suporte nativo a concorrência através de \textit{goroutines} e amplo ecossistema para desenvolvimento de microsserviços. Além disso, a linguagem possui bibliotecas maduras tanto para construção de APIs REST quanto para implementação de serviços gRPC.
 
-Para o desenvolvimento foi utilizado o \textit{goland} como editor principal. O projeto utiliza Go \textit{Modules} para gerenciamento de dependências, facilitando a reprodutibilidade do ambiente. As principais dependências incluem o framework gRPC (\texttt{google.golang.org/grpc}), Protocol Buffers (\texttt{google.golang.org/protobuf}), cliente Prometheus (\texttt{github.com/prometheus/client\_golang}) e geração de UUIDs (\texttt{github.com/google/uuid}).
+Para o desenvolvimento foi utilizado o \textit{goland} como editor principal. O projeto utiliza Go \textit{Modules} para gerenciamento de dependências, facilitando a reprodutibilidade do ambiente. As principais dependências incluem o framework gRPC (\texttt{google.golang.org/grpc}), Protocol Buffers (\texttt{google.golang.org/protobuf}), cliente Prometheus (\texttt{github.com/prometheus/client\_golang}).
 
 A containerização foi realizada através do \textit{Docker}, permitindo que ambos os servidores executem em ambientes isolados e padronizados. O \textit{Docker Compose} orquestra os serviços necessários (REST, gRPC, \textit{Prometheus}, \textit{Grafana} e \textit{cAdvisor}), simplificando o processo de execução e testes.
 
@@ -130,7 +130,7 @@ A lógica de negócio reside no diretório \texttt{internal/}, que está dividid
 
 Para REST, os controladores HTTP estão em \texttt{internal/api/controller/}, enquanto o middleware de métricas Prometheus fica em \texttt{internal/api/middleware/}. Para gRPC, a implementação do servidor está em \texttt{internal/grpc/server.go}. As definições Protocol Buffer residem em \texttt{proto/certificate.proto}, e o código Go gerado automaticamente pelo compilador protoc fica na mesma pasta.
 
-Os arquivos de configuração Docker ficam em \texttt{zarf/docker/}, incluindo \texttt{rest.dockerfile} e \texttt{grpc.dockerfile}. O diretório \texttt{zarf/keys/} armazena as chaves RSA necessárias para assinatura de certificados, enquanto \texttt{zarf/certificates/} recebe os certificados gerados em tempo de execução.
+Os arquivos de configuração Docker ficam em \texttt{zarf/docker/}. E temos o diretório em \texttt{zarf/keys/} armazena as chaves RSA necessárias para assinatura de certificados, enquanto \texttt{zarf/certificates/} recebe os certificados gerados em tempo de execução.
 
 % ----------------------------------------------------------
 \section{IMPLEMENTAÇÃO DOS SERVIDORES}\label{sec:servidores}
@@ -235,7 +235,7 @@ message BenchmarkResponse {
 }
 \end{lstlisting}
 
-O método \texttt{GetAllCertificates} é equivalente ao endpoint REST \texttt{/certificate/all}, retornando um mapa de certificados. O método \texttt{BenchmarkGetAll} fornece estatísticas detalhadas de serialização Protobuf para comparação com JSON.
+O método \texttt{GetAllCertificates} é equivalente ao endpoint REST \texttt{/certificate}, retornando um mapa de certificados. O método \texttt{BenchmarkGetAll} fornece estatísticas detalhadas de serialização Protobuf para comparação com JSON.
 
 O código Go foi gerado automaticamente a partir do arquivo \texttt{.proto} usando os comandos:
 
@@ -270,16 +270,16 @@ func main() {
 
 A implementação dos métodos RPC em \texttt{internal/grpc/server.go} delega a lógica de negócio para o mesmo \texttt{CertificateService} utilizado pelo servidor REST, garantindo comportamento idêntico entre os protocolos. A diferença reside exclusivamente na camada de transporte (HTTP/2 vs HTTP/1.1) e serialização (Protobuf vs JSON).
 
-Cada método RPC foi implementado como uma função que recebe \texttt{context.Context} e uma mensagem de requisição, retornando uma mensagem de resposta e erro. Por exemplo, \texttt{GetAllCertificates} chama \texttt{certificateService.GetAllCertificates()}, recebe o mapa de certificados, e o encapsula em \texttt{pb.GetAllResponse\{Certificates: certificates\}}. O framework gRPC automaticamente serializa essa resposta em Protobuf binário antes de transmitir pela rede.
+Cada método RPC foi implementado como uma função que recebe \texttt{context} e uma mensagem de requisição, retornando uma mensagem de resposta e erro. Por exemplo, \texttt{GetAllCertificates} chama \texttt{certificateService.GetAllCertificates()}, recebe o mapa de certificados, e o encapsula em \texttt{pb.GetAllResponse\{Certificates: certificates\}}. O framework gRPC automaticamente serializa essa resposta em Protobuf binário antes de transmitir pela rede.
 
 O método \texttt{BenchmarkGetAll} implementa medições detalhadas similares ao \textit{endpoint} REST equivalente. Ele mede o tempo de busca dos certificados, serializa manualmente a resposta usando \texttt{proto.Marshal} para obter o tamanho exato do \textit{payload} \textit{Protobuf}, e retorna estatísticas incluindo contagem de certificados, tamanho em \textit{bytes}, tempos de busca e serialização. Esta implementação foi essencial para comparar o desempenho de serialização entre JSON e Protobuf de forma controlada.
 
-O servidor gRPC foi containerizado usando \textit{Dockerfile multi-stage} em \texttt{zarf/docker/grpc.dockerfile}. O primeiro estágio compila o código Go com \texttt{CGO\_ENABLED=0} para gerar binário estático, e o segundo estágio copia o binário para imagem \textit{Alpine Linux} mínima. Os volumes Docker mapeiam \texttt{zarf/keys} em modo read-only (fornecendo a chave privada RSA) e \texttt{zarf/certificates} em modo read-write (compartilhado com o servidor REST para armazenar certificados). Este compartilhamento de volumes garante que ambos os servidores acessem exatamente os mesmos arquivos de certificados durante os testes.
+O servidor gRPC foi containerizado usando Dockerfile multi-stage em zarf/docker/grpc.dockerfile. O primeiro estágio compila o código Go com \texttt{CGO\_ENABLED=0} para gerar binário estático, e o segundo estágio copia o binário para imagem \textit{Alpine Linux} mínima. Os volumes Docker mapeiam \texttt{zarf/keys} em modo read-only (fornecendo a chave privada RSA) e \texttt{zarf/certificates} em modo read-write (compartilhado com o servidor REST para armazenar certificados). Este compartilhamento de volumes garante que ambos os servidores acessem exatamente os mesmos arquivos de certificados durante os testes.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{images/grpc-main.png}
-\caption{Código de inicialização do servidor gRPC em \texttt{cmd/grpc\_server/main.go}.}
+\caption{Código de inicialização do gRPC em \texttt{cmd/grpc\_server/main.go}.}
 \label{fig:grpc-main}
 \fonte{Elaborado pelo autor (2025).}
 \end{figure}
@@ -297,7 +297,7 @@ Os métodos RPC implementados em \texttt{internal/grpc/server.go} são:
 \section{LÓGICA DE NEGÓCIO COMPARTILHADA}\label{sec:logica}
 % ----------------------------------------------------------
 
-Ambos os servidores (REST e gRPC) compartilham a mesma implementação de lógica de negócio através do \texttt{CertificateService}, definido em \texttt{internal/service/certificate.go}. Esta decisão arquitetural foi fundamental para garantir que a comparação avalie exclusivamente as diferenças de protocolo e serialização, não diferenças na lógica de negócio.
+Ambos os servidores (REST e gRPC) compartilham a mesma implementação de lógica de negócio através do \texttt{CertificateService}. Esta decisão arquitetural foi fundamental para garantir que a comparação avalie exclusivamente as diferenças de protocolo e serialização, não diferenças na lógica de negócio.
 
 A interface do serviço define quatro operações:
 
@@ -369,7 +369,7 @@ scrape_configs:
     metrics_path: '/metrics'
 \end{lstlisting}
 
-Foi configurado scrape\_interval de 5 segundos para os servidores de aplicação (3x mais frequente que o padrão de 15s) para capturar picos de CPU e memória durante as transferências de certificados, que têm duração de poucos segundos. O Prometheus foi configurado com retenção de 200 horas (\texttt{--storage.tsdb.retention.time=200h}).
+Foi configurado scrape\_interval de 5 segundos para os servidores de aplicação (3x mais frequente que o padrão de 15s) para capturar picos de CPU e memória durante as transferências de certificados, que têm duração de poucos segundos. O Prometheus foi configurado com retenção de 200 horas (\texttt{--storage.tsdb.retention.time}).
 
 O cAdvisor foi configurado em \texttt{docker-compose.yaml} para coletar métricas de containers Docker com \texttt{housekeeping\_interval} de 10 segundos:
 

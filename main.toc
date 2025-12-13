@@ -34,33 +34,31 @@
 \contentsline {subsection}{\numberline {2.2.3}Pilares da Observabilidade}{38}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Automação e Resposta a Incidentes}{40}{subsection.2.2.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Proposta}}{42}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{DESENVOLVIMENTO}}{43}{chapter.3}%
+\contentsline {section}{\numberline {3.1}VISÃO GERAL DO PROJETO}{43}{section.3.1}%
+\contentsline {section}{\numberline {3.2}AMBIENTE DE DESENVOLVIMENTO}{43}{section.3.2}%
+\contentsline {section}{\numberline {3.3}ESTRUTURA DO PROJETO}{44}{section.3.3}%
+\contentsline {section}{\numberline {3.4}IMPLEMENTAÇÃO DOS SERVIDORES}{44}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Servidor REST}{44}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Servidor gRPC}{47}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}LÓGICA DE NEGÓCIO COMPARTILHADA}{49}{section.3.5}%
+\contentsline {section}{\numberline {3.6}INTEGRAÇÃO COM OBSERVABILIDADE}{51}{section.3.6}%
+\contentsline {section}{\numberline {3.7}METODOLOGIA DE COMPARAÇÃO}{53}{section.3.7}%
+\contentsline {section}{\numberline {3.8}CONTAINERIZAÇÃO E ORQUESTRAÇÃO}{53}{section.3.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{DESENVOLVIMENTO}}{45}{chapter.4}%
-\contentsline {section}{\numberline {4.1}VISÃO GERAL DO PROJETO}{45}{section.4.1}%
-\contentsline {section}{\numberline {4.2}AMBIENTE DE DESENVOLVIMENTO}{45}{section.4.2}%
-\contentsline {section}{\numberline {4.3}ESTRUTURA DO PROJETO}{46}{section.4.3}%
-\contentsline {section}{\numberline {4.4}IMPLEMENTAÇÃO DOS SERVIDORES}{46}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Servidor REST}{46}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Servidor gRPC}{49}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}LÓGICA DE NEGÓCIO COMPARTILHADA}{51}{section.4.5}%
-\contentsline {section}{\numberline {4.6}INTEGRAÇÃO COM OBSERVABILIDADE}{53}{section.4.6}%
-\contentsline {section}{\numberline {4.7}METODOLOGIA DE COMPARAÇÃO}{55}{section.4.7}%
-\contentsline {section}{\numberline {4.8}CONTAINERIZAÇÃO E ORQUESTRAÇÃO}{55}{section.4.8}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{RESULTADOS E ANÁLISE}}{54}{chapter.4}%
+\contentsline {section}{\numberline {4.1}METODOLOGIA DE EXECUÇÃO DOS TESTES}{54}{section.4.1}%
+\contentsline {section}{\numberline {4.2}RESULTADOS OBTIDOS}{55}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Análise do Tamanho de Payload}{56}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Análise do Tempo de Transferência}{57}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}ANÁLISE DE CONSUMO DE RECURSOS}{57}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Resultados do Teste com 15.110 Certificados}{57}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Resultados do Teste com 5.110 Certificados}{59}{subsection.4.3.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{RESULTADOS E ANÁLISE}}{56}{chapter.5}%
-\contentsline {section}{\numberline {5.1}METODOLOGIA DE EXECUÇÃO DOS TESTES}{56}{section.5.1}%
-\contentsline {section}{\numberline {5.2}RESULTADOS OBTIDOS}{57}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Análise do Tamanho de Payload}{58}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Análise do Tempo de Transferência}{59}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}ANÁLISE DE CONSUMO DE RECURSOS}{59}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Resultados do Teste com 15.110 Certificados}{59}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Resultados do Teste com 5.110 Certificados}{61}{subsection.5.3.2}%
-\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{CONSIDERAÇÕES FINAIS}}{64}{chapter.6}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{CONSIDERAÇÕES FINAIS}}{62}{chapter.5}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{REFERÊNCIAS}{66}{section*.36}%
+\contentsline {chapter}{REFERÊNCIAS}{64}{section*.36}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
